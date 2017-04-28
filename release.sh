@@ -109,9 +109,10 @@ then
 
     git checkout -b release/v$RELEASE_NUM
     git tag v$RELEASE_NUM
-    git push origin --tags
+    git push origin --tags release/v$RELEASE_NUM:release/v$RELEASE_NUM
 
     git checkout development
+    git push origin development:development
 
     separator
     echo "RELEASE END"
