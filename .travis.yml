@@ -19,8 +19,6 @@ deploy:
   github_token: $GH_TOKEN
   local_dir: dist
   target_branch: master
-  on:
-    branch: /^release\/.*$/
 
 env:
   global:
