@@ -62,10 +62,11 @@ function validateReleaseNum () {
 function notification () {
     local NAME=`node -p -e "require('./package.json').name"`
     if which osascript >/dev/null; then
-        osascript -e "display notification $NAME with title $1"
+        osascript -e "display notification \"$1\" with title \"$NAME\""
     fi
 }
-# Execution
+
+ Execution
 
 START_V=$(packageVersion)
 
@@ -116,7 +117,7 @@ then
     echo "RELEASE END"
     separator
 
-    notification "$RELEASE_NUM Released"
+    notification "Release v$RELEASE_NUM Released"
 else
     echo "Reverting Package Version: $START_V"
 
@@ -128,5 +129,5 @@ else
     echo "RELEASE ABORTED"
     separator
 
-    notification "$RELEASE_NUM Aborted"
+    notification "Release v$RELEASE_NUM Aborted"
 fi
