@@ -1,19 +1,13 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+var webpack = require('webpack'),
+    WebpackDevServer = require('webpack-dev-server'),
+    config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
     hot: true,
     historyApiFallback: true,
     stats: {
         colors: true
-    },
-    proxy: {
-        '/api/*': {
-            target: 'http://localhost/travel-book/rest/public/'
-        }
     }
-
 }).listen(3000, '0.0.0.0', function (err) {
     if (err) {
         console.log(err);
