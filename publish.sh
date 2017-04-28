@@ -20,7 +20,7 @@ PUBLISH_TIME="`date +'%Y-%m-%d %H:%M:%S'`"
 git commit -m "[$PUBLISH_TIME] Publish website"
 
 echo "/***** PUSHING $GH_REF ****/"
-git push --force --quiet "https://${GHTK}@$GH_REF" master:master
+git push --force --quiet "https://${GITHUB_TOKEN}@$GH_REF" master:master > /dev/null 2>&1
 
 echo "/***** CLEAN TMP REPO ****/"
 rm -rf .git

@@ -1,13 +1,23 @@
-script: bash ./publish.sh
+script: npm run dist
+
 language: node_js
+
 node_js:
 - 6.1.0
-cache:
-  directories:
-  - node_modules
+
 branches:
   only:
   - /^release\/.*$/
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  target_branch: master
+  on:
+    branch: /^release\/.*$/
+
 env:
   global:
-    secure: Q5D0P0sweMjUeBbUfjcJubQqNA9VC26U76XibJtr65goSR5hwBf/txMjveUbOaDgrgoGs9kw09Ugi2JTZ6xSHR0nynD+36XyRWqX9sLdqvhqaBWumm0YSEtuYkolcfAnhDaO//loz8jsy7SdHkM6whOw7kwU/jiytqnGah/cG2Qg2ut/pSa68ou1c8Fb2GdJz5/7qUFe0YNrX5dAdLBc0/2b0axj3yccghqH7ixtNn+j0P4dD4rT2o8QyL2XzeTGHTWEBy9dbDcDsZ3pJnxZOiWlnqRPH7DkBFPNFz8dOiRIAK1PFB6ODCBm+V9GapltLVnezBjdacYNt2NF7yxOVs5x8v6QfC8pUQp5PxWoiq3ZzU8DVmD5acFTY6zSm0Jy+dXD1HNETwYbLqbtBuoIhV1Kp+JXc4IRxYjCbfdJ030RWxGQn7LIVWfpRicVQBl7Osm44zrORf3UQ0qzDeDjcALgwvFBrE1X1t9LGx+Hqej8gp5Yq4jRgtEWupjDFG0JLrUxE/iI9ynut462j/yYdeubir0TIoy3RPueE+51t3MfvbsIiPgi9FnRSqakTbX8g7CncCDu3PxByKcxhOXR+IpEgMTDiuWuyioMXlJDEr3mOZa1mnHeAdAPSJ2YQIGpDZdKlJ5yPN/IfRVqXZk7iXgErloE6wqRxBvNFKZ+fbc=
+    secure: gusOr4O8yebAaGBV8eEvTLqjEmepP8sBE6W1Sc0Ioc8SkRvshIyo6L6dv0LskaSKXNLQsdDw8cyPh+hds6JIjZ6Bu3EctIXmIfn7QeR79BVW8pKF2CaVG4i6Z54asVEIp7vmHHTNtXsHwF5Bg7fOoajxJUFznOYDku5Rv0og+2PDWoxCKkZiO01D3XMrn4ImBO/Z+w8R0J19QCNC1r09cuDfbT17C2d1I55PtonAY+3+fG6vlHrvUVdIU11IuyrVWg67wOGDE3vO0scXVxzoApNLo1Gujcag2oKwixudM6YZWHFyFudTf2ZCrEXyAXnnfkT9RSRDnVmDSz61lTvAlIfBJ7gvGMeRd/TuA3tUCJaSIzjEsR2Wt7Jij0YUP2ECIMQFwC6orVh41YuPU46PynF0Xo3BEptK0kL/2yqnZ9B4LtMzmfyDAu1347IW2D/QPWHP5WdSI+7+vaOkAuOav9gIkXHQCbO5DZAIeH6w5oUYmubmIysEd++UU9cFUtf3KPt/QIt6Lyx8jz/ZSKGDVDEFw0a4j2+lgEEefy88oXdpkSibX51hEbFt43gEiSTo5Ta2zBgwA8Olh/rkuPWftrJRvtmfpILEIwukO1SZTJuubno8CdW1UCit46bxj1wuAJ5mBqxmlayC1h8Bdg6lMMPS6smqAM4g4vx96uARpXQ=

@@ -28,7 +28,7 @@ function checkGitBranch () {
 }
 
 function validateReleaseNum () {
-    local BRANCH_REGEX="^[0-9]\.[0-9]\.[0-9]$"
+    local BRANCH_REGEX="^[0-9]+\.[0-9]+\.[0-9]+$"
 
     if [ "$1" == "$(packageVersion)" ]
     then
