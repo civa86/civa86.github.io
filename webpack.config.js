@@ -57,8 +57,6 @@
         //Development Configuration
         console.log('/***** APPLICATION DEVELOPMENT ****/');
 
-        ExtractStyle = new ExtractTextPlugin('screen.css');
-
         devtoolValue = 'source-map';
         entry = [
             'webpack-dev-server/client?http://localhost:3000',
@@ -77,7 +75,6 @@
                 template: path.join(__dirname, 'app', 'index.html'),
                 inject: 'body'
             }),
-            ExtractStyle,
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': '"development"'
             })
@@ -110,11 +107,11 @@
                 },
                 {
                     test: /\.less$/,
-                    loader: ExtractStyle.extract('style', 'css!less')
+                    loader: (process.env.NODE_ENV === 'production') ? ExtractStyle.extract('style', 'css!less') : 'style!css?sourceMap!less?sourceMap'
                 },
                 {
                     test: /\.css$/,
-                    loader: ExtractStyle.extract('style', 'css')
+                    loader: (process.env.NODE_ENV === 'production') ? ExtractStyle.extract('style', 'css') : 'style!css?sourceMap'
                 },
                 {
                     test: /\.(txt)$/,
