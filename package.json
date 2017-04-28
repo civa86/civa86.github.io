@@ -1,0 +1,63 @@
+{
+  "name": "civa86.github.io",
+  "version": "0.0.1",
+  "description": "Resume Website",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/civa86/civa86.github.io"
+  },
+  "license": "MIT",
+  "homepage": "https://civa86.github.io",
+  "scripts": {
+    "development": "node server.js",
+    "dist": "rm -rf ./dist; NODE_ENV=production webpack --config webpack.config.js --progress --colors --profile --bail"
+  },
+  "dependencies": {
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
+    "redux": "3.6.0",
+    "react-redux": "4.4.6",
+    "redux-thunk": "2.1.0",
+    "react-router": "3.0.0",
+    "react-router-redux": "4.0.7",
+    "redux-form": "6.3.0",
+    "jquery": "1.12.1",
+    "ionicons": "2.0.1",
+    "devicons": "1.8.0",
+    "bootstrap": "3.3.6",
+    "moment": "2.13.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-core": "6.18.2",
+    "babel-loader": "6.2.8",
+    "babel-polyfill": "6.3.14",
+    "babel-preset-es2015-loose": "6.1.4",
+    "babel-preset-react": "6.3.13",
+    "babel-preset-stage-0": "6.16.0",
+    "css-loader": "0.23.1",
+    "eslint": "1.10.3",
+    "eslint-loader": "1.2.1",
+    "eslint-plugin-react": "3.16.1",
+    "extract-text-webpack-plugin": "0.9.1",
+    "file-loader": "0.8.5",
+    "imports-loader": "0.6.5",
+    "html-webpack-plugin": "2.22.0",
+    "less": "2.5.3",
+    "less-loader": "2.2.2",
+    "node-libs-browser": "0.5.3",
+    "react-hot-loader": "3.0.0-beta.6",
+    "redux-devtools": "3.3.1",
+    "redux-devtools-dock-monitor": "1.1.1",
+    "redux-devtools-log-monitor": "1.1.1",
+    "redux-mock-store": "1.2.1",
+    "style-loader": "0.13.0",
+    "webpack": "1.13.3",
+    "webpack-dev-server": "1.16.2"
+  },
+  "babel": {
+    "presets": ["es2015-loose", "stage-0", "react"],
+    "plugins": ["react-hot-loader/babel"]
+  }
+}
