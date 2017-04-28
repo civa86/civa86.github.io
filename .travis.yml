@@ -1,4 +1,4 @@
-script: npm run dist
+script: bash ./publish.sh
 
 language: node_js
 
@@ -12,13 +12,6 @@ cache:
 branches:
   only:
   - /^release\/.*$/
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  local_dir: dist
-  target_branch: master
 
 env:
   global:
