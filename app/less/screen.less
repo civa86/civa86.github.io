@@ -4,6 +4,8 @@
 @import 'utils/media-query';
 @import 'utils/mixin';
 
+@import 'resizer';
+
 //Setup
 @sidebar-w: 50px;
 @sidebar-bg-bolor: @base-border-color;
@@ -18,12 +20,38 @@ html, body {
   color: @text-color;
 }
 
-.under-construction {
-  color: @background-color-info;
-  .icn {
-    display: block;
-    font-size: 30px;
+.content {
+  overflow: scroll;
+  height: 100%;
+  background: @dark-background-color;
+
+  .code {
+    white-space: nowrap;
+    font-size: 16px;
+    margin: 10px 0;
+    counter-reset: line;
+
+    span {
+      cursor: text;
+      display: block;
+      line-height: 24px;
+
+      &.selected {
+        background: @line-highlight;
+        &:before {
+          color: @line-number-highlight;
+        }
+      }
+
+      &:before {
+        width: 33px;
+        text-align: right;
+        counter-increment: line;
+        content: counter(line);
+        display: inline-block;
+        color: @line-number;
+        padding-right: 15px;
+      }
+    }
   }
-
 }
-

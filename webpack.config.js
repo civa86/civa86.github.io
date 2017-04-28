@@ -21,15 +21,14 @@
         devtoolValue = 'source-map';
         entry = {
             app: './app/src/index',
-            vendor: [
+            vendor: [ //TODO dynamic with deps....
                 'react',
                 'react-dom',
                 'redux',
                 'react-redux',
                 'redux-thunk',
-                'react-router',
-                'react-router-redux',
                 'redux-form',
+                'react-split-pane',
                 'jquery',
                 'moment'
             ]
@@ -57,6 +56,8 @@
         //Development Configuration
         console.log('/***** APPLICATION DEVELOPMENT ****/');
 
+        ExtractStyle = new ExtractTextPlugin('vendor.css');
+
         devtoolValue = 'source-map';
         entry = [
             'webpack-dev-server/client?http://localhost:3000',
@@ -71,6 +72,7 @@
         };
         pluginsSet = [
             new webpack.HotModuleReplacementPlugin(),
+            ExtractStyle,
             new HtmlWebpackPlugin({
                 template: path.join(__dirname, 'app', 'index.html'),
                 inject: 'body'
@@ -111,7 +113,7 @@
                 },
                 {
                     test: /\.css$/,
-                    loader: (process.env.NODE_ENV === 'production') ? ExtractStyle.extract('style', 'css') : 'style!css?sourceMap'
+                    loader: ExtractStyle.extract('style', 'css')
                 },
                 {
                     test: /\.(txt)$/,

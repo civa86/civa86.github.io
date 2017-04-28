@@ -1,7 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import configureStore from './store/configureStore';
 import Root from './containers/Root';
@@ -25,13 +23,11 @@ import '../less/screen.less';
 // Text Files: humans
 import '../humans.txt';
 
-const
-    store = configureStore(),
-    history = syncHistoryWithStore(browserHistory, store);
+const store = configureStore();
 
 render(
     <AppContainer>
-        <Root store={store} history={history}/>
+        <Root store={store}/>
     </AppContainer>,
     document.getElementById('root')
 );
@@ -41,7 +37,7 @@ if (module.hot) {
         const RootContainer = require('./containers/Root').default;
         render(
             <AppContainer key={Math.random()}>
-                <RootContainer store={store} history={history}/>
+                <RootContainer store={store}/>
             </AppContainer>,
             document.getElementById('root')
         );
