@@ -1,6 +1,6 @@
 {
   "name": "civa86.github.io",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Resume Website",
   "main": "server.js",
   "repository": {
@@ -57,7 +57,13 @@
     "webpack-dev-server": "1.16.2"
   },
   "babel": {
-    "presets": ["es2015-loose", "stage-0", "react"],
-    "plugins": ["react-hot-loader/babel"]
+    "presets": [
+      "es2015-loose",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
+    ]
   }
 }
