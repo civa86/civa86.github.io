@@ -10,13 +10,31 @@ import Code from '../components/Code';
 
 class App extends Component {
 
+    renderTabs () {
+        const { editor } = this.props;
+
+        return editor.tabs
+                     .filter(t => t.opened)
+                     .map((value, index) => {
+                         return (
+                             <Tab
+                                 key={ index }
+                                 title={ value.title }
+                                 showClose={ true }
+                             />
+                         );
+                     });
+    }
+
     render () {
         const { dispatch, editor } = this.props;
         return (
             <SplitPane split="vertical" minSize={50} defaultSize={200}>
-                <div className="sidebar">
+                <div className="sidebar cursor-default no-select">
                     <div>
-                        asd
+                        <div className="title">
+                            <i className="ion-ios-bookmarks"/> Dario Civallero
+                        </div>
                     </div>
                 </div>
                 <div className="content">
@@ -26,21 +44,8 @@ class App extends Component {
                               onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
                               onTabClose={tab => dispatch(editorAction.tabClose(tab))}
                               onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
-                              draggable={true}
-                        >
-                            {
-                                editor.tabs
-                                      .filter(t => t.opened)
-                                      .map((value, index) => {
-                                          return (
-                                              <Tab
-                                                  key={ index }
-                                                  title={ value.title }
-                                                  showClose={ true }
-                                              />
-                                          );
-                                      })
-                            }
+                              draggable={true}>
+                            {this.renderTabs()}
                         </Tabs>
 
                     </div>
