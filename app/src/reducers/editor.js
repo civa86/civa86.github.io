@@ -18,6 +18,7 @@ function editor (state = initialState, action = {}) {
             return {
                 ...state,
                 tabs: state.tabs.map((t, i) => {
+                    console.log(i, action.tab)
                     if (i !== action.tab) {
                         return t;
                     }
@@ -36,10 +37,9 @@ function editor (state = initialState, action = {}) {
 
             [tabs[action.a], tabs[action.b]] = [tabs[action.b], tabs[action.a]];
 
-
-            if(state.activeTab == action.a) {
+            if (state.activeTab === action.a) {
                 activeTab = action.b;
-            }else if(state.activeTab == action.b) {
+            } else if (state.activeTab === action.b) {
                 activeTab = action.a;
             }
 

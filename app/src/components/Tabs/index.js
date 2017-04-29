@@ -1,55 +1,59 @@
 import React, { Component } from 'react';
 
 export class Tabs extends Component {
-    dragTarget = null;
-    mouseMoveHandler = this.handleMouseMove.bind(this);
-    mouseUpHandler = this.handleMouseUp.bind(this);
-    singleTabWidth = 0;
-    tabTotal = 0;
 
-    switchTab(index) {
+    constructor (props) {
+        super(props);
+
+        this.dragTarget = null;
+        this.mouseMoveHandler = this.handleMouseMove.bind(this);
+        this.mouseUpHandler = this.handleMouseUp.bind(this);
+        this.singleTabWidth = 0;
+        this.tabTotal = 0;
+    }
+
+    switchTab (index) {
         this.props.onTabSwitch(index);
     }
 
-    handleMouseDown(event) {
+    handleMouseDown (event) {
         this.dragTarget = {
             target: event.currentTarget,
             x: event.currentTarget.offsetLeft,
             left: event.currentTarget.offsetLeft + 'px',
             mouseX: event.pageX,
-            index: this.getIndexByLeft(event.currentTarget.offsetLeft),
+            index: this.getIndexByLeft(event.currentTarget.offsetLeft)
         };
     }
 
-    handleMouseUp() {
+    handleMouseUp () {
         this.dragTarget = null;
         this.forceUpdate();
     }
 
-    handleMouseMove(event) {
+    handleMouseMove (event) {
         // Draggable
-        if(this.dragTarget) {
+        if (this.dragTarget) {
             event.preventDefault();
             event.stopPropagation();
 
             const dragTarget = this.dragTarget;
-            const target = dragTarget.target;
             const one = this.refs.tabs.offsetWidth / 100;
             const maxLeft = one + one * this.singleTabWidth * (this.tabTotal - 1);
 
             let left = (dragTarget.x + event.pageX - dragTarget.mouseX);
 
-            if(left < one) {
+            if (left < one) {
                 left = one;
             }
 
-            if(left > maxLeft) {
+            if (left > maxLeft) {
                 left = maxLeft;
             }
 
             let index = this.getIndexByLeft(left);
 
-            if(index != dragTarget.index) {
+            if (index !== dragTarget.index) {
                 const a = index, b = dragTarget.index;
 
                 this.props.onTabPositionChange(a, b);
@@ -62,42 +66,42 @@ export class Tabs extends Component {
         }
     }
 
-    handleClose(index, event) {
+    handleClose (index, event) {
         event.preventDefault();
         event.stopPropagation();
         this.props.onTabClose(index);
     }
 
-    handleAdd(event) {
+    handleAdd (event) {
         event.preventDefault();
         event.stopPropagation();
         this.props.onTabAdd();
     }
 
-    getLeftByIndex(index) {
+    getLeftByIndex (index) {
         return +this.singleTabWidth * index;
     }
 
-    getIndexByLeft(left) {
+    getIndexByLeft (left) {
         let one = this.refs.tabs.offsetWidth / 100;
         return Math.round((left - one) / (one * this.singleTabWidth));
     }
 
-    componentDidMount() {
-        if(this.props.draggable) {
+    componentDidMount () {
+        if (this.props.draggable) {
             window.addEventListener('mousemove', this.mouseMoveHandler);
             window.addEventListener('mouseup', this.mouseUpHandler);
         }
     }
 
-    componentWillUnmount() {
-        if(this.props.draggable) {
+    componentWillUnmount () {
+        if (this.props.draggable) {
             window.removeEventListener('mousemove', this.mouseMoveHandler);
             window.removeEventListener('mouseup', this.mouseUpHandler);
         }
     }
 
-    render() {
+    render () {
         let props = this.props;
         this.tabTotal = props.children.length;
         this.singleTabWidth = 98 / this.tabTotal;
@@ -107,26 +111,26 @@ export class Tabs extends Component {
             let position = index;
             let icon = null;
 
-            if(tab.props.icon) {
-                if(typeof tab.props.icon === 'string') {
+            if (tab.props.icon) {
+                if (typeof tab.props.icon === 'string') {
                     icon = (<TabIcon type={ tab.props.icon }></TabIcon>);
                 } else {
                     icon = tab.props.icon;
                 }
             }
 
-            style['zIndex'] = this.tabTotal - position;
-            style['left'] = this.getLeftByIndex(position) + '%';
-            style['width'] = this.singleTabWidth + '%';
+            style.zIndex = this.tabTotal - position;
+            style.left = this.getLeftByIndex(position) + '%';
+            style.width = this.singleTabWidth + '%';
 
-            if(this.dragTarget && this.dragTarget.index == position) {
-                style['left'] = this.dragTarget.left;
+            if (this.dragTarget && this.dragTarget.index === position) {
+                style.left = this.dragTarget.left;
             }
 
             return (
                 <div
                     key={ index }
-                    className={ "tab-button" + (props.active == index ? " active" : "") }
+                    className={ "tab-button" + (props.active === index ? " active" : "") }
                     style={ style }
                     onClick={ this.switchTab.bind(this, index) }
                     onMouseDown={ this.handleMouseDown.bind(this) }
@@ -139,7 +143,10 @@ export class Tabs extends Component {
                         { icon }
                         { tab.props.title }
                     </div>
-                    { tab.props.showClose ? (<div className="close" onClick={ this.handleClose.bind(this, index) }></div>) : null }
+                    {
+                        tab.props.showClose ?
+                            (<div className="close" onClick={ this.handleClose.bind(this, index) }></div>) : null
+                    }
                 </div>
             );
         });
@@ -152,7 +159,8 @@ export class Tabs extends Component {
                     { tabs }
                 </div>
                 {
-                    (this.props.showAdd) ? (<div className="add-wrapper" onClick={ this.handleAdd.bind(this) }></div>) : null
+                    (this.props.showAdd) ? (
+                        <div className="add-wrapper" onClick={ this.handleAdd.bind(this) }></div>) : null
                 }
             </div>
         );
@@ -168,7 +176,7 @@ const Tab = ({ children }) => {
 const TabIcon = ({ type }) => {
     return (
         <div className={ "icon " + type }>
-            { type == 'loading' ? (<div className="mask"></div>) : null }
+            { type === 'loading' ? (<div className="mask"></div>) : null }
         </div>
     );
 };

@@ -18,9 +18,9 @@ class App extends Component {
                      .map((value, index) => {
                          return (
                              <Tab
-                                 key={ index }
-                                 title={ value.title }
-                                 showClose={ true }
+                                 key={index }
+                                 title={value.title}
+                                 showClose={true}
                              />
                          );
                      });
@@ -114,6 +114,3 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps)(App);
-
-
-
