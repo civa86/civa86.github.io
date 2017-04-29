@@ -18,9 +18,8 @@ class Code extends Component {
             }
         };
 
-        $(document).on('click', globalClickDetector);
         $('.code').on('click', 'span', lineClickHandler);
-        $('.code').on('blur', () => console.log('asd'));
+        $(document).on('click', globalClickDetector);
     }
 
     componentWillUnmount () {
