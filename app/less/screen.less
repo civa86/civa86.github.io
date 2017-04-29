@@ -5,14 +5,10 @@
 @import 'utils/mixin';
 
 @import 'resizer';
+@import 'tabs';
 
 //Setup
-@sidebar-w: 50px;
-@sidebar-bg-bolor: @base-border-color;
-@sidebar-icon-size: 30px;
-@menu-width: 180px;
-@z-top: 100;
-@menu-height: 70px;
+@tab-bar-h: 36px;
 
 //Generic Rules
 html, body {
@@ -21,9 +17,23 @@ html, body {
 }
 
 .content {
-  overflow: scroll;
   height: 100%;
   background: @dark-background-color;
+
+  .tab-bar {
+    height: @tab-bar-h;
+    background: @base-background-color;
+    border-bottom: 1px solid @base-border-color;
+  }
+
+  .content-editor {
+    overflow: scroll;
+    position: absolute;
+    top: @tab-bar-h;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   .code {
     white-space: nowrap;

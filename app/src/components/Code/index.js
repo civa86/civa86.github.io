@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-let clickHandler;
+let lineClickHandler,
+    globalClickDetector;
 
 class Code extends Component {
 
     componentDidMount () {
-        clickHandler = e => {
+        lineClickHandler = e => {
             $('.code').find('span.selected').removeClass('selected');
             $(e.target).addClass('selected');
         };
 
-        $('.code').on('click', 'span', clickHandler);
+        globalClickDetector = e => {
+            if (!$(e.target).closest('.code').length) {
+                $('.code').find('span.selected').removeClass('selected');
+            }
+        };
+
+        $(document).on('click', globalClickDetector);
+        $('.code').on('click', 'span', lineClickHandler);
+        $('.code').on('blur', () => console.log('asd'));
     }
 
-    componentWillMount () {
-        $('.code').off('click', clickHandler);
+    componentWillUnmount () {
+        $('.code').off('click', lineClickHandler);
+        $(document).off('click', globalClickDetector);
     }
 
     render () {
