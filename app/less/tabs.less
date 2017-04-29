@@ -76,6 +76,10 @@
       &.active {
         z-index: 999 !important;
 
+        .text {
+          color: @text-color-highlight;
+        }
+
         .tab {
           background: @dark-background-color;
           border-bottom: 1px solid @dark-background-color;
@@ -122,6 +126,7 @@
     }
 
     .text {
+      color: @line-number;
       position: absolute;
       left: 15px;
       top: 12px;
