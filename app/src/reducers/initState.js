@@ -2,14 +2,14 @@ const initState = {
     editor: {
         tabs: [
             {
-                title: 'Tab1'
+                title: 'Info',
+                opened: true,
+                panel: 'info'
             },
             {
-                title: 'Tab2'
-            },
-            {
-
-                title: 'Tab3'
+                title: 'Skills',
+                opened: true,
+                panel: 'skills'
             }
         ],
         activeTab: 0

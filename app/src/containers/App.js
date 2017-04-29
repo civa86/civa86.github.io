@@ -1,63 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import * as editorAction from '../actions/EditorActions';
+
 //Components
 import SplitPane from 'react-split-pane';
 import Tabs, { Tab } from '../components/Tabs';
 import Code from '../components/Code';
 
 class App extends Component {
-    tabs = [];
-
-    handleTabSwitch(active) {
-        this.setState({ activeTab: active });
-    }
-
-    handleTabPositionChange(a, b) {
-        let c = this.tabs[a];
-        this.tabs[a] = this.tabs[b];
-        this.tabs[b] = c;
-
-        if(this.state.activeTab == a) {
-            this.setState({ activeTab: b });
-        }else if(this.state.activeTab == b) {
-            this.setState({ activeTab: a });
-        }
-
-        this.forceUpdate()
-    }
-
-    handleTabClose(index) {
-        this.tabs.splice(index, 1);
-
-        if(this.state.activeTab >= this.tabs.length) {
-            this.setState({ activeTab: this.tabs.length - 1 });
-        }
-
-        this.forceUpdate();
-    }
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            activeTab: 0
-        };
-
-        this.tabs = [
-            {
-                title: 'Tab1'
-            },
-            {
-                title: 'Tab2'
-            },
-            {
-
-                title: 'Tab3'
-            }
-        ];
-    }
 
     render () {
+        const { dispatch, editor } = this.props;
         return (
             <SplitPane split="vertical" minSize={50} defaultSize={200}>
                 <div className="sidebar">
@@ -68,22 +22,24 @@ class App extends Component {
                 <div className="content">
                     <div className="tab-bar">
 
-                        <Tabs active={ this.state.activeTab }
-                              onTabSwitch={ this.handleTabSwitch.bind(this) }
-                              onTabPositionChange={ this.handleTabPositionChange.bind(this) }
-                              onTabClose={ this.handleTabClose.bind(this) }
-                              draggable={ true }
+                        <Tabs active={editor.activeTab}
+                              onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
+                              onTabClose={tab => dispatch(editorAction.tabClose(tab))}
+                              onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
+                              draggable={true}
                         >
                             {
-                                this.tabs.map((value, index) => {
-                                    return (
-                                        <Tab
-                                            key={ index }
-                                            title={ value.title }
-                                            showClose={ true }
-                                        />
-                                    );
-                                })
+                                editor.tabs
+                                      .filter(t => t.opened)
+                                      .map((value, index) => {
+                                          return (
+                                              <Tab
+                                                  key={ index }
+                                                  title={ value.title }
+                                                  showClose={ true }
+                                              />
+                                          );
+                                      })
                             }
                         </Tabs>
 
@@ -146,8 +102,13 @@ class App extends Component {
     }
 }
 
-function mapStateToProps () {
-    return {};
+function mapStateToProps (state) {
+    return {
+        editor: state.editor
+    };
 }
 
 export default connect(mapStateToProps)(App);
+
+
+
