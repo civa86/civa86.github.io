@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import * as appAction from '../actions/AppActions';
 import * as editorAction from '../actions/EditorActions';
 
 //Components
@@ -10,36 +11,40 @@ import Code from '../components/Code';
 
 class App extends Component {
 
-    renderTabs () {
+    getOpenedTabs () {
         const { editor } = this.props;
+        return editor.tabs;
+    }
 
-        return editor.tabs
-                     .filter(t => t.opened)
-                     .map((value, index) => {
-                         return (
-                             <Tab
-                                 key={index }
-                                 title={value.title}
-                                 showClose={true}
-                             />
-                         );
-                     });
+    renderTabs () {
+        return this.getOpenedTabs().map((value, index) => {
+            return (
+                <Tab
+                    key={index}
+                    title={value.title}
+                    showClose={true}
+                />
+            );
+        });
+    }
+
+    buildEmptyClass (inputClass) {
+        return (this.getOpenedTabs().length === 0) ? inputClass + ' empty' : inputClass;
     }
 
     render () {
         const { dispatch, editor } = this.props;
         return (
-            <SplitPane split="vertical" minSize={50} defaultSize={200}>
+            <SplitPane split="vertical" minSize={105} defaultSize={205}>
                 <div className="sidebar cursor-default no-select">
                     <div>
-                        <div className="title">
-                            <i className="ion-ios-bookmarks"/> Dario Civallero
+                        <div className="title" onClick={() => dispatch(appAction.reload())}>
+                            <i className="octicon octicon-repo"/> Dario Civallero
                         </div>
                     </div>
                 </div>
                 <div className="content">
-                    <div className="tab-bar">
-
+                    <div className={this.buildEmptyClass('tab-bar')}>
                         <Tabs active={editor.activeTab}
                               onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
                               onTabClose={tab => dispatch(editorAction.tabClose(tab))}
@@ -47,57 +52,59 @@ class App extends Component {
                               draggable={true}>
                             {this.renderTabs()}
                         </Tabs>
-
                     </div>
-                    <div className="container-fluid content-editor">
+                    <div className={this.buildEmptyClass('container-fluid content-editor')}>
                         <div className="row">
                             <div className="col-xs-12">
-                                <Code>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>def print_hi(name)</span>
-                                    <span>	puts "Hi, #{name}"</span>
-                                    <span>end</span>
-                                    <span></span>
-                                    <span>print_hi('Tom')</span>
-                                    <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                </Code>
+                                {
+                                    this.getOpenedTabs().length > 0 &&
+                                    <Code>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>#=> prints 'Hi, Tom' to STDOUT.</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>#=> prints 'Hi, Tom' to STDOUT.</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>#=> prints 'Hi, Tom' to STDOUT.</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>def print_hi(name)</span>
+                                        <span>	puts "Hi, #{name}"</span>
+                                        <span>end</span>
+                                        <span></span>
+                                        <span>print_hi('Tom')</span>
+                                        <span>#=> prints 'Hi, Tom' to STDOUT.</span>
+                                    </Code>
+                                }
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'imports?jQuery=jquery!bootstrap/dist/js/bootstrap';
 
 // Icons Font
-import 'ionicons/css/ionicons.css';
+import 'octicons/build/font/octicons.css';
 import 'devicons/css/devicons.css';
 
 // StyleSheet

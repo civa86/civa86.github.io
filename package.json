@@ -22,7 +22,7 @@
     "redux-form": "6.3.0",
     "react-split-pane": "0.1.63",
     "jquery": "1.12.1",
-    "ionicons": "2.0.1",
+    "octicons": "4.3.0",
     "devicons": "1.8.0",
     "bootstrap": "3.3.6",
     "moment": "2.13.0"

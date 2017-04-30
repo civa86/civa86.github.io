@@ -17,17 +17,7 @@ function editor (state = initialState, action = {}) {
         case actionTypes.EDITOR_TAB_CLOSE : {
             return {
                 ...state,
-                tabs: state.tabs.map((t, i) => {
-                    console.log(i, action.tab)
-                    if (i !== action.tab) {
-                        return t;
-                    }
-
-                    return {
-                        ...t,
-                        opened: false
-                    };
-                })
+                tabs: state.tabs.filter((t, i) => i !== action.tab)
             };
         }
 
@@ -47,6 +37,14 @@ function editor (state = initialState, action = {}) {
                 ...state,
                 activeTab,
                 tabs
+            };
+        }
+
+        case actionTypes.APP_RELOAD : {
+            return {
+                ...state,
+                tabs: [...state.allTabs],
+                activeTab: 0
             };
         }
 

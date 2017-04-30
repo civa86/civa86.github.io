@@ -14,20 +14,24 @@
 html, body {
   background: @base-background-color;
   color: @text-color;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .sidebar {
+  white-space: nowrap !important;
+  overflow: scroll;
+  height: 100%;
+
   .title {
     padding: 0 15px;
     line-height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     height: @tab-bar-h;
     border-left: 2px solid @tab-close-hover-color;
 
     i {
       display: inline-block;
-      padding-right: 5px;
-      font-size: 30px;
+      font-size: 20px;
       vertical-align: middle;
     }
   }
@@ -35,21 +39,29 @@ html, body {
 
 .content {
   height: 100%;
-  background: @dark-background-color;
 
   .tab-bar {
     height: @tab-bar-h;
     background: @base-background-color;
     border-bottom: 1px solid @base-border-color;
+
+    &.empty {
+      border-bottom: none;
+    }
   }
 
   .content-editor {
+    background: @dark-background-color;
     overflow: scroll;
     position: absolute;
     top: @tab-bar-h;
     left: 0;
     right: 0;
     bottom: 0;
+
+    &.empty {
+      background: @base-background-color;
+    }
   }
 
   .code {
