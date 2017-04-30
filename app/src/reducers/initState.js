@@ -2,12 +2,10 @@ const data = {
     //TODO get from data.json??
     tabs: [
         {
-            title: 'Info',
-            panel: 'info'
+            title: 'info'
         },
         {
-            title: 'Skills',
-            panel: 'skills'
+            title: 'skills'
         }
     ]
 };

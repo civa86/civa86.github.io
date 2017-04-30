@@ -40,6 +40,19 @@ function editor (state = initialState, action = {}) {
             };
         }
 
+        case actionTypes.EDITOR_FILE_OPEN : {
+            return {
+                ...state,
+                tabs: [
+                    ...state.tabs,
+                    {
+                        title: action.file
+                    }
+                ],
+                activeTab: state.tabs.length
+            };
+        }
+
         case actionTypes.APP_RELOAD : {
             return {
                 ...state,

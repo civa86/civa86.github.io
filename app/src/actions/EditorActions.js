@@ -22,8 +22,16 @@ function tabChangePosition (a, b) {
     };
 }
 
+function fileOpen (file) {
+    return {
+        type: actionTypes.EDITOR_FILE_OPEN,
+        file
+    };
+}
+
 export {
     tabSelect,
     tabClose,
-    tabChangePosition
+    tabChangePosition,
+    fileOpen
 };

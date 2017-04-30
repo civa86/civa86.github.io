@@ -40,8 +40,8 @@ class App extends Component {
         return (
             <div>
                 <div className="panels">
-                    <SplitPane split="vertical" minSize={105} defaultSize={205}>
-                        <SideBar/>
+                    <SplitPane split="vertical" minSize={205} defaultSize={205}>
+                        <SideBar onOpenFile={file => dispatch(editorAction.fileOpen(file))} />
                         <div className="content">
                             <div className={this.buildEmptyClass('tab-bar')}>
                                 <Tabs active={editor.activeTab}
