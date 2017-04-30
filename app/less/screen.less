@@ -5,7 +5,10 @@
 @import 'utils/mixin';
 
 @import 'resizer';
-@import 'tabs';
+@import '../src/components/Tabs/style.less';
+@import '../src/components/Reload/style.less';
+@import '../src/components/SideBar/style.less';
+@import '../src/components/Code/style.less';
 
 //Setup
 @tab-bar-h: 36px;
@@ -15,26 +18,6 @@ html, body {
   background: @base-background-color;
   color: @text-color;
   font-family: 'Source Code Pro', monospace;
-}
-
-.sidebar {
-  white-space: nowrap !important;
-  overflow: scroll;
-  height: 100%;
-
-  .title {
-    padding: 0 15px;
-    line-height: 40px;
-    font-size: 16px;
-    height: @tab-bar-h;
-    border-left: 2px solid @tab-close-hover-color;
-
-    i {
-      display: inline-block;
-      font-size: 20px;
-      vertical-align: middle;
-    }
-  }
 }
 
 .content {
@@ -61,36 +44,6 @@ html, body {
 
     &.empty {
       background: @base-background-color;
-    }
-  }
-
-  .code {
-    white-space: nowrap;
-    font-size: 16px;
-    margin: 10px 0;
-    counter-reset: line;
-
-    span {
-      cursor: text;
-      display: block;
-      line-height: 24px;
-
-      &.selected {
-        background: @line-highlight;
-        &:before {
-          color: @line-number-highlight;
-        }
-      }
-
-      &:before {
-        width: 33px;
-        text-align: right;
-        counter-increment: line;
-        content: counter(line);
-        display: inline-block;
-        color: @line-number;
-        padding-right: 15px;
-      }
     }
   }
 }

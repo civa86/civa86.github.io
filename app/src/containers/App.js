@@ -6,7 +6,9 @@ import * as editorAction from '../actions/EditorActions';
 
 //Components
 import SplitPane from 'react-split-pane';
+import SideBar from '../components/SideBar';
 import Tabs, { Tab } from '../components/Tabs';
+import Reload from '../components/Reload';
 import Code from '../components/Code';
 
 class App extends Component {
@@ -36,13 +38,7 @@ class App extends Component {
         const { dispatch, editor } = this.props;
         return (
             <SplitPane split="vertical" minSize={105} defaultSize={205}>
-                <div className="sidebar cursor-default no-select">
-                    <div>
-                        <div className="title" onClick={() => dispatch(appAction.reload())}>
-                            <i className="octicon octicon-repo"/> Dario Civallero
-                        </div>
-                    </div>
-                </div>
+                <SideBar/>
                 <div className="content">
                     <div className={this.buildEmptyClass('tab-bar')}>
                         <Tabs active={editor.activeTab}
@@ -56,6 +52,10 @@ class App extends Component {
                     <div className={this.buildEmptyClass('container-fluid content-editor')}>
                         <div className="row">
                             <div className="col-xs-12">
+                                {
+                                    this.getOpenedTabs().length === 0 &&
+                                    <Reload onReload={() => dispatch(appAction.reload())}/>
+                                }
                                 {
                                     this.getOpenedTabs().length > 0 &&
                                     <Code>

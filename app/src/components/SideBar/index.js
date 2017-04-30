@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SideBar = () => {
-    return (
-        <div id="sidebar-wrapper">
-            <ul className="sidebar-nav no-select">
-                <li>
-                    1
-                </li>
-            </ul>
-        </div>
-    );
-};
+class SideBar extends Component {
+    render () {
+        return (
+            <div className="sidebar cursor-default no-select">
+                <div>
+                    <div className="title">
+                        <i className="octicon octicon-repo"/> Dario Civallero
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 
 export default SideBar;

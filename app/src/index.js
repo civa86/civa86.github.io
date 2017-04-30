@@ -18,7 +18,7 @@ import 'devicons/css/devicons.css';
 import '../less/screen.less';
 
 // Favicon
-// import '../img/icon.png';
+import '../img/icon.png';
 
 // Text Files: humans
 import '../humans.txt';
