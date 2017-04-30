@@ -16,4 +16,40 @@
       vertical-align: middle;
     }
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 0 15px 5px 15px;
+      margin-bottom: 5px;
+
+      &.directory {
+        text-indent: 16px;
+      }
+      &.file {
+        text-indent: 25px;
+      }
+      &.selected {
+        background: @background-color-highlight;
+        color: @text-color-highlight;
+      }
+
+      .chevron {
+        letter-spacing: -11px;
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .type {
+        letter-spacing: 5px;
+        vertical-align: middle;
+      }
+      .list-label {
+        text-indent: 0;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
 }
