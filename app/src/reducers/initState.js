@@ -2,7 +2,7 @@ const data = {
     //TODO get from data.json??
     tabs: [
         {
-            title: 'info'
+            title: 'bio'
         },
         {
             title: 'skills'

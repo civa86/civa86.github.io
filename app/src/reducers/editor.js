@@ -41,15 +41,12 @@ function editor (state = initialState, action = {}) {
         }
 
         case actionTypes.EDITOR_FILE_OPEN : {
+            const toOpen = state.tabs.map(t => t.title).indexOf(action.file);
+
             return {
                 ...state,
-                tabs: [
-                    ...state.tabs,
-                    {
-                        title: action.file
-                    }
-                ],
-                activeTab: state.tabs.length
+                tabs: (toOpen !== -1) ? state.tabs : [...state.tabs, { title: action.file }],
+                activeTab: (toOpen !== -1) ? toOpen : state.tabs.length
             };
         }
 
