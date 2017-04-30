@@ -50,6 +50,16 @@ function editor (state = initialState, action = {}) {
             };
         }
 
+        case actionTypes.EDITOR_FILE_TREE_ELEM_SELECT : {
+            return {
+                ...state,
+                fileTree: {
+                    ...state.fileTree,
+                    selected: action.elem
+                }
+            };
+        }
+
         case actionTypes.APP_RELOAD : {
             return {
                 ...state,

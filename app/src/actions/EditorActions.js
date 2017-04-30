@@ -29,9 +29,17 @@ function fileOpen (file) {
     };
 }
 
+function fileTreeElemSelect (elem) {
+    return {
+        type: actionTypes.EDITOR_FILE_TREE_ELEM_SELECT,
+        elem
+    };
+}
+
 export {
     tabSelect,
     tabClose,
     tabChangePosition,
-    fileOpen
+    fileOpen,
+    fileTreeElemSelect
 };

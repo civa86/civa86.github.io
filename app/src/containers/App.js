@@ -37,11 +37,15 @@ class App extends Component {
 
     render () {
         const { dispatch, editor } = this.props;
+
         return (
             <div>
                 <div className="panels">
                     <SplitPane split="vertical" minSize={205} defaultSize={205}>
-                        <SideBar onOpenFile={file => dispatch(editorAction.fileOpen(file))} />
+                        <SideBar fileTree={editor.fileTree.items}
+                                 fileTreeSelected={editor.fileTree.selected}
+                                 onSelectElem={elem => dispatch(editorAction.fileTreeElemSelect(elem))}
+                                 onOpenFile={file => dispatch(editorAction.fileOpen(file))} />
                         <div className="content">
                             <div className={this.buildEmptyClass('tab-bar')}>
                                 <Tabs active={editor.activeTab}
