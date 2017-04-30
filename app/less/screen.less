@@ -4,20 +4,30 @@
 @import 'utils/media-query';
 @import 'utils/mixin';
 
+//Setup
+@tab-bar-h: 36px;
+@footer-h: 29px;
+
 @import 'resizer';
+@import '../src/components/Footer/style.less';
 @import '../src/components/Tabs/style.less';
 @import '../src/components/Reload/style.less';
 @import '../src/components/SideBar/style.less';
 @import '../src/components/Code/style.less';
-
-//Setup
-@tab-bar-h: 36px;
 
 //Generic Rules
 html, body {
   background: @base-background-color;
   color: @text-color;
   font-family: 'Source Code Pro', monospace;
+}
+
+.panels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: @footer-h;
 }
 
 .content {
