@@ -46,10 +46,12 @@ const Tabulator = () => {
 
 const HtmlTag = (props) => {
     function getOpeningTag () {
+        const classes = props.classes || 'tag';
         return (
-            <span className="tag">
+            <span className={classes}>
                     {'<' + props.tag}
                 {
+                    props.attrs &&
                     props.attrs.length > 0 &&
                     props.attrs.map((a, i) => (
                         <span className="attr" key={i}>
@@ -65,29 +67,21 @@ const HtmlTag = (props) => {
     }
 
     function getClosingTag () {
-        return <span className="tag">{'</' + props.tag + '>'}</span>
+        const classes = props.classes || 'tag';
+        return <span className={classes}>{'</' + props.tag + '>'}</span>
     }
 
-    if (props.indent) {
-        return (
-            <div>
-                <CodeLine>{getOpeningTag()}</CodeLine>
-                <CodeLine>
-                    {[...Array(props.indent).keys()].map(((e, i) => <Tabulator key={i}/>))}
-                    <span className="common">{props.text}</span>
-                </CodeLine>
-                <CodeLine>{getClosingTag()}</CodeLine>
-            </div>
-        )
-    } else {
-        return (
-            <CodeLine>
-                {getOpeningTag()}
-                <span className="common">{props.text}</span>
-                {getClosingTag()}
-            </CodeLine>
-        );
-    }
+    return (
+        <CodeLine>
+            {
+                props.indent &&
+                [...Array(props.indent).keys()].map(((e, i) => <Tabulator key={i}/>))
+            }
+            {getOpeningTag()}
+            <span className="common">{props.text}</span>
+            {getClosingTag()}
+        </CodeLine>
+    );
 };
 
 export default Code;
