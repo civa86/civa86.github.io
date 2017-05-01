@@ -10,28 +10,21 @@
         output,
         pluginsSet,
         emitLintErrors,
-        ExtractStyle;
+        ExtractStyle,
+        noVendorDeps = ['bootstrap', 'octicons', 'devicons'],
+        vendorDeps = Object.keys(require('./package.json').dependencies)
+                           .filter(function (e) { return noVendorDeps.indexOf(e) === -1 });
 
     if (process.env.NODE_ENV === 'production') {
         //Build Configuration
-        console.log('/***** APPLICATION BUILD ****/');
+        console.log('/***** APPLICATION BUILD ****/', vendorDeps);
 
         ExtractStyle = new ExtractTextPlugin('screen.[hash].css');
 
         devtoolValue = 'source-map';
         entry = {
             app: './app/src/index',
-            vendor: [ //TODO dynamic with deps....
-                'react',
-                'react-dom',
-                'redux',
-                'react-redux',
-                'redux-thunk',
-                'redux-form',
-                'react-split-pane',
-                'jquery',
-                'moment'
-            ]
+            vendor: vendorDeps
         };
         output = {
             path: path.join(__dirname, 'dist'),

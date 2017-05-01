@@ -4,7 +4,7 @@
   margin: 10px 0;
   counter-reset: line;
 
-  span {
+  .code-line {
     cursor: text;
     display: block;
     line-height: 24px;
@@ -24,6 +24,26 @@
       display: inline-block;
       color: @line-number;
       padding-right: 15px;
+    }
+
+    .tag {
+      color: @hue-5-2;
+    }
+
+    .attr-key {
+      color: @hue-6;
+    }
+
+    .attr-val {
+      color: @hue-4;
+    }
+
+    .common {
+      color: @text-color;
+    }
+
+    .comment {
+      color: @hue-7;
     }
   }
 }

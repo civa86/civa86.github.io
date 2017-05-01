@@ -19,13 +19,12 @@
     "redux": "3.6.0",
     "react-redux": "4.4.6",
     "redux-thunk": "2.1.0",
-    "redux-form": "6.3.0",
     "react-split-pane": "0.1.63",
     "jquery": "1.12.1",
-    "octicons": "4.3.0",
-    "devicons": "1.8.0",
+    "moment": "2.13.0",
     "bootstrap": "3.3.6",
-    "moment": "2.13.0"
+    "octicons": "4.3.0",
+    "devicons": "1.8.0"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",

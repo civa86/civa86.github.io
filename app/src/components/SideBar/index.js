@@ -15,8 +15,10 @@ const SideBar = (props) => {
             <div key={f.name}
                  className="file-tree-elem file"
                  onTouchEnd={() => props.onOpenFile(f.name)}
-                 onClick={() => props.onSelectElem(f.name, false)}
-                 onDoubleClick={() => props.onOpenFile(f.name)}>
+                 onClick={() => {
+                     props.onSelectElem(f.name, false);
+                     props.onOpenFile(f.name);
+                 }}>
                 <span className={buildSelectedClass(f.name, '')}>
                     <i className="type octicon octicon-file"/>
                     <span className="list-label">{f.name}</span>
