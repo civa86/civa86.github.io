@@ -37,7 +37,7 @@ class Code extends Component {
 }
 
 const CodeLine = (props) => {
- return <span className="code-line">{props.children}</span>;
+    return <span className="code-line">{props.children}</span>;
 };
 
 const Tabulator = () => {
@@ -54,7 +54,7 @@ const HtmlTag = (props) => {
                     props.attrs.map((a, i) => (
                         <span className="attr" key={i}>
                                 &nbsp;<span className="attr-key">{a.key}</span>
-                                <span className="common">=</span>
+                                <span className="common">{'='}</span>
                                 <span className="attr-val">"{a.val}"</span>
                             </span>
                     ))
