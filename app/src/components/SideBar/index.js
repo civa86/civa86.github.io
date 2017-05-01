@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
-let clickHandler;
+//TODO change with a pureFn component...
 
 class SideBar extends Component {
-
-    // componentDidMount () {
-    //     clickHandler = e => {
-    //         //TODO manage selected with redux and sync with tab focus...
-    //         $('.sidebar').find('.file-tree-elem.selected').removeClass('selected');
-    //         $(e.target.closest('.file-tree-elem')).addClass('selected');
-    //     };
-    //
-    //     $('.sidebar').on('click', '.file-tree-elem', clickHandler);
-    // }
-    //
-    // componentWillUnmount () {
-    //     $('.sidebar').off('click', clickHandler);
-    // }
 
     buildSelectedClass (name, inputClass) {
         const { fileTreeSelected } = this.props;
         return (name === fileTreeSelected) ? inputClass + ' selected' : inputClass;
+    }
+
+    buildCollapsedClass (collapsed, inputClass) {
+        return (collapsed === true) ? inputClass + ' collapsed' : inputClass;
     }
 
     renderFile (f) {
@@ -31,7 +20,7 @@ class SideBar extends Component {
             <div key={f.name}
                  className="file-tree-elem file"
                  onTouchEnd={() => onOpenFile(f.name)}
-                 onClick={() => onSelectElem(f.name)}
+                 onClick={() => onSelectElem(f.name, false)}
                  onDoubleClick={() => onOpenFile(f.name)}>
                 <span className={this.buildSelectedClass(f.name, '')}>
                     <i className="type octicon octicon-file"/>
@@ -46,11 +35,8 @@ class SideBar extends Component {
 
         return (
             <div key={d.name}>
-                <div
-                    data-toggle="collapse"
-                    data-target={'#dir-' + d.name}
-                    onClick={() => onSelectElem(d.name)}
-                    className="file-tree-elem directory collapsed">
+                <div className={this.buildCollapsedClass(d.collapsed, 'file-tree-elem directory')}
+                     onClick={() => onSelectElem(d.name, true)}>
                     <span className={this.buildSelectedClass(d.name, '')}>
                         <i className="chevron octicon octicon-chevron-right"/>
                         <i className="chevron octicon octicon-chevron-down"/>
@@ -62,8 +48,8 @@ class SideBar extends Component {
                     {
                         d.children &&
                         d.children.length > 0 &&
-                        <div className="file-tree inner-level collapse"
-                             id={'dir-' + d.name}>
+                        <div className="file-tree inner-level"
+                             style={{ height: (d.collapsed === true) ? 0 : 'auto' }}>
                             {this.renderFileTree(d.children)}
                         </div>
                     }

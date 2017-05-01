@@ -24,7 +24,7 @@ class App extends Component {
             return (
                 <Tab
                     key={index}
-                    title={value.title}
+                    title={value}
                     showClose={true}
                 />
             );
@@ -44,7 +44,12 @@ class App extends Component {
                     <SplitPane split="vertical" minSize={205} defaultSize={205}>
                         <SideBar fileTree={editor.fileTree.items}
                                  fileTreeSelected={editor.fileTree.selected}
-                                 onSelectElem={elem => dispatch(editorAction.fileTreeElemSelect(elem))}
+                                 onSelectElem={(elem, dir) => {
+                                     dispatch(editorAction.fileTreeElemSelect(elem));
+                                     if (dir === true) {
+                                         dispatch(editorAction.fileTreeToggleDirCollapse(elem));
+                                     }
+                                 }}
                                  onOpenFile={file => dispatch(editorAction.fileOpen(file))} />
                         <div className="content">
                             <div className={this.buildEmptyClass('tab-bar')}>

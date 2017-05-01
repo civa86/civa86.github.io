@@ -50,6 +50,13 @@
   transition-timing-function: @function;
 }
 
+.transition (@transition) {
+  -webkit-transition: @transition;
+  -moz-transition:    @transition;
+  -ms-transition:     @transition;
+  -o-transition:      @transition;
+}
+
 //Animations
 
 .animation-spin {

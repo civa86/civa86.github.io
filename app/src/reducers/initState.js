@@ -2,6 +2,7 @@ const data = [
     {
         name: 'info',
         dir: true,
+        collapsed: true,
         children: [
             { name: 'bio' },
             { name: 'education' },
@@ -13,21 +14,16 @@ const data = [
     }
 ];
 
-const
-    //TODO fix here...
-    extractTab = (list) => list.filter(e => !e.dir),
-    flatten = list => list.reduce(
-        (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
-    ),
-    dataTabs = flatten(data.map(e => {
-        if (e.dir && e.children.length) {
-            return extractTab(e.children)
-        }
+const flattenFiles = list => list.reduce((res, e) => {
+    if (e.dir !== true) {
+        res.push(e.name)
+    } else if (e.children.length > 0) {
+        return flattenFiles(e.children, res);
+    }
+    return res;
+}, []);
 
-        return {
-            title: e.name
-        };
-    }));
+const dataTabs = flattenFiles(data, []);
 
 const initState = {
     editor: {

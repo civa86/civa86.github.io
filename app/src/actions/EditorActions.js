@@ -36,10 +36,18 @@ function fileTreeElemSelect (elem) {
     };
 }
 
+function fileTreeToggleDirCollapse (elem) {
+    return {
+        type: actionTypes.EDITOR_FILE_TREE_TOGGLE_DIR_COLLAPSE,
+        elem
+    };
+}
+
 export {
     tabSelect,
     tabClose,
     tabChangePosition,
     fileOpen,
-    fileTreeElemSelect
+    fileTreeElemSelect,
+    fileTreeToggleDirCollapse
 };

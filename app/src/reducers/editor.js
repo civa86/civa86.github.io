@@ -41,11 +41,11 @@ function editor (state = initialState, action = {}) {
         }
 
         case actionTypes.EDITOR_FILE_OPEN : {
-            const toOpen = state.tabs.map(t => t.title).indexOf(action.file);
+            const toOpen = state.tabs.map(t => t).indexOf(action.file);
 
             return {
                 ...state,
-                tabs: (toOpen !== -1) ? state.tabs : [...state.tabs, { title: action.file }],
+                tabs: (toOpen !== -1) ? state.tabs : [...state.tabs, action.file],
                 activeTab: (toOpen !== -1) ? toOpen : state.tabs.length
             };
         }
@@ -56,6 +56,36 @@ function editor (state = initialState, action = {}) {
                 fileTree: {
                     ...state.fileTree,
                     selected: action.elem
+                }
+            };
+        }
+
+        case actionTypes.EDITOR_FILE_TREE_TOGGLE_DIR_COLLAPSE : {
+            const toggleCollapse = (tree, elem) => {
+                return tree.map(e => {
+                    if (e.dir !== true) {
+                        return e;
+                    }
+
+                    if (e.name === elem) {
+                        return {
+                            ...e,
+                            collapsed: !e.collapsed
+                        };
+                    } else {
+                        return {
+                            ...e,
+                            children: toggleCollapse(e.children, elem)
+                        };
+                    }
+                });
+            };
+
+            return {
+                ...state,
+                fileTree: {
+                    ...state.fileTree,
+                    items: toggleCollapse(state.fileTree.items, action.elem)
                 }
             };
         }
