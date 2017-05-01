@@ -2,7 +2,7 @@ import React from 'react';
 
 import Tabs, { Tab } from '../Tabs';
 import Reload from '../Reload';
-import Code from '../Code';
+import fileContent from '../FileContent';
 
 const Editor = (props) => {
 
@@ -42,52 +42,9 @@ const Editor = (props) => {
                         }
                         {
                             props.tabs.length > 0 &&
-                            <Code>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>def print_hi(name)</span>
-                                <span>	puts "Hi, #{name}"</span>
-                                <span>end</span>
-                                <span></span>
-                                <span>print_hi('Tom')</span>
-                                <span>#=> prints 'Hi, Tom' to STDOUT.</span>
-                            </Code>
+                            props.tabs[props.activeTab] &&
+                            typeof fileContent[props.tabs[props.activeTab]] === 'function' &&
+                            fileContent[props.tabs[props.activeTab]]()
                         }
                     </div>
                 </div>
