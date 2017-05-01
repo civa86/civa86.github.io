@@ -13,6 +13,7 @@
 @import '../src/components/Tabs/style.less';
 @import '../src/components/Reload/style.less';
 @import '../src/components/SideBar/style.less';
+@import '../src/components/Editor/style.less';
 @import '../src/components/Code/style.less';
 
 //Generic Rules
@@ -28,32 +29,4 @@ html, body {
   left: 0;
   right: 0;
   bottom: @footer-h;
-}
-
-.content {
-  height: 100%;
-
-  .tab-bar {
-    height: @tab-bar-h;
-    background: @base-background-color;
-    border-bottom: 1px solid @base-border-color;
-
-    &.empty {
-      border-bottom: none;
-    }
-  }
-
-  .content-editor {
-    background: @dark-background-color;
-    overflow: scroll;
-    position: absolute;
-    top: @tab-bar-h;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    &.empty {
-      background: @base-background-color;
-    }
-  }
 }

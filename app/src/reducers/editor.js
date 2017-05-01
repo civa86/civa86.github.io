@@ -52,7 +52,7 @@ function editor (state = initialState, action = {}) {
                 activeTab: activeTab,
                 fileTree: {
                     ...state.fileTree,
-                    selected: selectFileTreeElemByTab(state.fileTree.items, null, cleanedTabs, state.activeTab)
+                    selected: selectFileTreeElemByTab(state.fileTree.items, null, cleanedTabs, activeTab)
                 }
             };
         }
