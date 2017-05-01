@@ -120,6 +120,10 @@
                     loader: 'file?name=[name].[ext]'
                 },
                 {
+                    test: /\.(json)$/,
+                    loader: 'raw'
+                },
+                {
                     test: /\.(woff|woff2|ttf|eot)(\?=?|$)/,
                     loader: 'file?name=assets/fonts/[name].[ext]'
                 },

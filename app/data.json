@@ -1,0 +1,21 @@
+[
+  {
+    "name": "info",
+    "dir": true,
+    "collapsed": true,
+    "children": [
+      {
+        "name": "bio"
+      },
+      {
+        "name": "education"
+      },
+      {
+        "name": "interests"
+      }
+    ]
+  },
+  {
+    "name": "skills"
+  }
+]

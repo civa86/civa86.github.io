@@ -1,40 +1,29 @@
-const data = [
-    {
-        name: 'info',
-        dir: true,
-        collapsed: true,
-        children: [
-            { name: 'bio' },
-            { name: 'education' },
-            { name: 'interests' }
-        ]
-    },
-    {
-        name: 'skills'
-    }
-];
+import dataRaw from '../../data.json';
 
-const flattenFiles = list => list.reduce((res, e) => {
-    if (e.dir !== true) {
-        res.push(e.name)
-    } else if (e.children.length > 0) {
-        return flattenFiles(e.children, res);
-    }
-    return res;
-}, []);
+function flattenFiles (list) {
+    return list.reduce((res, e) => {
+        if (e.dir !== true) {
+            res.push(e.name)
+        } else if (e.children.length > 0) {
+            return flattenFiles(e.children, res);
+        }
+        return res;
+    }, []);
+}
 
-const dataTabs = flattenFiles(data, []);
-
-const initState = {
-    editor: {
-        fileTree: {
-            items: [...data],
-            selected: 'info'
-        },
-        allTabs: [...dataTabs],
-        tabs: [...dataTabs],
-        activeTab: 0
-    }
-};
+const
+    data = JSON.parse(dataRaw),
+    dataTabs = flattenFiles(data, []),
+    initState = {
+        editor: {
+            fileTree: {
+                items: [...data],
+                selected: 'info'
+            },
+            allTabs: [...dataTabs],
+            tabs: [...dataTabs],
+            activeTab: 0
+        }
+    };
 
 export default initState;
