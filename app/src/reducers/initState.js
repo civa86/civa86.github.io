@@ -29,7 +29,7 @@ const initState = {
     editor: {
         fileTree: {
             items: [...data],
-            selected: null
+            selected: 'info'
         },
         allTabs: [...dataTabs],
         tabs: [...dataTabs],

@@ -8,9 +8,30 @@ function editor (state = initialState, action = {}) {
     switch (action.type) {
 
         case actionTypes.EDITOR_TAB_SELECT : {
+            const selectFileTreeElemByTab = (tree, parentTree, tab) => {
+                const selectedTab = state.tabs[tab];
+
+                return tree.reduce((res, e) => {
+                    if (e.name === selectedTab) {
+                        if (parentTree && parentTree.dir && parentTree.collapsed) {
+                            res = parentTree.name;
+                        } else {
+                            res = selectedTab;
+                        }
+                    } else if (e.dir && e.children.length > 0) {
+                        res = selectFileTreeElemByTab(e.children, e, tab);
+                    }
+                    return res;
+                }, null);
+            };
+
             return {
                 ...state,
-                activeTab: action.tab
+                activeTab: action.tab,
+                fileTree: {
+                    ...state.fileTree,
+                    selected: selectFileTreeElemByTab(state.fileTree.items, null, action.tab)
+                }
             };
         }
 
