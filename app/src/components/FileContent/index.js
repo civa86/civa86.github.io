@@ -1,7 +1,8 @@
 import Bio from './Bio';
-import Skills from './Skills';
+import Education from './Education';
+// import Skills from './Skills';
 
 export default {
-    bio: Bio,
-    skills: Skills
+    'bio.html': Bio,
+    'education.json': Education
 };

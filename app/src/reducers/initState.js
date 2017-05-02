@@ -18,7 +18,7 @@ const
         editor: {
             fileTree: {
                 items: [...data],
-                selected: 'info'
+                selected: 'bio.html'
             },
             allTabs: [...dataTabs],
             tabs: [...dataTabs],

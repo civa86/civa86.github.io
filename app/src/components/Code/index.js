@@ -75,7 +75,7 @@ const HtmlTag = (props) => {
         <CodeLine>
             {
                 props.indent &&
-                [...Array(props.indent).keys()].map(((e, i) => <Tabulator key={i}/>))
+                Array(props.indent).fill().map(((e, i) => <Tabulator key={i}/>))
             }
             {getOpeningTag()}
             <span className="common">{props.text}</span>

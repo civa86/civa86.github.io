@@ -18,7 +18,7 @@ class App extends Component {
         return (
             <div>
                 <div className="panels">
-                    <SplitPane split="vertical" minSize={205} defaultSize={205}>
+                    <SplitPane split="vertical" minSize={250} defaultSize={250}>
                         <SideBar fileTree={editor.fileTree.items}
                                  fileTreeSelected={editor.fileTree.selected}
                                  onSelectElem={(elem, dir) => {

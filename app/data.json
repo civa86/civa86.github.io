@@ -2,20 +2,23 @@
   {
     "name": "info",
     "dir": true,
-    "collapsed": true,
+    "collapsed": false,
     "children": [
       {
-        "name": "bio"
+        "name": "bio.html"
       },
       {
-        "name": "education"
+        "name": "education.json"
       },
       {
-        "name": "interests"
+        "name": "interests.png"
       }
     ]
   },
   {
-    "name": "skills"
+    "name": "skills.js"
+  },
+  {
+    "name": "contacts.html"
   }
 ]
