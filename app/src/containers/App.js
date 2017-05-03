@@ -17,7 +17,7 @@ class App extends Component {
 
         return (
             <div>
-                <div className="panels">
+                <div className="panels hidden-xs">
                     <SplitPane split="vertical" minSize={205} defaultSize={205}>
                         <SideBar fileTree={editor.fileTree.items}
                                  fileTreeSelected={editor.fileTree.selected}
@@ -37,6 +37,15 @@ class App extends Component {
                                 onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
                         />
                     </SplitPane>
+                </div>
+                <div className="panels visible-xs">
+                    <Editor tabs={editor.tabs}
+                            activeTab={editor.activeTab}
+                            onReload={() => dispatch(appAction.reload())}
+                            onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
+                            onTabClose={tab => dispatch(editorAction.tabClose(tab))}
+                            onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
+                    />
                 </div>
                 <Footer/>
             </div>

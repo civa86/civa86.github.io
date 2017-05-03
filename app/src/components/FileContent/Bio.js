@@ -28,7 +28,10 @@ const Bio = () => {
                 <Tabulator/>Full Stack Web Developer
             </CodeLine>
             <CodeLine>
-                <Tabulator/>with {exp} years of professional experience
+                <Tabulator/>with {exp} years of <span className="hidden-xs">professional experience</span>
+            </CodeLine>
+            <CodeLine classes="visible-xs">
+                <Tabulator/><span className="visible-xs-inline">professional experience</span>
             </CodeLine>
             <CodeLine><span className="tag4">{'</p>'}</span></CodeLine>
             <CodeLine><span className="comment">{'<!-- About Me -->'}</span></CodeLine>
@@ -36,7 +39,7 @@ const Bio = () => {
             <HtmlTag tag="li"
                      classes="tag3"
                      indent={1}
-                     text="HTML5, Javascript, PHP, Clojure lover"
+                     text="JS, PHP, Clojure lover"
             />
             <HtmlTag tag="li"
                      classes="tag3"

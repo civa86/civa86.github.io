@@ -37,11 +37,17 @@ class Code extends Component {
 }
 
 const CodeLine = (props) => {
-    return <span className="code-line">{props.children}</span>;
+    const classes = 'code-line' + ((props.classes) ? ' ' + props.classes : '');
+    return <span className={classes}>{props.children}</span>;
 };
 
 const Tabulator = () => {
-    return <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    return (
+        <span>
+            <span className="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span className="visible-xs-inline">&nbsp;&nbsp;</span>
+        </span>
+    );
 };
 
 const HtmlTag = (props) => {
