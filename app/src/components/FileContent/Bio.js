@@ -20,6 +20,10 @@ const Bio = () => {
                      text="Civallero"
             />
             <HtmlTag tag="div"
+                     attrs={[{ key: 'id', val: 'country' }]}
+                     text="Italy"
+            />
+            <HtmlTag tag="div"
                      attrs={[{ key: 'id', val: 'age' }]}
                      text={age}
             />

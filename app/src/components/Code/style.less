@@ -22,6 +22,10 @@
     }
 
     &:before {
+      @media @only-xs {
+        width: 20px;
+      }
+      .no-select();
       width: 33px;
       text-align: right;
       counter-increment: line;

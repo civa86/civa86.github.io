@@ -3,7 +3,7 @@ import dataRaw from '../../data.json';
 function flattenFiles (list) {
     return list.reduce((res, e) => {
         if (e.dir !== true) {
-            res.push(e.name)
+            res.push(e)
         } else if (e.children.length > 0) {
             return flattenFiles(e.children, res);
         }
@@ -20,8 +20,12 @@ const
                 items: [...data],
                 selected: 'bio.html'
             },
-            allTabs: [...dataTabs],
-            tabs: [...dataTabs],
+            allTabs: dataTabs.map(e => e.name),
+            tabs: dataTabs.map(e => e.name),
+            tabIcons: dataTabs.reduce((res, e) => {
+                res[e.name] = e.icon;
+                return res;
+            }, {}),
             activeTab: 0
         }
     };

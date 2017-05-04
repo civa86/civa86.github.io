@@ -12,6 +12,20 @@ import Editor from '../components/Editor';
 
 class App extends Component {
 
+    renderEditor () {
+        const { dispatch, editor } = this.props;
+        return (
+            <Editor tabs={editor.tabs}
+                    icons={editor.tabIcons}
+                    activeTab={editor.activeTab}
+                    onReload={() => dispatch(appAction.reload())}
+                    onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
+                    onTabClose={tab => dispatch(editorAction.tabClose(tab))}
+                    onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
+            />
+        );
+    }
+
     render () {
         const { dispatch, editor } = this.props;
 
@@ -29,23 +43,11 @@ class App extends Component {
                                  }}
                                  onOpenFile={file => dispatch(editorAction.fileOpen(file))}
                         />
-                        <Editor tabs={editor.tabs}
-                                activeTab={editor.activeTab}
-                                onReload={() => dispatch(appAction.reload())}
-                                onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
-                                onTabClose={tab => dispatch(editorAction.tabClose(tab))}
-                                onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
-                        />
+                        {this.renderEditor()}
                     </SplitPane>
                 </div>
                 <div className="panels visible-xs">
-                    <Editor tabs={editor.tabs}
-                            activeTab={editor.activeTab}
-                            onReload={() => dispatch(appAction.reload())}
-                            onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
-                            onTabClose={tab => dispatch(editorAction.tabClose(tab))}
-                            onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
-                    />
+                    {this.renderEditor()}
                 </div>
                 <Footer/>
             </div>

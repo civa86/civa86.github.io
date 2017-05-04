@@ -5,20 +5,25 @@
     "collapsed": false,
     "children": [
       {
-        "name": "bio.html"
+        "name": "bio.html",
+        "icon": "octicon octicon-person"
       },
       {
-        "name": "education.json"
+        "name": "education.json",
+        "icon": "octicon octicon-person"
       },
       {
-        "name": "interests.png"
+        "name": "interests.png",
+        "icon": "octicon octicon-person"
       }
     ]
   },
   {
-    "name": "skills.js"
+    "name": "skills.js",
+    "icon": "octicon octicon-person"
   },
   {
-    "name": "contacts.html"
+    "name": "contacts.html",
+    "icon": "octicon octicon-person"
   }
 ]

@@ -12,6 +12,7 @@ const Editor = (props) => {
                 <Tab
                     key={index}
                     title={value}
+                    icon={props.icons[value]}
                     showClose={true}
                 />
             );

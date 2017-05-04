@@ -135,6 +135,12 @@
       white-space: nowrap;
       text-overflow: ellipsis;
 
+      .text-value {
+        @media @only-xs {
+          display: none;
+        }
+      }
+
       &.with-close {
         width: calc(100% - 45px);
       }
