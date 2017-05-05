@@ -90,9 +90,19 @@ const HtmlTag = (props) => {
     );
 };
 
+function curlyStart () {
+    return '{';
+}
+
+function curlyEnd () {
+    return '}';
+}
+
 export default Code;
 export {
     Tabulator,
     CodeLine,
-    HtmlTag
+    HtmlTag,
+    curlyStart,
+    curlyEnd
 }

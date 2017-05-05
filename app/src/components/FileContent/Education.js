@@ -1,15 +1,8 @@
 import React from 'react';
 
-import Code, { CodeLine, Tabulator } from '../Code';
+import Code, { CodeLine, Tabulator, curlyStart, curlyEnd } from '../Code';
 
 const Education = () => {
-    function curlyStart() {
-        return '{';
-    }
-
-    function curlyEnd() {
-        return '}';
-    }
 
     return (
         <Code>
