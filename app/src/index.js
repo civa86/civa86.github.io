@@ -10,6 +10,9 @@ import Root from './containers/Root';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'imports?jQuery=jquery!bootstrap/dist/js/bootstrap';
 
+//Jquery Plugins
+import 'imports?jQuery=jquery!jquery.waitforimages/dist/jquery.waitforimages.js';
+
 // Icons Font
 import 'octicons/build/font/octicons.css';
 import 'devicons/css/devicons.css';
