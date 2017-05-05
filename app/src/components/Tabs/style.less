@@ -143,6 +143,10 @@
 
       &.with-close {
         width: calc(100% - 45px);
+        @media @only-xs {
+          width: calc(100% - 30px);
+        }
+
       }
 
       > * {
@@ -152,9 +156,13 @@
 
       .icon {
         position: relative;
-        display: inline-block;
+        display: none;
         box-sizing: border-box;
         margin-right: 8px;
+        @media @only-xs {
+          margin-right: 0;
+          display: inline-block;
+        }
       }
 
       .icon.loading {
@@ -213,6 +221,9 @@
     }
 
     .close {
+      @media @only-xs {
+        display: none !important;
+      }
       display: none;
       position: absolute;
       right: 10px;

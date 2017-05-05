@@ -10,20 +10,20 @@
       },
       {
         "name": "education.json",
-        "icon": "octicon octicon-person"
+        "icon": "octicon octicon-mortar-board"
       },
       {
         "name": "interests.png",
-        "icon": "octicon octicon-person"
+        "icon": "octicon octicon-file-media"
       }
     ]
   },
   {
     "name": "skills.js",
-    "icon": "octicon octicon-person"
+    "icon": "octicon octicon-beaker"
   },
   {
     "name": "contacts.html",
-    "icon": "octicon octicon-person"
+    "icon": "octicon octicon-mention"
   }
 ]

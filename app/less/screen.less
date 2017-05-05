@@ -15,6 +15,7 @@
 @import '../src/components/SideBar/style.less';
 @import '../src/components/Editor/style.less';
 @import '../src/components/Code/style.less';
+@import '../src/components/ImageGallery/style.less';
 
 //Generic Rules
 html, body {
@@ -29,4 +30,10 @@ html, body {
   left: 0;
   right: 0;
   bottom: @footer-h;
+}
+
+@media @only-xs {
+  .Pane1, .Resizer {
+    display: none !important;
+  }
 }

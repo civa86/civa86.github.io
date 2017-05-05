@@ -1,0 +1,28 @@
+.image-gallery {
+  display: table;
+  width: 100%;
+
+  .carousel {
+    display: table-cell;
+    vertical-align: middle;
+
+    .item {
+      img {
+        margin: 10px auto;
+        border-radius: 50%;
+      }
+    }
+
+    .carousel-control {
+      background: none;
+      color: @text-color-highlight;
+
+      .carousel-control-right {
+        right: 10px;
+      }
+      .carousel-control-left {
+        left: 10px;
+      }
+    }
+  }
+}

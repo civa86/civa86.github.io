@@ -141,7 +141,7 @@ export class Tabs extends Component {
                     ></div>
                     <div className={ "text" + (tab.props.showClose ? " with-close" : "") }>
                         { icon }
-                        <span className="text-value">{ tab.props.title }</span>
+                        <span className="text-value" title={tab.props.title}>{tab.props.title}</span>
 
                     </div>
                     {
