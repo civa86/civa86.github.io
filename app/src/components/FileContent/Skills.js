@@ -48,19 +48,28 @@ const Skills = () => {
         );
     }
 
+    //TODO implement copy...
+
     return (
         <Code>
-            <CodeLine>
+            <CodeLine classes="hidden-xs">
                 <span className="comment">{'/*'}</span>
             </CodeLine>
-            <CodeLine>
+            <CodeLine classes="hidden-xs">
                 <Tabulator/>
+                <span className="comment">
+                    <span className="cursor-pointer">
+                        <i className="octicon octicon-clippy"/>
+                        Copy and
+                    </span>
+                    &nbsp;
+                </span>
                 <span className="comment">{'Run me on your Browser Console'}</span>
             </CodeLine>
-            <CodeLine>
+            <CodeLine classes="hidden-xs">
                 <span className="comment">{'*/'}</span>
             </CodeLine>
-            <CodeLine/>
+            <CodeLine classes="hidden-xs"/>
             {/* CONSTANTS */}
             <CodeLine>
                 <span className="tag3">var </span>
@@ -375,47 +384,123 @@ const Skills = () => {
             </CodeLine>
             <CodeLine><span className="common">{curlyEnd()}</span></CodeLine>
             <CodeLine/>
+            {/* TEMPLATE */}
             <CodeLine>
-                <span className="common">[</span>
+                <span className="tag3">function </span>
+                <span className="tag2">template </span>
+                <span className="common">() {curlyStart()}</span>
+            </CodeLine>
+            {/* TEMPLATE: return */}
+            <CodeLine>
+                <Tabulator/>
+                <span className="tag3">return </span>
+                <span className="common">[ </span>
+            </CodeLine>
+            <CodeLine>
+                <Tabulator classes="visible-xs-inline"/>
+                <Tabulator/>
+                <Tabulator/>
+                <span className="tag4">"HTML"</span>,
+                &nbsp;
+                <span className="tag4">"MarkDown"</span>,
+            </CodeLine>
+            <CodeLine>
+                <Tabulator classes="visible-xs-inline"/>
+                <Tabulator/>
+                <Tabulator/>
+                <span className="tag4">"CSS3"</span>,
+                &nbsp;
+                <span className="tag4">"Less"</span>,
+                &nbsp;
+                <span className="tag4">"Sass"</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
-                <span className="operator">...</span>
-                <span className="common">operatingSystems</span>,
+                <span className="common"> ]</span>
             </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <span className="operator">...</span>
-                <span className="common">editors</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <span className="operator">...</span>
-                <span className="tag2">javascript</span>
-                <span className="common">()</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <span className="operator">...</span>
-                <span className="tag2">php</span>
-                <span className="common">()</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <span className="operator">...</span>
-                <span className="tag2">clojure</span>
-                <span className="common">()</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <span className="operator">...</span>
-                <span className="tag2">database</span>
-                <span className="common">()</span>
-            </CodeLine>
-            <CodeLine>
-                <span className="common">]</span>
-            </CodeLine>
+            <CodeLine><span className="common">{curlyEnd()}</span></CodeLine>
             <CodeLine/>
+            {/*RESULT*/}
+            <span className="hidden-xs">
+                <CodeLine>
+                    <span className="tag2">alert</span>
+                    <span className="common">(</span>
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <span className="tag4">"\u03BB Skills \u03BB</span>
+                    <span className="operator">{'\\n'}</span>
+                    <span className="operator">{'\\n'}</span>
+                    <span className="tag4">"</span>
+                    <span className="operator">{' + '}</span>
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <span className="common">[</span>
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="common">operatingSystems</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="common">editors</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="tag2">javascript</span>
+                    <span className="common">()</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="tag2">php</span>
+                    <span className="common">()</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="tag2">clojure</span>
+                    <span className="common">()</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="tag2">database</span>
+                    <span className="common">()</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="operator">...</span>
+                    <span className="tag2">template</span>
+                    <span className="common">()</span>
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <span className="common">]</span>
+                    <span className="common">.</span>
+                    <span className="operator">join</span>
+                    <span className="common">(</span>
+                    <span className="tag4">"</span>
+                    <span className="operator">{', '}</span>
+                    <span className="tag4">"</span>
+                    <span className="common">)</span>
+                </CodeLine>
+                <CodeLine>
+                    <span className="common">)</span>
+                </CodeLine>
+                <CodeLine/>
+            </span>
         </Code>
     );
 };
