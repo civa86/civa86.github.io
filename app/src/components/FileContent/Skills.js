@@ -5,7 +5,7 @@ import Code, { CodeLine, Tabulator, curlyStart, curlyEnd } from '../Code';
 const Skills = () => {
 
     function renderReturnValues (v) {
-        const values = v || ['frameworks', 'tools', 'unitTest']
+        const values = v || ['frameworks', 'tools', 'unitTest'];
         return (
             <span>
                 <CodeLine>
