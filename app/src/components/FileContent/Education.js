@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Code, { CodeLine, Tabulator, curlyStart, curlyEnd } from '../Code';
+import Code, { CodeLine } from '../Code';
 
 const Education = () => {
 
