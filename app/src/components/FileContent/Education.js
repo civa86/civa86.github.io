@@ -36,11 +36,11 @@ const Education = () => {
             <CodeLine>
                 <span className="tag3">|</span>
                 &nbsp;
-                <span className="common">:-------</span>
+                <span className="common">--------</span>
                 &nbsp;
                 <span className="tag3">|</span>
                 &nbsp;
-                <span className="common">:-----------</span>
+                <span className="common">------------</span>
                 &nbsp;
                 <span className="tag3">|</span>
             </CodeLine>
