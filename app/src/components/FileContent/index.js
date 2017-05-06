@@ -5,7 +5,7 @@ import Skills from './Skills';
 
 export default {
     'bio.html': Bio,
-    'education.json': Education,
+    'education.md': Education,
     'interests.png': Interests,
     'skills.js': Skills
 };
