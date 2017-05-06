@@ -58,7 +58,7 @@ const Skills = () => {
             <CodeLine classes="hidden-xs">
                 <Tabulator/>
                 <span className="comment">
-                    <span className="cursor-pointer">
+                    <span className="">
                         <i className="octicon octicon-clippy"/>
                         Copy and
                     </span>

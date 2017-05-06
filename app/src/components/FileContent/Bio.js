@@ -61,6 +61,7 @@ const Bio = () => {
                      text="Black cats addicted"
             />
             <CodeLine><span className="tag2">{'</ul>'}</span></CodeLine>
+            <CodeLine/>
         </Code>
     );
 };

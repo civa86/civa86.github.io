@@ -9,142 +9,72 @@ const Contacts = () => {
             <CodeLine><span className="common">{curlyStart()}</span></CodeLine>
             <CodeLine>
                 <Tabulator/>
-                <span className="attr-key">"school"</span>
+                <span className="attr-key">
+                    <i className="octicon octicon-mail visible-xs-inline"/>
+                    <span className="hidden-xs">"email"</span>
+                </span>
                 {': '}
-                <span className="tag4">"University of Turin"</span>,
+                <span className="tag4">
+                    <a href="mailto:dario.civallero@gmail.com">"dario.civallero@gmail.com"</a>
+                </span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
-                <span className="attr-key">"department"</span>
+                <span className="attr-key">
+                    <i className="octicon octicon-mark-github visible-xs-inline"/>
+                    <span className="hidden-xs">"github"</span>
+                </span>
                 {': '}
-                <span className="tag4">"Computer Science"</span>,
+                <span className="tag4">
+                    <a href="https://github.com/civa86"
+                       target="_blank">"civa86"</a>
+                </span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
-                <span className="attr-key">"title"</span>
-                {': '}
-                <span className="tag4">"Bachelor Degree"</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <span className="attr-key">"languages"</span>
+                <span className="attr-key">
+                    <span>"social"</span>
+                </span>
                 {': '}
                 <span className="common">[</span>
             </CodeLine>
-
             <CodeLine>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="common">{curlyStart()}</span>
+                <span className="tag4">
+                    <a href="https://www.linkedin.com/in/dario-civallero-882128aa/"
+                       target="_blank">"linkedin"</a>
+                </span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
                 <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"id"</span>
-                {': '}
-                <span className="tag4">"italian"</span>,
+                <span className="tag4">
+                    <a href="https://www.facebook.com/civa86"
+                       target="_blank">"facebook"</a>
+                </span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
                 <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"proficiency"</span>
-                {': '}
-                <span className="tag4">"native"</span>
+                <span className="tag4">
+                    <a href="https://twitter.com/civa_86"
+                       target="_blank">"twitter"</a>
+                </span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="common">{curlyEnd()},</span>
+                <span className="tag4">
+                    <a href="https://plus.google.com/u/0/108969866828854243390" target="_blank">"google+"</a>
+                </span>
             </CodeLine>
-
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="common">{curlyStart()}</span>
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"id"</span>
-                {': '}
-                <span className="tag4">"english"</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"proficiency"</span>
-                {': '}
-                <span className="tag4">"professional"</span>
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="common">{curlyEnd()},</span>
-            </CodeLine>
-
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="common">{curlyStart()}</span>
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"id"</span>
-                {': '}
-                <span className="tag4">"french"</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"proficiency"</span>
-                {': '}
-                <span className="tag4">"elementary"</span>
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="common">{curlyEnd()},</span>
-            </CodeLine>
-
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="common">{curlyStart()}</span>
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"id"</span>
-                {': '}
-                <span className="tag4">"spanish"</span>,
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="attr-key">"proficiency"</span>
-                {': '}
-                <span className="tag4">"elementary"</span>
-            </CodeLine>
-            <CodeLine>
-                <Tabulator/>
-                <Tabulator/>
-                <span className="common">{curlyEnd()}</span>
-            </CodeLine>
-
             <CodeLine>
                 <Tabulator/>
                 <span className="common">]</span>
             </CodeLine>
             <CodeLine><span className="common">{curlyEnd()}</span></CodeLine>
+            <CodeLine/>
         </Code>
     );
 };
