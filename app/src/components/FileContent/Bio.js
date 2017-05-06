@@ -12,11 +12,11 @@ const Bio = () => {
         <Code>
             <CodeLine><span className="comment">{'<!-- Personal Info -->'}</span></CodeLine>
             <HtmlTag tag="div"
-                      attrs={[{ key: 'id', val: 'name' }]}
+                      attrs={[{ key: 'id', val: 'firstname' }]}
                       text="Dario"
             />
             <HtmlTag tag="div"
-                     attrs={[{ key: 'id', val: 'surname' }]}
+                     attrs={[{ key: 'id', val: 'lastname' }]}
                      text="Civallero"
             />
             <HtmlTag tag="div"

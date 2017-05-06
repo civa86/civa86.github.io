@@ -11,7 +11,7 @@
         pluginsSet,
         emitLintErrors,
         ExtractStyle,
-        noVendorDeps = ['bootstrap', 'octicons', 'devicons'],
+        noVendorDeps = ['bootstrap', 'octicons'],
         vendorDeps = Object.keys(require('./package.json').dependencies)
                            .filter(function (e) { return noVendorDeps.indexOf(e) === -1 });
 

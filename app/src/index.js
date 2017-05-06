@@ -15,7 +15,6 @@ import 'imports?jQuery=jquery!jquery.waitforimages/dist/jquery.waitforimages.js'
 
 // Icons Font
 import 'octicons/build/font/octicons.css';
-import 'devicons/css/devicons.css';
 
 // StyleSheet
 import '../less/screen.less';

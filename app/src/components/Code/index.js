@@ -41,9 +41,10 @@ const CodeLine = (props) => {
     return <span className={classes}>{props.children}</span>;
 };
 
-const Tabulator = () => {
+const Tabulator = (props) => {
+    const classes = props.classes || '';
     return (
-        <span>
+        <span className={classes}>
             <span className="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span className="visible-xs-inline">&nbsp;&nbsp;</span>
         </span>
