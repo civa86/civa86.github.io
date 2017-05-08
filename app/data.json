@@ -11,16 +11,16 @@
       {
         "name": "education.md",
         "icon": "octicon octicon-mortar-board"
-      },
-      {
-        "name": "interests.png",
-        "icon": "octicon octicon-file-media"
       }
     ]
   },
   {
     "name": "skills.js",
     "icon": "octicon octicon-beaker"
+  },
+  {
+    "name": "interests.png",
+    "icon": "octicon octicon-file-media"
   },
   {
     "name": "contacts.json",
