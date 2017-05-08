@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Code, { CodeLine, Tabulator, curlyStart, curlyEnd } from '../Code';
+import Clippy from '../Clippy';
 
 const Skills = () => {
 
@@ -58,13 +59,10 @@ const Skills = () => {
             <CodeLine classes="hidden-xs">
                 <Tabulator/>
                 <span className="comment">
-                    <span className="">
-                        <i className="octicon octicon-clippy"/>
-                        Copy and
-                    </span>
-                    &nbsp;
+                    <Clippy label="Copy and "/>
+                    Run me in your Browser Console
                 </span>
-                <span className="comment">{'Run me on your Browser Console'}</span>
+
             </CodeLine>
             <CodeLine classes="hidden-xs">
                 <span className="comment">{'*/'}</span>
