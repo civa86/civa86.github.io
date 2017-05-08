@@ -6,24 +6,29 @@
     "children": [
       {
         "name": "bio.html",
-        "icon": "octicon octicon-person"
+        "icon": "octicon octicon-person",
+        "type": "HTML"
       },
       {
         "name": "education.md",
-        "icon": "octicon octicon-mortar-board"
+        "icon": "octicon octicon-mortar-board",
+        "type": "Markdown"
       }
     ]
   },
   {
     "name": "skills.js",
-    "icon": "octicon octicon-beaker"
+    "icon": "octicon octicon-beaker",
+    "type": "JavaScript"
   },
   {
     "name": "interests.png",
-    "icon": "octicon octicon-file-media"
+    "icon": "octicon octicon-file-media",
+    "type": "PNG"
   },
   {
     "name": "contacts.json",
-    "icon": "octicon octicon-mention"
+    "icon": "octicon octicon-mention",
+    "type": "JSON"
   }
 ]

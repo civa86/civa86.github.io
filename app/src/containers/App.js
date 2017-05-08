@@ -10,7 +10,23 @@ import SplitPane from 'react-split-pane';
 import SideBar from '../components/SideBar';
 import Editor from '../components/Editor';
 
+const getItemTypeByName = (collection, name) => {
+    return collection.reduce((res, e) => {
+        if (e.name === name) {
+            res = e.type;
+        } else if (e.dir && e.children.length > 0) {
+            res = getItemTypeByName(e.children, name);
+        }
+        return res;
+    }, null);
+};
+
 class App extends Component {
+
+    getSelectedFileType () {
+        const { editor } = this.props;
+        return getItemTypeByName(editor.fileTree.items, editor.fileTree.selected);
+    }
 
     render () {
         const { dispatch, editor } = this.props;
@@ -39,7 +55,8 @@ class App extends Component {
                         />
                     </SplitPane>
                 </div>
-                <Footer/>
+                <Footer currentFile={editor.fileTree.selected}
+                        currentFileType={this.getSelectedFileType()}/>
             </div>
         );
     }
