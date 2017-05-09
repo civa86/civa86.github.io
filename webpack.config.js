@@ -1,6 +1,8 @@
 (function (module) {
     'use strict';
 
+    //TODO upgrade to webpack 2
+
     var path = require('path'),
         webpack = require('webpack'),
         HtmlWebpackPlugin = require('html-webpack-plugin'),
