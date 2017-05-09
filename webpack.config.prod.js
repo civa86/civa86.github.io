@@ -4,34 +4,44 @@
     var path = require('path'),
         webpack = require('webpack'),
         HtmlWebpackPlugin = require('html-webpack-plugin'),
-        ExtractTextPlugin = require('extract-text-webpack-plugin');
+        ExtractTextPlugin = require('extract-text-webpack-plugin'),
+        noVendorDeps = ['bootstrap', 'octicons'],
+        vendorDeps = Object.keys(require('./package.json').dependencies)
+                           .filter(function (e) { return noVendorDeps.indexOf(e) === -1 });;
 
     module.exports = {
-        devtool: 'eval',
-        entry: [
-            'webpack-dev-server/client?http://localhost:3000',
-            'webpack/hot/only-dev-server',
-            'react-hot-loader/patch',
-            './app/src/index'
-        ],
+        devtool: 'source-map',
+        entry: {
+            app: './app/src/index',
+            vendor: vendorDeps
+        },
         output: {
             path: path.join(__dirname, 'dist'),
-            filename: 'bundle.js',
-            publicPath: '/'
+            filename: 'js/bundle.[hash].min.js'
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin(),
-            new ExtractTextPlugin({
-                filename: "vendor.css",
-                disable: false,
-                allChunks: true
+            new webpack.LoaderOptionsPlugin({
+                minimize: true
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                filename: 'js/vendor.[hash].js'
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                minimize: true,
+                sourceMap: true
             }),
             new HtmlWebpackPlugin({
                 template: path.join(__dirname, 'app', 'index.html'),
                 inject: 'body'
             }),
+            new ExtractTextPlugin({
+                filename: 'screen.[hash].css',
+                disable: false,
+                allChunks: true
+            }),
             new webpack.DefinePlugin({
-                'process.env.NODE_ENV': '"development"'
+                'process.env.NODE_ENV': '"production"'
             })
         ],
         module: {
@@ -42,10 +52,10 @@
                     loader: 'eslint-loader',
                     include: path.join(__dirname, 'app', 'src'),
                     options: {
-                        emitError: false,
-                        emitWarning: true,
-                        failOnWarning: false,
-                        failOnError: false
+                        emitError: true,
+                        emitWarning: false,
+                        failOnWarning: true,
+                        failOnError: true
                     }
                 },
                 {
@@ -56,23 +66,18 @@
                 },
                 {
                     test: /\.less$/,
-                    use: [
-                        {
-                            loader: 'style-loader'
-                        },
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: true
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: [
+                            {
+                                loader: 'css-loader'
+                            },
+                            {
+                                loader: 'less-loader'
                             }
-                        },
-                        {
-                            loader: 'less-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        }
-                    ]
+                        ],
+                        publicPath: "/"
+                    })
                 },
                 {
                     test: /\.css$/,
