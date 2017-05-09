@@ -38,6 +38,7 @@
     "eslint": "1.10.3",
     "eslint-loader": "1.2.1",
     "eslint-plugin-react": "3.16.1",
+    "eslint-config-civa86": "1.0.0",
     "extract-text-webpack-plugin": "0.9.1",
     "file-loader": "0.8.5",
     "imports-loader": "0.6.5",
@@ -63,6 +64,12 @@
     ],
     "plugins": [
       "react-hot-loader/babel"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "civa86",
+    "plugins": [
+      "react"
     ]
   }
 }

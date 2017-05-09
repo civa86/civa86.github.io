@@ -127,14 +127,10 @@
             ]
         },
         eslint: {
-            configFile: './.eslintrc',
             emitError: emitLintErrors,
             emitWarning: !emitLintErrors,
             failOnWarning: emitLintErrors,
-            failOnError: emitLintErrors,
-            plugins: [
-                "react"
-            ]
+            failOnError: emitLintErrors
         }
     };
 })(module);
