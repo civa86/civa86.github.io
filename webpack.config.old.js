@@ -53,7 +53,7 @@
 
         ExtractStyle = new ExtractTextPlugin('vendor.css');
 
-        devtoolValue = 'source-map';
+        devtoolValue = 'eval';
         entry = [
             'webpack-dev-server/client?http://localhost:3000',
             'webpack/hot/only-dev-server',

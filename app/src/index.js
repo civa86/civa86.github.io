@@ -8,10 +8,10 @@ import Root from './containers/Root';
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
-import 'imports?jQuery=jquery!bootstrap/dist/js/bootstrap';
+import 'imports-loader?jQuery=jquery!bootstrap/dist/js/bootstrap';
 
 //Jquery Plugins
-import 'imports?jQuery=jquery!jquery.waitforimages/dist/jquery.waitforimages.js';
+import 'imports-loader?jQuery=jquery!jquery.waitforimages/dist/jquery.waitforimages.js';
 
 // Icons Font
 import 'octicons/build/font/octicons.css';
