@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
 import App from './App';
@@ -18,5 +19,9 @@ class Root extends Component {
         );
     }
 }
+
+Root.propTypes = {
+    store: PropTypes.any
+};
 
 export default Root;

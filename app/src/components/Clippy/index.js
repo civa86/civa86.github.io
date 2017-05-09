@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 class Clippy extends Component {
@@ -29,5 +30,9 @@ class Clippy extends Component {
         );
     }
 }
+
+Clippy.propTypes = {
+    label: PropTypes.string.isRequired
+};
 
 export default Clippy;

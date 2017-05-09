@@ -75,21 +75,21 @@ const Skills = () => {
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
-                <span className="tag4">"Mac OS X"</span>,
+                <span className="tag4">{'"Mac OS X"'}</span>,
                 &nbsp;
-                <span className="tag4">"Windows"</span>,
+                <span className="tag4">{'"Windows"'}</span>,
                 <span className="hidden-xs hidden-sm">
                     &nbsp;
-                    <span className="tag4">"Ubuntu"</span>,
+                    <span className="tag4">{'"Ubuntu"'}</span>,
                     &nbsp;
-                    <span className="tag4">"RedHat"</span>
+                    <span className="tag4">{'"RedHat"'}</span>
                 </span>
             </CodeLine>
             <CodeLine classes="visible-xs visible-sm">
                 <Tabulator/>
-                <span className="tag4">"Ubuntu"</span>,
+                <span className="tag4">{'"Ubuntu"'}</span>,
                 &nbsp;
-                <span className="tag4">"RedHat"</span>
+                <span className="tag4">{'"RedHat"'}</span>
             </CodeLine>
             <CodeLine><span className="common">]</span></CodeLine>
             <CodeLine/>
@@ -99,23 +99,23 @@ const Skills = () => {
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
-                <span className="tag4">"IntelliJ"</span>,
+                <span className="tag4">{'"IntelliJ"'}</span>,
                 &nbsp;
-                <span className="tag4">"Atom"</span>,
+                <span className="tag4">{'"Atom"'}</span>,
                 &nbsp;
-                <span className="tag4">"Vim"</span>,
+                <span className="tag4">{'"Vim"'}</span>,
                 <span className="hidden-xs hidden-sm">
                     &nbsp;
-                    <span className="tag4">"Eclipse"</span>,
+                    <span className="tag4">{'"Eclipse"'}</span>,
                     &nbsp;
-                    <span className="tag4">"NetBeans"</span>
+                    <span className="tag4">{'"NetBeans"'}</span>
                 </span>
             </CodeLine>
             <CodeLine classes="visible-xs visible-sm">
                 <Tabulator/>
-                <span className="tag4">"Eclipse"</span>,
+                <span className="tag4">{'"Eclipse"'}</span>,
                 &nbsp;
-                <span className="tag4">"NetBeans"</span>
+                <span className="tag4">{'"NetBeans"'}</span>
             </CodeLine>
             <CodeLine><span className="common">]</span></CodeLine>
             <CodeLine/>
@@ -139,14 +139,14 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"React"</span>,
+                <span className="tag4">{'"React"'}</span>,
                 &nbsp;
-                <span className="tag4">"Angular"</span>,
+                <span className="tag4">{'"Angular"'}</span>,
                 <span className="hidden-xs hidden-sm">
                     &nbsp;
-                    <span className="tag4">"jQuery"</span>,
+                    <span className="tag4">{'"jQuery"'}</span>,
                     &nbsp;
-                    <span className="tag4">"Ember"</span>
+                    <span className="tag4">{'"Ember"'}</span>
                 </span>
             </CodeLine>
             <CodeLine classes="visible-xs visible-sm">
@@ -154,9 +154,9 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"jQuery"</span>,
+                <span className="tag4">{'"jQuery"'}</span>,
                 &nbsp;
-                <span className="tag4">"Ember"</span>
+                <span className="tag4">{'"Ember"'}</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
@@ -179,23 +179,23 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"NodeJs"</span>,
+                <span className="tag4">{'"NodeJs"'}</span>,
                 &nbsp;
-                <span className="tag4">"Electron"</span>,
+                <span className="tag4">{'"Electron"'}</span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"Babel"</span>,
+                <span className="tag4">{'"Babel"'}</span>,
                 &nbsp;
-                <span className="tag4">"Webpack"</span>,
+                <span className="tag4">{'"Webpack"'}</span>,
                 <span className="hidden-xs hidden-sm">
                     &nbsp;
-                     <span className="tag4">"Grunt"</span>,
+                     <span className="tag4">{'"Grunt"'}</span>,
                      &nbsp;
-                     <span className="tag4">"Bower"</span>
+                     <span className="tag4">{'"Bower"'}</span>
                 </span>
             </CodeLine>
             <CodeLine classes="visible-xs visible-sm">
@@ -203,9 +203,9 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"Grunt"</span>,
+                <span className="tag4">{'"Grunt"'}</span>,
                 &nbsp;
-                <span className="tag4">"Bower"</span>
+                <span className="tag4">{'"Bower"'}</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
@@ -228,14 +228,14 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"Mocha"</span>,
+                <span className="tag4">{'"Mocha"'}</span>,
                 &nbsp;
-                <span className="tag4">"Chai"</span>,
+                <span className="tag4">{'"Chai"'}</span>,
                 <span className="hidden-xs hidden-sm">
                     &nbsp;
-                    <span className="tag4">"Karma"</span>,
+                    <span className="tag4">{'"Karma"'}</span>,
                     &nbsp;
-                    <span className="tag4">"Jasmine"</span>
+                    <span className="tag4">{'"Jasmine"'}</span>
                 </span>
             </CodeLine>
             <CodeLine classes="visible-xs visible-sm">
@@ -243,9 +243,9 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"Karma"</span>,
+                <span className="tag4">{'"Karma"'}</span>,
                 &nbsp;
-                <span className="tag4">"Jasmine"</span>
+                <span className="tag4">{'"Jasmine"'}</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
@@ -278,9 +278,9 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"Zend"</span>,
+                <span className="tag4">{'"Zend"'}</span>,
                 &nbsp;
-                <span className="tag4">"Symfony"</span>
+                <span className="tag4">{'"Symfony"'}</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
@@ -303,9 +303,9 @@ const Skills = () => {
                 <Tabulator/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"Propel"</span>,
+                <span className="tag4">{'"Propel"'}</span>,
                 &nbsp;
-                <span className="tag4">"Composer"</span>
+                <span className="tag4">{'"Composer"'}</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
@@ -322,7 +322,7 @@ const Skills = () => {
                 <span className="common">unitTest </span>
                 <span className="operator">{'='} </span>
                 <span className="common">[ </span>
-                <span className="tag4">"phpUnit"</span>
+                <span className="tag4">{'"phpUnit"'}</span>
                 <span className="common"> ]</span>
             </CodeLine>
             <CodeLine/>
@@ -344,7 +344,7 @@ const Skills = () => {
                 <span className="common">frameworks </span>
                 <span className="operator">{'='} </span>
                 <span className="common">[ </span>
-                <span className="tag4">"Luminus"</span>
+                <span className="tag4">{'"Luminus"'}</span>
                 <span className="common"> ]</span>,
             </CodeLine>
 
@@ -356,7 +356,7 @@ const Skills = () => {
                 <span className="common">tools </span>
                 <span className="operator">{'='} </span>
                 <span className="common">[ </span>
-                <span className="tag4">"Leiningen"</span>
+                <span className="tag4">{'"Leiningen"'}</span>
                 <span className="common"> ]</span>
             </CodeLine>
             <CodeLine/>
@@ -375,9 +375,9 @@ const Skills = () => {
                 <Tabulator/>
                 <span className="tag3">return </span>
                 <span className="common">[ </span>
-                <span className="tag4">"MySql"</span>,
+                <span className="tag4">{'"MySql"'}</span>,
                 &nbsp;
-                <span className="tag4">"MongoDB"</span>
+                <span className="tag4">{'"MongoDB"'}</span>
                 <span className="common"> ]</span>
             </CodeLine>
             <CodeLine><span className="common">{curlyEnd()}</span></CodeLine>
@@ -398,19 +398,19 @@ const Skills = () => {
                 <Tabulator classes="visible-xs-inline"/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"HTML"</span>,
+                <span className="tag4">{'"HTML"'}</span>,
                 &nbsp;
-                <span className="tag4">"MarkDown"</span>,
+                <span className="tag4">{'"MarkDown"'}</span>,
             </CodeLine>
             <CodeLine>
                 <Tabulator classes="visible-xs-inline"/>
                 <Tabulator/>
                 <Tabulator/>
-                <span className="tag4">"CSS3"</span>,
+                <span className="tag4">{'"CSS3"'}</span>,
                 &nbsp;
-                <span className="tag4">"Less"</span>,
+                <span className="tag4">{'"Less"'}</span>,
                 &nbsp;
-                <span className="tag4">"Sass"</span>
+                <span className="tag4">{'"Sass"'}</span>
             </CodeLine>
             <CodeLine>
                 <Tabulator/>
@@ -426,10 +426,10 @@ const Skills = () => {
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
-                    <span className="tag4">"\u03BB Skills \u03BB</span>
+                    <span className="tag4">{'"\\u03BB Skills \\u03BB'}</span>
                     <span className="operator">{'\\n'}</span>
                     <span className="operator">{'\\n'}</span>
-                    <span className="tag4">"</span>
+                    <span className="tag4">{'"'}</span>
                     <span className="operator">{' + '}</span>
                 </CodeLine>
                 <CodeLine>
@@ -489,9 +489,9 @@ const Skills = () => {
                     <span className="common">.</span>
                     <span className="operator">join</span>
                     <span className="common">(</span>
-                    <span className="tag4">"</span>
+                    <span className="tag4">{'"'}</span>
                     <span className="operator">{', '}</span>
-                    <span className="tag4">"</span>
+                    <span className="tag4">{'"'}</span>
                     <span className="common">)</span>
                 </CodeLine>
                 <CodeLine>

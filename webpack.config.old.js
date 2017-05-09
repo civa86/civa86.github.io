@@ -1,7 +1,7 @@
 (function (module) {
     'use strict';
 
-    //TODO upgrade to webpack 2
+    //TODO make prod conf...
 
     var path = require('path'),
         webpack = require('webpack'),

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 let lineClickHandler,
@@ -36,9 +37,18 @@ class Code extends Component {
     }
 }
 
+Code.propTypes = {
+    children: PropTypes.array
+};
+
 const CodeLine = (props) => {
     const classes = 'code-line' + ((props.classes) ? ' ' + props.classes : '');
     return <span className={classes}>{props.children}</span>;
+};
+
+CodeLine.propTypes = {
+    classes: PropTypes.string,
+    children: PropTypes.any
 };
 
 const Tabulator = (props) => {
@@ -49,6 +59,10 @@ const Tabulator = (props) => {
             <span className="visible-xs-inline">&nbsp;&nbsp;</span>
         </span>
     );
+};
+
+Tabulator.propTypes = {
+    classes: PropTypes.string
 };
 
 const HtmlTag = (props) => {
@@ -64,7 +78,7 @@ const HtmlTag = (props) => {
                         <span className="attr" key={i}>
                                 &nbsp;<span className="attr-key">{a.key}</span>
                                 <span className="common">{'='}</span>
-                                <span className="attr-val">"{a.val}"</span>
+                                <span className="attr-val">{'"'}{a.val}{'"'}</span>
                             </span>
                     ))
                 }
@@ -89,6 +103,14 @@ const HtmlTag = (props) => {
             {getClosingTag()}
         </CodeLine>
     );
+};
+
+HtmlTag.propTypes = {
+    tag: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    attrs: PropTypes.array,
+    classes: PropTypes.string,
+    indent: PropTypes.number
 };
 
 function curlyStart () {

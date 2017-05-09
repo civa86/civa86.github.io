@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import * as appAction from '../actions/AppActions';
@@ -61,6 +62,11 @@ class App extends Component {
         );
     }
 }
+
+App.propTypes = {
+    editor: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
 
 function mapStateToProps (state) {
     return {
