@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 let wResize;
@@ -56,5 +57,9 @@ export class ImageGallery extends Component {
         );
     }
 }
+
+ImageGallery.propTypes = {
+    images: PropTypes.arrayOf(PropTypes.string).isRequired
+};
 
 export default ImageGallery;

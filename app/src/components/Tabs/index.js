@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class Tabs extends Component {
+class Tabs extends Component {
 
     constructor (props) {
         super(props);
@@ -10,6 +11,7 @@ export class Tabs extends Component {
         this.mouseUpHandler = this.handleMouseUp.bind(this);
         this.singleTabWidth = 0;
         this.tabTotal = 0;
+        this.tabs = null;
     }
 
     switchTab (index) {
@@ -38,7 +40,7 @@ export class Tabs extends Component {
             event.stopPropagation();
 
             const dragTarget = this.dragTarget;
-            const one = this.refs.tabs.offsetWidth / 100;
+            const one = this.tabs.offsetWidth / 100;
             const maxLeft = one + one * this.singleTabWidth * (this.tabTotal - 1);
 
             let left = (dragTarget.x + event.pageX - dragTarget.mouseX);
@@ -83,7 +85,7 @@ export class Tabs extends Component {
     }
 
     getIndexByLeft (left) {
-        let one = this.refs.tabs.offsetWidth / 100;
+        let one = this.tabs.offsetWidth / 100;
         return Math.round((left - one) / (one * this.singleTabWidth));
     }
 
@@ -135,10 +137,7 @@ export class Tabs extends Component {
                     onClick={ this.switchTab.bind(this, index) }
                     onMouseDown={ this.handleMouseDown.bind(this) }
                 >
-                    <div
-                        className="tab"
-                        style={ this.props.color ? { borderColor: this.props.color } : null }
-                    ></div>
+                    <div className="tab"/>
                     <div className={ "text" + (tab.props.showClose ? " with-close" : "") }>
                         { icon }
                         <span className="text-value" title={tab.props.title}>{tab.props.title}</span>
@@ -156,7 +155,8 @@ export class Tabs extends Component {
             <div
                 className="r-a-t"
             >
-                <div className={ "tab-wrapper" + (this.props.showAdd ? " with-add" : "") } ref="tabs">
+                <div className={ "tab-wrapper" + (this.props.showAdd ? " with-add" : "") }
+                     ref={c => this.tabs = c}>
                     { tabs }
                 </div>
                 {
@@ -168,10 +168,25 @@ export class Tabs extends Component {
     }
 }
 
+Tabs.propTypes = {
+    onTabSwitch: PropTypes.func.isRequired,
+    onTabPositionChange: PropTypes.func.isRequired,
+    onTabClose: PropTypes.func,
+    onTabAdd: PropTypes.func,
+    draggable: PropTypes.bool,
+    showAdd: PropTypes.bool,
+    showClose: PropTypes.bool,
+    children: PropTypes.any
+};
+
 const Tab = ({ children }) => {
     return (
         <div>{ children }</div>
     );
+};
+
+Tab.propTypes = {
+    children: PropTypes.any
 };
 
 const TabIcon = ({ type }) => {
@@ -180,6 +195,10 @@ const TabIcon = ({ type }) => {
             { type === 'loading' ? (<div className="mask"></div>) : null }
         </div>
     );
+};
+
+TabIcon.propTypes = {
+    type: PropTypes.string.isRequired
 };
 
 export default Tabs;

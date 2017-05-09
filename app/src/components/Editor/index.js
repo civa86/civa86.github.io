@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Tabs, { Tab } from '../Tabs';
 import Reload from '../Reload';
@@ -52,6 +53,15 @@ const Editor = (props) => {
             </div>
         </div>
     );
+};
+
+Editor.propTypes = {
+    tabs: PropTypes.array.isRequired,
+    activeTab: PropTypes.number.isRequired,
+    onTabSwitch: PropTypes.func.isRequired,
+    onTabPositionChange: PropTypes.func.isRequired,
+    onTabClose: PropTypes.func.isRequired,
+    onReload: PropTypes.func.isRequired
 };
 
 export default Editor;

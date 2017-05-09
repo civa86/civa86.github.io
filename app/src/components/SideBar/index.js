@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SideBar = (props) => {
 
@@ -75,6 +76,12 @@ const SideBar = (props) => {
             </div>
         </div>
     );
+};
+
+SideBar.propTypes = {
+    onOpenFile: PropTypes.func.isRequired,
+    onSelectElem: PropTypes.func.isRequired,
+    fileTree: PropTypes.array
 };
 
 export default SideBar;

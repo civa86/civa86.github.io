@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Footer = (props) => {
     const { currentFile, currentFileType } = props;
@@ -19,6 +20,11 @@ const Footer = (props) => {
             </div>
         </div>
     );
+};
+
+Footer.propTypes = {
+    currentFile: PropTypes.string.isRequired,
+    currentFileType: PropTypes.string.isRequired
 };
 
 export default Footer;
