@@ -49,8 +49,6 @@ const Skills = () => {
         );
     }
 
-    //TODO implement copy...
-
     return (
         <Code>
             <CodeLine classes="hidden-xs">

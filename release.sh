@@ -114,7 +114,7 @@ then
     git checkout development
     git push origin development:development
 
-#    TODO delete local release branch
+    git branch -d release/v$RELEASE_NUM
 
     separator
     echo "RELEASE END"
