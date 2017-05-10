@@ -23,8 +23,8 @@ const Footer = (props) => {
 };
 
 Footer.propTypes = {
-    currentFile: PropTypes.string.isRequired,
-    currentFileType: PropTypes.string.isRequired
+    currentFile: PropTypes.string,
+    currentFileType: PropTypes.string
 };
 
 export default Footer;
