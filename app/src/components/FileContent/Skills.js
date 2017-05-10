@@ -419,20 +419,41 @@ const Skills = () => {
             {/*RESULT*/}
             <span className="hidden-xs">
                 <CodeLine>
-                    <span className="tag2">alert</span>
+                    <span className="tag3">var </span>
+                    <span className="common">newWin {'='} </span>
+                    <span className="tag2">open</span>
                     <span className="common">(</span>
+                    <span className="tag4">{'""'}</span>
+                    <span className="common">)</span>
+                </CodeLine>
+
+                <CodeLine>
+                    <span className="common">newWin.</span>
+                    <span className="tag3">document</span>
+                    <span className="common">.</span>
+                    <span className="tag2">write</span>
+                    <span className="common">(</span>
+                </CodeLine>
+
+                <CodeLine>
+                    <Tabulator/>
+                    <span className="tag4">{'"<h1>\\u03BB Technical Skills \\u03BB'}</span>
+                    <span className="tag4">{'</h1>"'}</span>
+                    <span className="operator">{' + '}</span>
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
-                    <span className="tag4">{'"\\u03BB Skills \\u03BB'}</span>
-                    <span className="operator">{'\\n'}</span>
-                    <span className="operator">{'\\n'}</span>
-                    <span className="tag4">{'"'}</span>
+                    <span className="tag4">{'"<br/>"'}</span>
                     <span className="operator">{' + '}</span>
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
                     <span className="common">[</span>
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="tag4">{'"<h4>Operating Systems</h4>"'}</span>,
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
@@ -443,8 +464,18 @@ const Skills = () => {
                 <CodeLine>
                     <Tabulator/>
                     <Tabulator/>
+                    <span className="tag4">{'"<h4>Editors</h4>"'}</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
                     <span className="operator">...</span>
                     <span className="common">editors</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="tag4">{'"<h4>JavaScript</h4>"'}</span>,
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
@@ -456,9 +487,19 @@ const Skills = () => {
                 <CodeLine>
                     <Tabulator/>
                     <Tabulator/>
+                    <span className="tag4">{'"<h4>PHP</h4>"'}</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
                     <span className="operator">...</span>
                     <span className="tag2">php</span>
                     <span className="common">()</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="tag4">{'"<h4>Clojure</h4>"'}</span>,
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
@@ -470,9 +511,19 @@ const Skills = () => {
                 <CodeLine>
                     <Tabulator/>
                     <Tabulator/>
+                    <span className="tag4">{'"<h4>DataBase</h4>"'}</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
                     <span className="operator">...</span>
                     <span className="tag2">database</span>
                     <span className="common">()</span>,
+                </CodeLine>
+                <CodeLine>
+                    <Tabulator/>
+                    <Tabulator/>
+                    <span className="tag4">{'"<h4>Layout & Templates</h4>"'}</span>,
                 </CodeLine>
                 <CodeLine>
                     <Tabulator/>
@@ -488,7 +539,7 @@ const Skills = () => {
                     <span className="operator">join</span>
                     <span className="common">(</span>
                     <span className="tag4">{'"'}</span>
-                    <span className="operator">{', '}</span>
+                    <span className="operator">{'<br/>'}</span>
                     <span className="tag4">{'"'}</span>
                     <span className="common">)</span>
                 </CodeLine>

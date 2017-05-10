@@ -12,7 +12,9 @@ class Clippy extends Component {
         const textToCopy = clone.text()
                                 .replace(/(\/\*(.*)\*\/)/g, '')
                                 .replace(/((]|})\w)/g, s => s.charAt(0) + '\n' + s.charAt(1))
-                                .replace(/return/g, ';return');
+                                .replace(/\s\s+/g, ' ')
+                                .replace(/return/g, '\nreturn')
+                                .replace(/newWin\./g, '\nnewWin\.');
 
         return textToCopy; //TODO copy in clipboard
 
