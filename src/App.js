@@ -32,8 +32,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App__Panels">
-          <SplitPane split="vertical" minSize={250} defaultSize={250}>
-            {/* <SideBar
+          {/* <SplitPane split="vertical" minSize={250} defaultSize={250}> */}
+          {/* <SideBar
               fileTree={editor.fileTree.items}
               fileTreeSelected={editor.fileTree.selected}
               onSelectElem={(elem, dir) => {
@@ -44,7 +44,7 @@ class App extends Component {
               }}
               onOpenFile={file => dispatch(editorAction.fileOpen(file))}
             /> */}
-            {/* <Editor
+          {/* <Editor
               tabs={editor.tabs}
               icons={editor.tabIcons}
               activeTab={editor.activeTab}
@@ -53,7 +53,7 @@ class App extends Component {
               onTabClose={tab => dispatch(editorAction.tabClose(tab))}
               onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
             /> */}
-          </SplitPane>
+          {/* </SplitPane> */}
         </div>
         <Footer currentFile={editor.files[editor.selected]} />
       </div>

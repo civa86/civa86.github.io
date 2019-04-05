@@ -13,7 +13,7 @@ const Footer = props => {
           </div>
           <div className="col-6 text-right">
             <span className="Footer__elem d-none d-sm-inline">LF</span>
-            <span className="Footer__elem d-sm-inline hidden-xs">UTF-8</span>
+            <span className="Footer__elem d-none d-sm-inline">UTF-8</span>
             <span className="Footer__elem">{currentFile.type}</span>
           </div>
         </div>
