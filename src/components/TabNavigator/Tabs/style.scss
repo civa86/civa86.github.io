@@ -1,4 +1,5 @@
 @import '../../../scss/colors';
+@import '../../../scss/functions';
 
 .r-a-t {
   position: relative;
@@ -19,7 +20,7 @@
     width: 35px;
     height: 35px;
     background: #f9f9f9;
-    transition: 'background' ease 0.3s;
+    transition: background ease 0.3s;
 
     &::before {
       content: '';
@@ -42,10 +43,6 @@
       height: 17px;
       background: #bbb;
     }
-
-    //&:hover {
-    //  background: #f3f3f3;
-    //}
   }
 
   .tab-wrapper {
@@ -54,8 +51,6 @@
     left: 0;
     width: 100%;
     height: 35px;
-    // background: #aaa;
-    //padding-left: 15px;
 
     &.with-add {
       width: calc(100% - 35px);
@@ -63,7 +58,6 @@
 
     .tab-button {
       position: absolute;
-      // width: 115px;
       height: 27px;
       user-select: none;
 
@@ -119,7 +113,7 @@
       padding: 0 30px;
       background: $base-background-color;
       z-index: 0;
-      transition: 'background' ease 0.3s;
+      transition: background ease 0.3s;
       user-select: none;
       border-bottom: 1px solid $base-border-color;
     }
@@ -137,17 +131,17 @@
       white-space: nowrap;
       text-overflow: ellipsis;
 
-      //   .text-value {
-      //     $media $only-xs {
-      //       display: none;
-      //     }
-      //   }
+      .text-value {
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
 
       &.with-close {
-        width: calc(100% - 45px);
-        // $media $only-xs {
-        //   width: calc(100% - 30px);
-        // }
+        width: 55%;
+        @include media-breakpoint-down(xs) {
+          width: calc(100% - 30px);
+        }
       }
 
       > * {
@@ -160,10 +154,10 @@
         display: none;
         box-sizing: border-box;
         margin-right: 8px;
-        // $media $only-xs {
-        //   margin-right: 0;
-        //   display: inline-block;
-        // }
+        @include media-breakpoint-down(xs) {
+          margin-right: 0;
+          display: inline-block;
+        }
       }
 
       .icon.loading {
@@ -180,7 +174,7 @@
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
-        transition: 'background' ease 0.3s;
+        transition: background ease 0.3s;
 
         & .mask {
           position: absolute;
@@ -190,7 +184,7 @@
           height: 14px;
           background: #f9f9f9;
           clip: rect(0px, 14px, 14px, 7px);
-          transition: 'background' ease 0.3s;
+          transition: background ease 0.3s;
         }
       }
 
@@ -222,9 +216,9 @@
     }
 
     .close {
-      //   $media $only-xs {
-      //     display: none !important;
-      //   }
+      @include media-breakpoint-down(xs) {
+        display: none !important;
+      }
       display: none;
       position: absolute;
       right: 10px;
