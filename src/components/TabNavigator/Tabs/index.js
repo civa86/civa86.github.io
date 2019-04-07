@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 import './style.scss'
 
@@ -161,31 +160,12 @@ class Tabs extends Component {
   }
 }
 
-Tabs.propTypes = {
-  onTabSwitch: PropTypes.func.isRequired,
-  onTabPositionChange: PropTypes.func.isRequired,
-  onTabClose: PropTypes.func,
-  onTabAdd: PropTypes.func,
-  draggable: PropTypes.bool,
-  showAdd: PropTypes.bool,
-  showClose: PropTypes.bool,
-  children: PropTypes.any
-}
-
 const Tab = ({ children }) => {
   return <div>{children}</div>
 }
 
-Tab.propTypes = {
-  children: PropTypes.any
-}
-
 const TabIcon = ({ type }) => {
   return <div className={'icon ' + type}>{type === 'loading' ? <div className="mask" /> : null}</div>
-}
-
-TabIcon.propTypes = {
-  type: PropTypes.string.isRequired
 }
 
 export default Tabs

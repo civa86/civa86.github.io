@@ -5,14 +5,14 @@ import SplitPane from 'react-split-pane'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import TabNavigator from './components/TabNavigator'
-import { treeElementSelect } from './store/reducers/editor'
+import { treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducers/editor'
 
 // Style
 import './App.scss'
 
 class App extends Component {
   render() {
-    const { editor, treeElementSelect } = this.props
+    const { editor, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
 
     return (
       <div className="App">
@@ -24,7 +24,14 @@ class App extends Component {
               onSelectElem={elem => treeElementSelect(elem)}
             />
             <div className="h-100">
-              <TabNavigator tabs={editor.tabs} tabIcons={editor.tabIcons} activeTab={editor.activeTab} />
+              <TabNavigator
+                tabs={editor.tabs}
+                tabIcons={editor.tabIcons}
+                activeTab={editor.activeTab}
+                onTabSwitch={tab => tabSelect(tab)}
+                onTabClose={tab => tabClose(tab)}
+                onTabPositionChange={(a, b) => tabChangePosition(a, b)}
+              />
               {/* TODO: empty class... */}
               <div className={`container-fluid content-editor`}>
                 <div className="row">
@@ -56,7 +63,8 @@ const mapStateToProps = state => ({
   editor: state.editor
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({ treeElementSelect }, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ treeElementSelect, tabSelect, tabClose, tabChangePosition }, dispatch)
 
 export default connect(
   mapStateToProps,

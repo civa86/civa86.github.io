@@ -1,10 +1,9 @@
 // Constants
-export const EDITOR_TREE_ELEM_SELECT = 'EDITOR_FILE_TREE_ELEM_SELECT'
-// export const EDITOR_TREE_TOGGLE_DIR_COLLAPSE = 'EDITOR_FILE_TREE_TOGGLE_DIR_COLLAPSE'
 // export const APP_RELOAD = 'APP_RELOAD' //TODO: app reducer??
-// export const EDITOR_TAB_SELECT = 'EDITOR_TAB_SELECT'
-// export const EDITOR_TAB_CLOSE = 'EDITOR_TAB_CLOSE'
-// export const EDITOR_TAB_CHANGE_POSITION = 'EDITOR_TAB_CHANGE_POSITION'
+export const EDITOR_TREE_ELEM_SELECT = 'EDITOR_FILE_TREE_ELEM_SELECT'
+export const EDITOR_TAB_SELECT = 'EDITOR_TAB_SELECT'
+export const EDITOR_TAB_CLOSE = 'EDITOR_TAB_CLOSE'
+export const EDITOR_TAB_CHANGE_POSITION = 'EDITOR_TAB_CHANGE_POSITION'
 // export const EDITOR_FILE_OPEN = 'EDITOR_FILE_OPEN'
 
 // Actions
@@ -15,34 +14,27 @@ export const treeElementSelect = element => {
   }
 }
 
-// export const fileTreeToggleDirCollapse = elem => {
-//   return {
-//     type: EDITOR_FILE_TREE_TOGGLE_DIR_COLLAPSE,
-//     elem
-//   }
-// }
+export const tabSelect = tab => {
+  return {
+    type: EDITOR_TAB_SELECT,
+    tab
+  }
+}
 
-// export const tabSelect = tab => {
-//   return {
-//     type: EDITOR_TAB_SELECT,
-//     tab
-//   }
-// }
+export const tabClose = tab => {
+  return {
+    type: EDITOR_TAB_CLOSE,
+    tab
+  }
+}
 
-// export const tabClose = tab => {
-//   return {
-//     type: EDITOR_TAB_CLOSE,
-//     tab
-//   }
-// }
-
-// export const tabChangePosition = (a, b) => {
-//   return {
-//     type: EDITOR_TAB_CHANGE_POSITION,
-//     a,
-//     b
-//   }
-// }
+export const tabChangePosition = (a, b) => {
+  return {
+    type: EDITOR_TAB_CHANGE_POSITION,
+    a,
+    b
+  }
+}
 
 // export const fileOpen = file => {
 //   return {
@@ -131,15 +123,16 @@ const toggleCollapse = (tree, elem) => {
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '@@INIT':
+    case '@@INIT': {
       const flatFiles = flattenFiles(state.tree)
       return {
         ...state,
         tabs: flatFiles.map(e => e.name),
         tabIcons: flatFiles.reduce((res, e) => ({ ...res, [e.name]: e.tabIcon }), {})
       }
+    }
 
-    case EDITOR_TREE_ELEM_SELECT:
+    case EDITOR_TREE_ELEM_SELECT: {
       const tabToOpen = !action.element.directory ? state.tabs.map(t => t).indexOf(action.element.name) : null
       return {
         ...state,
@@ -149,6 +142,55 @@ export default (state = initialState, action) => {
         tabs: tabToOpen === null ? state.tabs : tabToOpen > -1 ? state.tabs : [...state.tabs, action.element.name],
         activeTab: tabToOpen === null ? state.activeTab : tabToOpen > -1 ? tabToOpen : state.tabs.length
       }
+    }
+
+    case EDITOR_TAB_SELECT: {
+      const selectedFile = flattenFiles(state.tree).find(e => e.name === state.tabs[action.tab])
+      return {
+        ...state,
+        activeTab: action.tab,
+        treeSelectedName: selectedFile ? selectedFile.name : '',
+        treeSelectedType: selectedFile ? selectedFile.type : ''
+      }
+    }
+
+    case EDITOR_TAB_CLOSE: {
+      const cleanedTabs = state.tabs.filter((t, i) => i !== action.tab)
+      let activeTab = state.activeTab
+      if (action.tab < state.activeTab) {
+        activeTab = activeTab - 1
+      } else if (!cleanedTabs[state.activeTab] && state.activeTab >= cleanedTabs.length) {
+        activeTab = cleanedTabs.length - 1
+      }
+      const selectedFile = flattenFiles(state.tree).find(e => e.name === cleanedTabs[activeTab])
+      return {
+        ...state,
+        tabs: cleanedTabs,
+        activeTab: activeTab,
+        treeSelectedName: selectedFile ? selectedFile.name : '',
+        treeSelectedType: selectedFile ? selectedFile.type : ''
+      }
+    }
+
+    case EDITOR_TAB_CHANGE_POSITION: {
+      let tabs = [...state.tabs]
+      let activeTab = state.activeTab
+
+      ;[tabs[action.a], tabs[action.b]] = [tabs[action.b], tabs[action.a]]
+
+      if (state.activeTab === action.a) {
+        activeTab = action.b
+      } else if (state.activeTab === action.b) {
+        activeTab = action.a
+      }
+
+      return {
+        ...state,
+        activeTab,
+        tabs
+      }
+    }
+
     default:
       return state
   }
