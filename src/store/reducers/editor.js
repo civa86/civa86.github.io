@@ -1,5 +1,5 @@
 // Constants
-// export const APP_RELOAD = 'APP_RELOAD' //TODO: app reducer??
+export const EDITOR_RELOAD = 'EDITOR_RELOAD' //TODO: app reducer??
 export const EDITOR_TREE_ELEM_SELECT = 'EDITOR_FILE_TREE_ELEM_SELECT'
 export const EDITOR_TAB_SELECT = 'EDITOR_TAB_SELECT'
 export const EDITOR_TAB_CLOSE = 'EDITOR_TAB_CLOSE'
@@ -7,6 +7,12 @@ export const EDITOR_TAB_CHANGE_POSITION = 'EDITOR_TAB_CHANGE_POSITION'
 // export const EDITOR_FILE_OPEN = 'EDITOR_FILE_OPEN'
 
 // Actions
+export const reloadEditor = () => {
+  return {
+    type: EDITOR_RELOAD
+  }
+}
+
 export const treeElementSelect = element => {
   return {
     type: EDITOR_TREE_ELEM_SELECT,
@@ -92,7 +98,7 @@ export const initialState = {
 }
 
 // Utils
-function flattenFiles(tree) {
+const flattenFiles = tree => {
   return tree.reduce((res, e) => {
     if (e.directory !== true) {
       res.push(e)
@@ -101,6 +107,15 @@ function flattenFiles(tree) {
     }
     return res
   }, [])
+}
+
+const initializeState = () => {
+  const flatFiles = flattenFiles(initialState.tree)
+  return {
+    ...initialState,
+    tabs: flatFiles.map(e => e.name),
+    tabIcons: flatFiles.reduce((res, e) => ({ ...res, [e.name]: e.tabIcon }), {})
+  }
 }
 
 const toggleCollapse = (tree, elem) => {
@@ -123,13 +138,9 @@ const toggleCollapse = (tree, elem) => {
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '@@INIT': {
-      const flatFiles = flattenFiles(state.tree)
-      return {
-        ...state,
-        tabs: flatFiles.map(e => e.name),
-        tabIcons: flatFiles.reduce((res, e) => ({ ...res, [e.name]: e.tabIcon }), {})
-      }
+    case '@@INIT':
+    case EDITOR_RELOAD: {
+      return initializeState()
     }
 
     case EDITOR_TREE_ELEM_SELECT: {
