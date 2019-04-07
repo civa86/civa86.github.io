@@ -176,7 +176,9 @@ export default (state = initialState, action) => {
       let tabs = [...state.tabs]
       let activeTab = state.activeTab
 
-      ;[tabs[action.a], tabs[action.b]] = [tabs[action.b], tabs[action.a]]
+      const tmp = tabs[action.a]
+      tabs[action.a] = tabs[action.b]
+      tabs[action.b] = tmp
 
       if (state.activeTab === action.a) {
         activeTab = action.b
