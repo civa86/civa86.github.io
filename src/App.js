@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SplitPane from 'react-split-pane'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
-// import Editor from './components/Editor'
+import TabNavigator from './components/TabNavigator'
 import { treeElementSelect } from './store/reducers/editor'
 
 // Style
@@ -23,24 +23,14 @@ class App extends Component {
               selectedElement={editor.treeSelectedName}
               onSelectElem={elem => treeElementSelect(elem)}
             />
-            <div>
-              {/* TODO: empty class... */}
-              <div className={`tab-bar`}>
-                {/* <Tabs
-                  active={props.activeTab}
-                  onTabSwitch={tab => props.onTabSwitch(tab)}
-                  onTabClose={tab => props.onTabClose(tab)}
-                  onTabPositionChange={(a, b) => props.onTabPositionChange(a, b)}
-                  draggable={true}>
-                  {renderTabs()}
-                </Tabs> */}
-              </div>
+            <div className="h-100">
+              <TabNavigator tabs={editor.tabs} tabIcons={editor.tabIcons} activeTab={editor.activeTab} />
               {/* TODO: empty class... */}
               <div className={`container-fluid content-editor`}>
                 <div className="row">
                   <div className="col-12">
                     {/* {editor.tabs.length === 0 && <Reload onReload={() => onReload()} />} */}
-                    {editor.tabs.length > 0 && editor.tabs[editor.activeTab]}
+                    {/* {editor.tabs.length > 0 && editor.tabs[editor.activeTab]} */}
                   </div>
                 </div>
               </div>
