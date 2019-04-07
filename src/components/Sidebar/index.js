@@ -64,7 +64,7 @@ const Sidebar = props => {
   }
 
   return (
-    <div className="Sidebar cursor-default no-select">
+    <div className="Sidebar cursor-default no-select h-100">
       <div>
         <div className="Sidebar__title">
           <i className="Sidebar__title-icon octicon octicon-repo" /> Dario Civallero
