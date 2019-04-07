@@ -5,7 +5,7 @@ import SplitPane from 'react-split-pane'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import TabNavigator from './components/TabNavigator'
-import Reload from './components/Reload'
+import ReloadEditor from './components/ReloadEditor'
 import { reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducers/editor'
 
 // Style
@@ -24,8 +24,9 @@ class App extends Component {
               selectedElement={editor.treeSelectedName}
               onSelectElem={elem => treeElementSelect(elem)}
             />
-            <div className="h-100">
-              {editor.tabs.length > 0 && (
+
+            {editor.tabs.length > 0 && (
+              <div className="h-100">
                 <TabNavigator
                   tabs={editor.tabs}
                   tabIcons={editor.tabIcons}
@@ -34,10 +35,11 @@ class App extends Component {
                   onTabClose={tab => tabClose(tab)}
                   onTabPositionChange={(a, b) => tabChangePosition(a, b)}
                 />
-              )}
-              {editor.tabs.length === 0 && <Reload onReload={() => reloadEditor()} />}
-              {/* {editor.tabs.length > 0 && <Reload onReload={() => reloadEditor()} />} */}
-              {/* <div className={`container-fluid content-editor`}>
+              </div>
+            )}
+            {editor.tabs.length === 0 && <ReloadEditor onReload={() => reloadEditor()} />}
+            {/* {editor.tabs.length > 0 && <Reload onReload={() => reloadEditor()} />} */}
+            {/* <div className={`container-fluid content-editor`}>
                 <div className="row">
                   <div className="col-12">
                     {editor.tabs.length === 0 && <Reload onReload={() => onReload()} />}
@@ -45,7 +47,7 @@ class App extends Component {
                   </div>
                 </div>
               </div> */}
-            </div>
+
             {/* <Editor
               tabs={editor.tabs}
               icons={editor.tabIcons}
