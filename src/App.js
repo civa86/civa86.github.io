@@ -5,6 +5,7 @@ import SplitPane from 'react-split-pane'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import TabNavigator from './components/TabNavigator'
+import EditorContentSwitch from './components/EditorContentSwitch'
 import ReloadEditor from './components/ReloadEditor'
 import { reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducers/editor'
 
@@ -35,18 +36,10 @@ class App extends Component {
                   onTabClose={tab => tabClose(tab)}
                   onTabPositionChange={(a, b) => tabChangePosition(a, b)}
                 />
+                <EditorContentSwitch content={editor.treeSelectedName} />
               </div>
             )}
             {editor.tabs.length === 0 && <ReloadEditor onReload={() => reloadEditor()} />}
-            {/* {editor.tabs.length > 0 && <Reload onReload={() => reloadEditor()} />} */}
-            {/* <div className={`container-fluid content-editor`}>
-                <div className="row">
-                  <div className="col-12">
-                    {editor.tabs.length === 0 && <Reload onReload={() => onReload()} />}
-                    {editor.tabs.length > 0 && editor.tabs[editor.activeTab]}
-                  </div>
-                </div>
-              </div> */}
 
             {/* <Editor
               tabs={editor.tabs}

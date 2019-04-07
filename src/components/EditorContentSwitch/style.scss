@@ -1,0 +1,12 @@
+@import '../../scss/measures';
+@import '../../scss/colors';
+
+.EditorContentSwitch {
+  background: $dark-background-color;
+  overflow: scroll;
+  position: absolute;
+  top: $tab-bar-h;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
