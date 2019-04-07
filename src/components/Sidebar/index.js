@@ -10,13 +10,9 @@ const Sidebar = props => {
       <div
         key={f.name}
         className="Sidebar__file-tree-element Sidebar__file-tree-element--file"
-        onTouchEnd={() => props.onOpenFile(f.name)}
-        onClick={() => {
-          props.onSelectElem(f)
-          props.onOpenFile(f.name)
-        }}>
+        onClick={() => props.onSelectElem(f)}>
         <span className={f.name === selectedElement ? 'Sidebar__file-tree-element--selected' : ''}>
-          <i className="Sidebar__file-tree-icon Sidebar__file-tree-icon--type octicon octicon-file" />
+          <i className={`Sidebar__file-tree-icon Sidebar__file-tree-icon--type ${f.treeIcon}`} />
           <span className="Sidebar__file-tree-label">{f.name}</span>
         </span>
       </div>
@@ -59,7 +55,7 @@ const Sidebar = props => {
 
   function renderTree(elements) {
     return elements.map(elem => {
-      if (elem.dir) {
+      if (elem.directory) {
         return renderDirectory(elem)
       } else {
         return renderFile(elem)

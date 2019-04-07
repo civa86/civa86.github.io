@@ -5,12 +5,14 @@ import SplitPane from 'react-split-pane'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 // import Editor from './components/Editor'
+import { treeElementSelect } from './store/reducers/editor'
+
 // Style
 import './App.scss'
 
 class App extends Component {
   render() {
-    const { editor } = this.props
+    const { editor, treeElementSelect } = this.props
 
     return (
       <div className="App">
@@ -19,14 +21,7 @@ class App extends Component {
             <Sidebar
               tree={editor.tree}
               selectedElement={editor.treeSelectedName}
-              onSelectElem={(elem, dir) => {
-                console.log('onSelect', elem)
-                // dispatch(editorAction.fileTreeElemSelect(elem))
-                // if (dir === true) {
-                //   dispatch(editorAction.fileTreeToggleDirCollapse(elem))
-                // }
-              }}
-              onOpenFile={file => console.log('onOpen', file)} // dispatch(editorAction.fileOpen(file))
+              onSelectElem={elem => treeElementSelect(elem)}
             />
             <div />
             {/* <Editor
@@ -50,7 +45,7 @@ const mapStateToProps = state => ({
   editor: state.editor
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ treeElementSelect }, dispatch)
 
 export default connect(
   mapStateToProps,
