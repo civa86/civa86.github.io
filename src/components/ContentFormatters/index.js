@@ -32,3 +32,65 @@ export const CodeBlock = props => {
     </div>
   )
 }
+
+export const Tabulator = () => {
+  return <span>&nbsp;&nbsp;</span>
+}
+
+export const CommentLine = props => {
+  return <span className="CommentLine">{props.children}</span>
+}
+
+export const HtmlLine = props => {
+  const attributes = props.attributes || []
+  return (
+    <span className="HtmlLine">
+      <span>{'<'}</span>
+      <span className="HtmlLine__tag">{props.tag}</span>
+      {attributes.map((a, i) => (
+        <span key={`attr-${i}`}>
+          {' '}
+          <span className="HtmlLine__attr-key">{a.key}</span>
+          <span>{'="'}</span>
+          <span className="HtmlLine__attr-value">{a.value}</span>
+          <span>{'"'}</span>
+        </span>
+      ))}
+      <span>{'>'}</span>
+      <span className="HtmlLine__content">{props.children}</span>
+      <span>{'</'}</span>
+      <span className="HtmlLine__tag">{props.tag}</span>
+      <span>{'>'}</span>
+    </span>
+  )
+}
+
+export const HtmlOpenTag = props => {
+  const attributes = props.attributes || []
+  return (
+    <span className="HtmlLine">
+      <span>{'<'}</span>
+      <span className="HtmlLine__tag">{props.tag}</span>
+      {attributes.map((a, i) => (
+        <span key={`attr-${i}`}>
+          {' '}
+          <span className="HtmlLine__attr-key">{a.key}</span>
+          <span>{'="'}</span>
+          <span className="HtmlLine__attr-value">{a.value}</span>
+          <span>{'"'}</span>
+        </span>
+      ))}
+      <span>{'>'}</span>
+    </span>
+  )
+}
+
+export const HtmlCloseTag = props => {
+  return (
+    <span className="HtmlLine">
+      <span>{'</'}</span>
+      <span className="HtmlLine__tag">{props.tag}</span>
+      <span>{'>'}</span>
+    </span>
+  )
+}
