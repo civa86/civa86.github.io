@@ -15,11 +15,11 @@ import snowJump from '../../images/snow-jump.jpg'
 
 const Interests = () => {
   const images = [
-    { original: napoleon },
     { original: torino },
     { original: japan1 },
     { original: japan2 },
     { original: ny },
+    { original: napoleon },
     { original: skateFlip },
     { original: skateDh },
     { original: snowRail },
