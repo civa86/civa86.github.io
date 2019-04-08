@@ -1,41 +1,41 @@
 // Constants
-export const EDITOR_RELOAD = 'EDITOR_RELOAD'
-export const EDITOR_TREE_ELEM_SELECT = 'EDITOR_FILE_TREE_ELEM_SELECT'
-export const EDITOR_TAB_SELECT = 'EDITOR_TAB_SELECT'
-export const EDITOR_TAB_CLOSE = 'EDITOR_TAB_CLOSE'
-export const EDITOR_TAB_CHANGE_POSITION = 'EDITOR_TAB_CHANGE_POSITION'
+const RELOAD = 'RELOAD'
+const TREE_ELEM_SELECT = 'TREE_ELEM_SELECT'
+const TAB_SELECT = 'TAB_SELECT'
+const TAB_CLOSE = 'TAB_CLOSE'
+const TAB_CHANGE_POSITION = 'TAB_CHANGE_POSITION'
 
 // Actions
 export const reloadEditor = () => {
   return {
-    type: EDITOR_RELOAD
+    type: RELOAD
   }
 }
 
 export const treeElementSelect = element => {
   return {
-    type: EDITOR_TREE_ELEM_SELECT,
+    type: TREE_ELEM_SELECT,
     element
   }
 }
 
 export const tabSelect = tab => {
   return {
-    type: EDITOR_TAB_SELECT,
+    type: TAB_SELECT,
     tab
   }
 }
 
 export const tabClose = tab => {
   return {
-    type: EDITOR_TAB_CLOSE,
+    type: TAB_CLOSE,
     tab
   }
 }
 
 export const tabChangePosition = (a, b) => {
   return {
-    type: EDITOR_TAB_CHANGE_POSITION,
+    type: TAB_CHANGE_POSITION,
     a,
     b
   }
@@ -137,11 +137,11 @@ const toggleCollapse = (tree, elem) => {
 export default (state = initialState, action) => {
   switch (action.type) {
     case '@@INIT':
-    case EDITOR_RELOAD: {
+    case RELOAD: {
       return initializeState()
     }
 
-    case EDITOR_TREE_ELEM_SELECT: {
+    case TREE_ELEM_SELECT: {
       const tabToOpen = !action.element.directory ? state.tabs.map(t => t).indexOf(action.element.name) : null
       return {
         ...state,
@@ -154,7 +154,7 @@ export default (state = initialState, action) => {
       }
     }
 
-    case EDITOR_TAB_SELECT: {
+    case TAB_SELECT: {
       const selectedFile = flattenFiles(state.tree).find(e => e.name === state.tabs[action.tab])
       return {
         ...state,
@@ -165,7 +165,7 @@ export default (state = initialState, action) => {
       }
     }
 
-    case EDITOR_TAB_CLOSE: {
+    case TAB_CLOSE: {
       const cleanedTabs = state.tabs.filter((t, i) => i !== action.tab)
       let activeTab = state.activeTab
       if (action.tab < state.activeTab) {
@@ -184,7 +184,7 @@ export default (state = initialState, action) => {
       }
     }
 
-    case EDITOR_TAB_CHANGE_POSITION: {
+    case TAB_CHANGE_POSITION: {
       let tabs = [...state.tabs]
       let activeTab = state.activeTab
 

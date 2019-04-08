@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar'
 import TabNavigator from './components/TabNavigator'
 import ContentSwitch from './components/ContentSwitch'
 import ReloadEditor from './components/ReloadEditor'
-import { reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducers/editor'
+import { reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducer'
 
 // Style
 import './App.scss'
@@ -21,52 +21,42 @@ class App extends Component {
   }
 
   render() {
-    const { editor, reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
+    const { appState, reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
 
     return (
       <div className="App" onClick={() => this.globalHandler()}>
         <div className="App__Panels">
           <SplitPane split="vertical" minSize={250} defaultSize={250}>
             <Sidebar
-              tree={editor.tree}
-              selectedElement={editor.treeSelectedName}
+              tree={appState.tree}
+              selectedElement={appState.treeSelectedName}
               onSelectElem={elem => treeElementSelect(elem)}
             />
 
-            {editor.tabs.length > 0 && (
+            {appState.tabs.length > 0 && (
               <div className="h-100">
                 <TabNavigator
-                  tabs={editor.tabs}
-                  tabIcons={editor.tabIcons}
-                  activeTab={editor.activeTab}
+                  tabs={appState.tabs}
+                  tabIcons={appState.tabIcons}
+                  activeTab={appState.activeTab}
                   onTabSwitch={tab => tabSelect(tab)}
                   onTabClose={tab => tabClose(tab)}
                   onTabPositionChange={(a, b) => tabChangePosition(a, b)}
                 />
-                <ContentSwitch content={editor.currentContent} />
+                <ContentSwitch content={appState.currentContent} />
               </div>
             )}
-            {editor.tabs.length === 0 && <ReloadEditor onReload={() => reloadEditor()} />}
-
-            {/* <Editor
-              tabs={editor.tabs}
-              icons={editor.tabIcons}
-              activeTab={editor.activeTab}
-              onReload={() => dispatch(appAction.reload())}
-              onTabSwitch={tab => dispatch(editorAction.tabSelect(tab))}
-              onTabClose={tab => dispatch(editorAction.tabClose(tab))}
-              onTabPositionChange={(a, b) => dispatch(editorAction.tabChangePosition(a, b))}
-            /> */}
+            {appState.tabs.length === 0 && <ReloadEditor onReload={() => reloadEditor()} />}
           </SplitPane>
         </div>
-        <Footer currentFile={editor.treeSelectedName} currentType={editor.treeSelectedType} />
+        <Footer currentFile={appState.treeSelectedName} currentType={appState.treeSelectedType} />
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  editor: state.editor
+  appState: state
 })
 
 const mapDispatchToProps = dispatch =>
