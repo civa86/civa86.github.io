@@ -8,7 +8,7 @@ import ny from '../../images/ny.jpg'
 import japan1 from '../../images/japan-1.jpg'
 import japan2 from '../../images/japan-2.jpg'
 import napoleon from '../../images/napoleon.jpg'
-import skateFlip from '../../images/skate-flip.jpg'
+import skatePark from '../../images/skate-park.jpg'
 import skateDh from '../../images/skate-dh.jpg'
 import snowRail from '../../images/snow-rail.jpg'
 import snowJump from '../../images/snow-jump.jpg'
@@ -20,19 +20,17 @@ const Interests = () => {
     { original: japan2 },
     { original: ny },
     { original: napoleon },
-    { original: skateFlip },
+    { original: skatePark },
     { original: skateDh },
     { original: snowRail },
     { original: snowJump }
   ]
-  // const maxHeight = document.querySelector('.ContentSwitch').clientHeight - 200
   return (
     <div className="container-fluid h-100">
       <div className="row h-100 justify-content-center align-items-center">
         <div className="col" style={{ maxWidth: 800 }}>
           <ImageGallery
             items={images}
-            lazyLoad={true}
             showThumbnails={false}
             showFullscreenButton={false}
             showPlayButton={false}

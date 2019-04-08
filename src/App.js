@@ -33,7 +33,7 @@ class App extends Component {
               onSelectElem={elem => treeElementSelect(elem)}
             />
 
-            {appState.tabs.length > 0 && (
+            {appState.tabs && appState.tabs.length > 0 && (
               <div className="h-100">
                 <TabNavigator
                   tabs={appState.tabs}
@@ -46,7 +46,7 @@ class App extends Component {
                 <ContentSwitch content={appState.currentContent} />
               </div>
             )}
-            {appState.tabs.length === 0 && <Reload onReload={() => reload()} />}
+            {appState.tabs && appState.tabs.length === 0 && <Reload onReload={() => reload()} />}
           </SplitPane>
         </div>
         <Footer currentFile={appState.treeSelectedName} currentType={appState.treeSelectedType} />

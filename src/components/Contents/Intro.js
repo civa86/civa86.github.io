@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-import { CodeBlock, CodeLine, Tabulator, CommentLine, HtmlLine, HtmlOpenTag, HtmlCloseTag } from '../ContentFormatters'
+import { CodeBlock, CodeLine, Tabulator, HtmlLine, HtmlOpenTag, HtmlCloseTag } from '../ContentFormatters'
 
 const Bio = () => {
   const age = moment().diff(moment('1986-08-17 15:00:00'), 'years')
@@ -64,10 +64,6 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">Functional Thinker</HtmlLine>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
         <HtmlLine tag="li">JavaScript Lover</HtmlLine>
       </CodeLine>
       <CodeLine>
@@ -76,21 +72,13 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlOpenTag tag="li" />
+        <HtmlLine tag="li">
+          Skateboarder<span className="CommentLine">{'/'}</span>Snowboarder
+        </HtmlLine>
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <Tabulator />
-        <span className="HtmlLine__content">Skateboarder, Snowboarder,</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <span className="HtmlLine__content">Black Cats Addicted</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <HtmlCloseTag tag="li" />
+        <HtmlLine tag="li">Black Cats Addicted</HtmlLine>
       </CodeLine>
       <CodeLine>
         <HtmlCloseTag tag="ul" />

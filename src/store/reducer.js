@@ -41,8 +41,46 @@ export const tabChangePosition = (a, b) => {
   }
 }
 
+// Utils
+const flattenFiles = tree => {
+  return tree.reduce((res, e) => {
+    if (e.directory !== true) {
+      res.push(e)
+    } else if (e.children.length > 0) {
+      return flattenFiles(e.children, res)
+    }
+    return res
+  }, [])
+}
+
+const initializeState = stateObejct => {
+  const flatFiles = flattenFiles(stateObejct.tree)
+  return {
+    ...stateObejct,
+    tabs: flatFiles.map(e => e.name),
+    tabIcons: flatFiles.reduce((res, e) => ({ ...res, [e.name]: e.tabIcon }), {})
+  }
+}
+
+const toggleCollapse = (tree, elem) => {
+  return tree.map(e => {
+    if (e.directory !== true) return e
+    if (e.name === elem) {
+      return {
+        ...e,
+        collapsed: !e.collapsed
+      }
+    } else {
+      return {
+        ...e,
+        children: toggleCollapse(e.children, elem)
+      }
+    }
+  })
+}
+
 // Initial State
-export const initialState = {
+export const initialState = initializeState({
   tree: [
     {
       name: 'info',
@@ -93,52 +131,13 @@ export const initialState = {
   tabs: [],
   tabIcons: [],
   activeTab: 0
-}
-
-// Utils
-const flattenFiles = tree => {
-  return tree.reduce((res, e) => {
-    if (e.directory !== true) {
-      res.push(e)
-    } else if (e.children.length > 0) {
-      return flattenFiles(e.children, res)
-    }
-    return res
-  }, [])
-}
-
-const initializeState = () => {
-  const flatFiles = flattenFiles(initialState.tree)
-  return {
-    ...initialState,
-    tabs: flatFiles.map(e => e.name),
-    tabIcons: flatFiles.reduce((res, e) => ({ ...res, [e.name]: e.tabIcon }), {})
-  }
-}
-
-const toggleCollapse = (tree, elem) => {
-  return tree.map(e => {
-    if (e.directory !== true) return e
-    if (e.name === elem) {
-      return {
-        ...e,
-        collapsed: !e.collapsed
-      }
-    } else {
-      return {
-        ...e,
-        children: toggleCollapse(e.children, elem)
-      }
-    }
-  })
-}
+})
 
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '@@INIT':
     case RELOAD: {
-      return initializeState()
+      return { ...initialState }
     }
 
     case TREE_ELEM_SELECT: {
