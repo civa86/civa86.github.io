@@ -1,11 +1,7 @@
 import React from 'react'
-// Style
-// import './style.scss'
 
-const Skills = props => {
-  //   const { content } = props
-
-  return <div>SKILLS</div>
+const Skills = () => {
+  return <div>Skills</div>
 }
 
 export default Skills

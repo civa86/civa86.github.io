@@ -1,11 +1,7 @@
 import React from 'react'
-// Style
-// import './style.scss'
 
-const Bio = props => {
-  //   const { content } = props
-
-  return <div>BIO</div>
+const Bio = () => {
+  return <div>Bio</div>
 }
 
 export default Bio

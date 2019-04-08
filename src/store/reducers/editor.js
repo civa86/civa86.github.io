@@ -58,12 +58,14 @@ export const initialState = {
       collapsed: false,
       children: [
         {
+          id: 0,
           name: 'bio.html',
           tabIcon: 'octicon octicon-person',
           treeIcon: 'octicon octicon-file',
           type: 'HTML'
         },
         {
+          id: 1,
           name: 'education.md',
           tabIcon: 'octicon octicon-mortar-board',
           treeIcon: 'octicon octicon-book',
@@ -72,18 +74,21 @@ export const initialState = {
       ]
     },
     {
+      id: 2,
       name: 'skills.js',
       tabIcon: 'octicon octicon-beaker',
       treeIcon: 'octicon octicon-file',
       type: 'JavaScript'
     },
     {
+      id: 3,
       name: 'interests.png',
       tabIcon: 'octicon octicon-file-media',
       treeIcon: 'octicon octicon-file-media',
       type: 'PNG'
     },
     {
+      id: 4,
       name: 'contacts.json',
       tabIcon: 'octicon octicon-mention',
       treeIcon: 'octicon octicon-file',
@@ -92,6 +97,7 @@ export const initialState = {
   ],
   treeSelectedName: 'bio.html',
   treeSelectedType: 'HTML',
+  currentContent: 0,
   tabs: [],
   tabIcons: [],
   activeTab: 0
@@ -150,6 +156,7 @@ export default (state = initialState, action) => {
         tree: action.element.directory ? toggleCollapse(state.tree, action.element.name) : state.tree,
         treeSelectedName: action.element.name,
         treeSelectedType: action.element.type,
+        currentContent: !action.element.directory ? action.element.id : state.currentContent,
         tabs: tabToOpen === null ? state.tabs : tabToOpen > -1 ? state.tabs : [...state.tabs, action.element.name],
         activeTab: tabToOpen === null ? state.activeTab : tabToOpen > -1 ? tabToOpen : state.tabs.length
       }
@@ -161,7 +168,8 @@ export default (state = initialState, action) => {
         ...state,
         activeTab: action.tab,
         treeSelectedName: selectedFile ? selectedFile.name : '',
-        treeSelectedType: selectedFile ? selectedFile.type : ''
+        treeSelectedType: selectedFile ? selectedFile.type : '',
+        currentContent: selectedFile ? selectedFile.id : -1
       }
     }
 
@@ -179,7 +187,8 @@ export default (state = initialState, action) => {
         tabs: cleanedTabs,
         activeTab: activeTab,
         treeSelectedName: selectedFile ? selectedFile.name : '',
-        treeSelectedType: selectedFile ? selectedFile.type : ''
+        treeSelectedType: selectedFile ? selectedFile.type : '',
+        currentContent: selectedFile ? selectedFile.id : -1
       }
     }
 
