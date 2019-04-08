@@ -6,7 +6,7 @@ const TAB_CLOSE = 'TAB_CLOSE'
 const TAB_CHANGE_POSITION = 'TAB_CHANGE_POSITION'
 
 // Actions
-export const reloadEditor = () => {
+export const reload = () => {
   return {
     type: RELOAD
   }

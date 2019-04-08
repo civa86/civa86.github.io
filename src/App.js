@@ -6,8 +6,8 @@ import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import TabNavigator from './components/TabNavigator'
 import ContentSwitch from './components/ContentSwitch'
-import ReloadEditor from './components/ReloadEditor'
-import { reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducer'
+import Reload from './components/Reload'
+import { reload, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducer'
 
 // Style
 import './App.scss'
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   render() {
-    const { appState, reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
+    const { appState, reload, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
 
     return (
       <div className="App" onClick={() => this.globalHandler()}>
@@ -46,7 +46,7 @@ class App extends Component {
                 <ContentSwitch content={appState.currentContent} />
               </div>
             )}
-            {appState.tabs.length === 0 && <ReloadEditor onReload={() => reloadEditor()} />}
+            {appState.tabs.length === 0 && <Reload onReload={() => reload()} />}
           </SplitPane>
         </div>
         <Footer currentFile={appState.treeSelectedName} currentType={appState.treeSelectedType} />
@@ -60,7 +60,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition }, dispatch)
+  bindActionCreators({ reload, treeElementSelect, tabSelect, tabClose, tabChangePosition }, dispatch)
 
 export default connect(
   mapStateToProps,
