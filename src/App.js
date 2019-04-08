@@ -13,11 +13,18 @@ import { reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition
 import './App.scss'
 
 class App extends Component {
+  globalHandler() {
+    // Reset all CodeLine selected
+    Array.from(document.querySelectorAll('.CodeLine--selected')).forEach(node => {
+      node.classList.remove('CodeLine--selected')
+    })
+  }
+
   render() {
     const { editor, reloadEditor, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
 
     return (
-      <div className="App">
+      <div className="App" onClick={() => this.globalHandler()}>
         <div className="App__Panels">
           <SplitPane split="vertical" minSize={250} defaultSize={250}>
             <Sidebar

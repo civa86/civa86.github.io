@@ -1,0 +1,42 @@
+@import '../../scss/measures';
+@import '../../scss/colors';
+@import '../../scss/functions';
+
+.CodeLine {
+  cursor: text;
+  display: block;
+  line-height: 24px;
+
+  &:before {
+    @include media-breakpoint-down(xs) {
+      width: 20px;
+    }
+    user-select: none;
+    width: 33px;
+    text-align: right;
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    color: $line-number;
+    padding-right: 15px;
+  }
+
+  &--selected {
+    background: $line-highlight;
+    &:before {
+      color: $line-number-highlight;
+    }
+  }
+}
+
+.CodeBlock {
+  white-space: nowrap;
+  font-size: 16px;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 13px;
+  }
+
+  margin: 10px 0;
+  counter-reset: line;
+}
