@@ -5,7 +5,6 @@ import './style.scss'
 
 // Functions
 const selectCodeLine = event => {
-  event.preventDefault()
   event.stopPropagation()
   const selectedLines = Array.from(document.querySelectorAll('.CodeLine--selected'))
   selectedLines.forEach(node => {
@@ -148,6 +147,39 @@ export const CssBlockEnd = () => {
   return (
     <span className="CssBlock">
       <span>}</span>
+    </span>
+  )
+}
+
+// YAML
+
+export const YamlLine = props => {
+  return (
+    <span className="YamlLine">
+      <span className="YamlLine__yaml-key">{props.yamlKey}</span>
+      {': '}
+      <span className="YamlLine__yaml-value">
+        {props.mailLink && <a href={`mailto:${props.yamlValue}`}>{props.yamlValue}</a>}
+        {!props.mailLink && (
+          <a target="_blank" rel="noopener noreferrer" href={`https://${props.yamlValue}`}>
+            {props.yamlValue}
+          </a>
+        )}
+      </span>
+    </span>
+  )
+}
+
+export const YamlArrayValue = props => {
+  return (
+    <span className="YamlLine">
+      <Tabulator />
+      {'- '}
+      <span className="YamlLine__yaml-value">
+        <a target="_blank" rel="noopener noreferrer" href={`${props.yamlLink}`}>
+          {props.yamlValue}
+        </a>
+      </span>
     </span>
   )
 }

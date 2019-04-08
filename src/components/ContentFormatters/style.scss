@@ -27,6 +27,14 @@
       color: $line-number-highlight;
     }
   }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
 }
 
 .CodeBlock {
@@ -86,6 +94,16 @@
     color: $hue-6;
   }
   &__rule-string {
+    color: $hue-4;
+  }
+}
+
+.YamlLine {
+  color: $text-color;
+  &__yaml-key {
+    color: $hue-5;
+  }
+  &__yaml-value {
     color: $hue-4;
   }
 }
