@@ -81,10 +81,10 @@ export const initialState = {
     },
     {
       id: 4,
-      name: 'contacts.json',
+      name: 'contacts.yml',
       tabIcon: 'octicon octicon-mention',
       treeIcon: 'octicon octicon-file',
-      type: 'JSON'
+      type: 'YAML'
     }
   ],
   treeSelectedName: 'identity.html',
