@@ -48,6 +48,16 @@
   cursor: col-resize;
 }
 
+// Image Gallery
+.image-gallery-fullscreen-button::before,
+.image-gallery-play-button::before,
+.image-gallery-left-nav::before,
+.image-gallery-right-nav::before {
+  text-shadow: none !important;
+  color: $text-color-highlight !important;
+  font-size: 30px !important;
+}
+
 // HTML Structure
 
 html,
