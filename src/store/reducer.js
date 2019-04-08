@@ -67,10 +67,10 @@ export const initialState = {
     },
     {
       id: 2,
-      name: 'skills.js',
+      name: 'skills.json',
       tabIcon: 'octicon octicon-beaker',
       treeIcon: 'octicon octicon-file',
-      type: 'JavaScript'
+      type: 'JSON'
     },
     {
       id: 3,
