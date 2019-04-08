@@ -1,10 +1,9 @@
 // Constants
-export const EDITOR_RELOAD = 'EDITOR_RELOAD' //TODO: app reducer??
+export const EDITOR_RELOAD = 'EDITOR_RELOAD'
 export const EDITOR_TREE_ELEM_SELECT = 'EDITOR_FILE_TREE_ELEM_SELECT'
 export const EDITOR_TAB_SELECT = 'EDITOR_TAB_SELECT'
 export const EDITOR_TAB_CLOSE = 'EDITOR_TAB_CLOSE'
 export const EDITOR_TAB_CHANGE_POSITION = 'EDITOR_TAB_CHANGE_POSITION'
-// export const EDITOR_FILE_OPEN = 'EDITOR_FILE_OPEN'
 
 // Actions
 export const reloadEditor = () => {
@@ -41,13 +40,6 @@ export const tabChangePosition = (a, b) => {
     b
   }
 }
-
-// export const fileOpen = file => {
-//   return {
-//     type: EDITOR_FILE_OPEN,
-//     file
-//   }
-// }
 
 // Initial State
 export const initialState = {

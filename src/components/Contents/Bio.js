@@ -66,15 +66,21 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">Skateboarder</HtmlLine>
+        <HtmlOpenTag tag="li" />
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">Snowboarder</HtmlLine>
+        <Tabulator />
+        <span className="HtmlLine__content">Skateboarder, Snowboarder,</span>
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">Black Cats Addicted</HtmlLine>
+        <Tabulator />
+        <span className="HtmlLine__content">Black Cats Addicted</span>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <HtmlCloseTag tag="li" />
       </CodeLine>
       <CodeLine>
         <HtmlCloseTag tag="ul" />
