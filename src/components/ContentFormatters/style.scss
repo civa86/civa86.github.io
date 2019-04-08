@@ -34,7 +34,7 @@
   font-size: 16px;
 
   // @include media-breakpoint-down(xs) {
-  //   font-size: 13px;
+  //   font-size: 14px;
   // }
 
   margin: 10px 0;
@@ -57,6 +57,35 @@
     color: $hue-6;
   }
   &__attr-value {
+    color: $hue-4;
+  }
+}
+
+.CssBlock {
+  color: $text-color;
+
+  &__selector {
+    &--id {
+      color: $hue-2;
+    }
+    &--class {
+      color: $hue-6;
+    }
+    &--tag {
+      color: $hue-5;
+    }
+    &--tag-attribute {
+      color: $hue-6;
+    }
+    &--tag-attribute-separator {
+      color: $text-color;
+    }
+  }
+
+  &__rule-value {
+    color: $hue-6;
+  }
+  &__rule-string {
     color: $hue-4;
   }
 }

@@ -37,11 +37,11 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <span className="HtmlLine__content">Full Stack Software Engineer</span>
+        <span className="HtmlLine__content">Senior Software Engineer</span>
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <span className="HtmlLine__content">with {exp} years of professional experience</span>
+        <span className="HtmlLine__content">with {exp} years of experience</span>
       </CodeLine>
       <CodeLine>
         <HtmlCloseTag tag="p" />
@@ -54,7 +54,11 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">JavaScript lover, Functional thinker</HtmlLine>
+        <HtmlLine tag="li">Functional Thinker</HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <HtmlLine tag="li">JavaScript Lover</HtmlLine>
       </CodeLine>
       <CodeLine>
         <Tabulator />
@@ -62,7 +66,11 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">Skateboarder, Snowboarder</HtmlLine>
+        <HtmlLine tag="li">Skateboarder</HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <HtmlLine tag="li">Snowboarder</HtmlLine>
       </CodeLine>
       <CodeLine>
         <Tabulator />

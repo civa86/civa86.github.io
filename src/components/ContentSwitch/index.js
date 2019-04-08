@@ -4,8 +4,8 @@ import Loader from '../Loader'
 import './style.scss'
 
 const Bio = React.lazy(() => import('../Contents/Bio'))
+const Career = React.lazy(() => import('../Contents/Career'))
 const Contacts = React.lazy(() => import('../Contents/Contacts'))
-const Education = React.lazy(() => import('../Contents/Education'))
 const Interests = React.lazy(() => import('../Contents/Interests'))
 const Skills = React.lazy(() => import('../Contents/Skills'))
 
@@ -23,7 +23,7 @@ const ContentSwitch = props => {
       case 1:
         return (
           <Suspense fallback={<Loader />}>
-            <Education />
+            <Career />
           </Suspense>
         )
       case 2:

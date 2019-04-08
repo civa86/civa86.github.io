@@ -25,14 +25,10 @@ export const CodeLine = props => {
 
 // Code Block
 export const CodeBlock = props => {
-  return (
-    <div className="CodeBlock">
-      {props.children}
-      <CodeLine />
-    </div>
-  )
+  return <div className="CodeBlock">{props.children}</div>
 }
 
+// General
 export const Tabulator = () => {
   return <span>&nbsp;&nbsp;</span>
 }
@@ -41,6 +37,7 @@ export const CommentLine = props => {
   return <span className="CommentLine">{props.children}</span>
 }
 
+// HTML
 export const HtmlLine = props => {
   const attributes = props.attributes || []
   return (
@@ -91,6 +88,66 @@ export const HtmlCloseTag = props => {
       <span>{'</'}</span>
       <span className="HtmlLine__tag">{props.tag}</span>
       <span>{'>'}</span>
+    </span>
+  )
+}
+
+// CSS
+export const CssBlockStart = props => {
+  return (
+    <span className="CssBlock">
+      {props.type === 'id' && <span className="CssBlock__selector--id">{`#${props.selector}`}</span>}
+      {props.type === 'class' && <span className="CssBlock__selector--class">{`.${props.selector}`}</span>}
+      {props.type === 'tag' && (
+        <span className="CssBlock__selector--tag">
+          {`${props.selector}`}
+          {props.attribute && (
+            <span className="CssBlock__selector--tag-attribute">
+              {props.attribute}
+              {props.attributeArg && (
+                <span>
+                  <span className="CssBlock__selector--tag-attribute-separator">{'('}</span>
+                  <span>{props.attributeArg}</span>
+                  <span className="CssBlock__selector--tag-attribute-separator">{')'}</span>
+                </span>
+              )}
+            </span>
+          )}
+        </span>
+      )}
+      <span>{' {'}</span>
+    </span>
+  )
+}
+
+export const CssRule = props => {
+  return (
+    <span className="CssBlock">
+      <Tabulator />
+      <span className="CssBlock__rule-key">{props.ruleKey}</span>:&nbsp;
+      {!props.quoted && (
+        <span>
+          <span className="CssBlock__rule-value">{props.ruleValue}</span>;
+        </span>
+      )}
+      {props.quoted && (
+        <span>
+          <span className="CssBlock__rule-string">
+            {"'"}
+            {props.ruleValue}
+            {"'"}
+          </span>
+          ;
+        </span>
+      )}
+    </span>
+  )
+}
+
+export const CssBlockEnd = () => {
+  return (
+    <span className="CssBlock">
+      <span>}</span>
     </span>
   )
 }
