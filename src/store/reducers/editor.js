@@ -59,17 +59,17 @@ export const initialState = {
       children: [
         {
           id: 0,
-          name: 'bio.html',
+          name: 'identity.html',
           tabIcon: 'octicon octicon-person',
           treeIcon: 'octicon octicon-file',
           type: 'HTML'
         },
         {
           id: 1,
-          name: 'education.md',
+          name: 'career.css',
           tabIcon: 'octicon octicon-mortar-board',
-          treeIcon: 'octicon octicon-book',
-          type: 'Markdown'
+          treeIcon: 'octicon octicon-file',
+          type: 'CSS'
         }
       ]
     },
@@ -95,7 +95,7 @@ export const initialState = {
       type: 'JSON'
     }
   ],
-  treeSelectedName: 'bio.html',
+  treeSelectedName: 'identity.html',
   treeSelectedType: 'HTML',
   currentContent: 0,
   tabs: [],
