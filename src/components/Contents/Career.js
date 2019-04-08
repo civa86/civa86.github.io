@@ -10,8 +10,6 @@ const Career = () => {
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="from" ruleValue="09-2005" />
-      </CodeLine>
-      <CodeLine>
         <CssRule ruleKey="to" ruleValue="10-2009" />
       </CodeLine>
       <CodeLine>
@@ -29,8 +27,6 @@ const Career = () => {
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="from" ruleValue="11-2009" />
-      </CodeLine>
-      <CodeLine>
         <CssRule ruleKey="to" ruleValue="08-2012" />
       </CodeLine>
       <CodeLine>
@@ -48,8 +44,6 @@ const Career = () => {
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="from" ruleValue="09-2012" />
-      </CodeLine>
-      <CodeLine>
         <CssRule ruleKey="to" ruleValue="04-2015" />
       </CodeLine>
       <CodeLine>
@@ -67,8 +61,6 @@ const Career = () => {
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="from" ruleValue="04-2015" />
-      </CodeLine>
-      <CodeLine>
         <CssRule ruleKey="to" ruleValue="07-2018" />
       </CodeLine>
       <CodeLine>
@@ -86,8 +78,6 @@ const Career = () => {
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="from" ruleValue="07-2018" />
-      </CodeLine>
-      <CodeLine>
         <CssRule ruleKey="to" ruleValue="present" />
       </CodeLine>
       <CodeLine>

@@ -3,7 +3,7 @@ import Loader from '../Loader'
 // Style
 import './style.scss'
 
-const Bio = React.lazy(() => import('../Contents/Bio'))
+const Intro = React.lazy(() => import('../Contents/Intro'))
 const Career = React.lazy(() => import('../Contents/Career'))
 const Contacts = React.lazy(() => import('../Contents/Contacts'))
 const Interests = React.lazy(() => import('../Contents/Interests'))
@@ -17,7 +17,7 @@ const ContentSwitch = props => {
       case 0:
         return (
           <Suspense fallback={<Loader />}>
-            <Bio />
+            <Intro />
           </Suspense>
         )
       case 1:

@@ -3,27 +3,29 @@ import ImageGallery from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
 
 // images
-import image1 from '../../images/torino.jpg'
-import image2 from '../../images/ny.jpg'
-import image3 from '../../images/japan.jpg'
-import image4 from '../../images/napoleon.jpg'
-import image5 from '../../images/skate.jpg'
-import image6 from '../../images/dh-1.jpg'
-import image7 from '../../images/dh-2.jpg'
-import image8 from '../../images/snowboard.jpg'
+import torino from '../../images/torino.jpg'
+import ny from '../../images/ny.jpg'
+import japan1 from '../../images/japan-1.jpg'
+import japan2 from '../../images/japan-2.jpg'
+import napoleon from '../../images/napoleon.jpg'
+import skateFlip from '../../images/skate-flip.jpg'
+import skateDh from '../../images/skate-dh.jpg'
+import snowRail from '../../images/snow-rail.jpg'
+import snowJump from '../../images/snow-jump.jpg'
 
 const Interests = () => {
   const images = [
-    { original: image1 },
-    { original: image2 },
-    { original: image3 },
-    { original: image4 },
-    { original: image5 },
-    { original: image6 },
-    { original: image7 },
-    { original: image8 }
+    { original: napoleon },
+    { original: torino },
+    { original: japan1 },
+    { original: japan2 },
+    { original: ny },
+    { original: skateFlip },
+    { original: skateDh },
+    { original: snowRail },
+    { original: snowJump }
   ]
-
+  // const maxHeight = document.querySelector('.ContentSwitch').clientHeight - 200
   return (
     <div className="container-fluid h-100">
       <div className="row h-100 justify-content-center align-items-center">

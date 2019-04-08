@@ -51,7 +51,7 @@ export const initialState = {
       children: [
         {
           id: 0,
-          name: 'identity.html',
+          name: 'intro.html',
           tabIcon: 'octicon octicon-person',
           treeIcon: 'octicon octicon-file',
           type: 'HTML'
@@ -87,7 +87,7 @@ export const initialState = {
       type: 'YAML'
     }
   ],
-  treeSelectedName: 'identity.html',
+  treeSelectedName: 'intro.html',
   treeSelectedType: 'HTML',
   currentContent: 0,
   tabs: [],
