@@ -132,14 +132,14 @@
       text-overflow: ellipsis;
 
       .text-value {
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
           display: none;
         }
       }
 
       &.with-close {
         width: 55%;
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
           width: calc(100% - 30px);
         }
       }
@@ -154,7 +154,7 @@
         display: none;
         box-sizing: border-box;
         margin-right: 8px;
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
           margin-right: 0;
           display: inline-block;
         }
@@ -216,7 +216,7 @@
     }
 
     .close {
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(sm) {
         display: none !important;
       }
       display: none;

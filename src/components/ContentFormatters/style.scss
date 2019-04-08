@@ -8,7 +8,7 @@
   line-height: 24px;
 
   &:before {
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       width: 20px;
     }
     @include noSelect();
@@ -41,7 +41,7 @@
   white-space: nowrap;
   font-size: 16px;
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     font-size: 15px;
   }
 

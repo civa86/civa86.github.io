@@ -77,7 +77,7 @@ body {
   font-family: 'Source Code Pro', monospace;
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .Pane1,
   .Resizer {
     display: none !important;
