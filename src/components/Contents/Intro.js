@@ -73,6 +73,10 @@ const Bio = () => {
       </CodeLine>
       <CodeLine>
         <Tabulator />
+        <HtmlLine tag="li">Functional Thinker</HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
         <HtmlLine tag="li">Enthusiastic Father</HtmlLine>
       </CodeLine>
       <CodeLine>
