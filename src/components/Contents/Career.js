@@ -30,7 +30,7 @@ const Career = () => {
         <CssRule ruleKey="to" ruleValue="08-2012" />
       </CodeLine>
       <CodeLine>
-        <CssRule ruleKey="@" ruleValue="Criticalcase srl" quoted />
+        <CssRule ruleKey="@" ruleValue="Criticalcase" quoted />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="role" ruleValue="Web Developer" quoted />
@@ -47,7 +47,7 @@ const Career = () => {
         <CssRule ruleKey="to" ruleValue="04-2015" />
       </CodeLine>
       <CodeLine>
-        <CssRule ruleKey="@" ruleValue="Wedoo srl" quoted />
+        <CssRule ruleKey="@" ruleValue="Wedoo" quoted />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="role" ruleValue="Full Stack Developer" quoted />
@@ -64,7 +64,7 @@ const Career = () => {
         <CssRule ruleKey="to" ruleValue="07-2018" />
       </CodeLine>
       <CodeLine>
-        <CssRule ruleKey="@" ruleValue="Etiqa srl" quoted />
+        <CssRule ruleKey="@" ruleValue="Etiqa" quoted />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="role" ruleValue="Software Engineer" quoted />
@@ -81,7 +81,7 @@ const Career = () => {
         <CssRule ruleKey="to" ruleValue="present" />
       </CodeLine>
       <CodeLine>
-        <CssRule ruleKey="@" ruleValue="Protocube Reply srl" quoted />
+        <CssRule ruleKey="@" ruleValue="Protocube Reply" quoted />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="role" ruleValue="PM, Software Engineer" quoted />

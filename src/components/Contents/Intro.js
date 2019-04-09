@@ -10,7 +10,7 @@ const Bio = () => {
   return (
     <CodeBlock>
       <CodeLine>
-        <HtmlOpenTag tag="p" />
+        <HtmlOpenTag tag="div" attributes={[{ key: 'class', value: 'introduction' }]} />
       </CodeLine>
       <CodeLine>
         <Tabulator />
@@ -21,31 +21,36 @@ const Bio = () => {
         <span className="HtmlLine__content">with {exp} years of experience</span>
       </CodeLine>
       <CodeLine>
-        <HtmlCloseTag tag="p" />
+        <HtmlCloseTag tag="div" />
       </CodeLine>
 
       <CodeLine>
-        <HtmlLine tag="div" attributes={[{ key: 'id', value: 'first-name' }]}>
+        <HtmlLine tag="p" attributes={[{ key: 'id', value: 'first-name' }]}>
           Dario
         </HtmlLine>
       </CodeLine>
       <CodeLine>
-        <HtmlLine tag="div" attributes={[{ key: 'id', value: 'last-name' }]}>
+        <HtmlLine tag="p" attributes={[{ key: 'id', value: 'last-name' }]}>
           Civallero
         </HtmlLine>
       </CodeLine>
       <CodeLine>
-        <HtmlLine tag="div" attributes={[{ key: 'id', value: 'age' }]}>
+        <HtmlLine tag="p" attributes={[{ key: 'id', value: 'age' }]}>
           {age}
         </HtmlLine>
       </CodeLine>
       <CodeLine>
-        <HtmlLine tag="div" attributes={[{ key: 'id', value: 'from' }]}>
+        <HtmlLine tag="p" attributes={[{ key: 'id', value: 'from' }]}>
           Italy
         </HtmlLine>
       </CodeLine>
       <CodeLine>
-        <HtmlOpenTag tag="div" attributes={[{ key: 'id', value: 'speak' }]} />
+        <HtmlLine tag="p" attributes={[{ key: 'id', value: 'hometown' }]}>
+          Turin
+        </HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <HtmlOpenTag tag="p" attributes={[{ key: 'id', value: 'speak' }]} />
       </CodeLine>
       <CodeLine>
         <Tabulator />
@@ -56,7 +61,7 @@ const Bio = () => {
         <span className="HtmlLine__content">French, Spanish</span>
       </CodeLine>
       <CodeLine>
-        <HtmlCloseTag tag="div" />
+        <HtmlCloseTag tag="p" />
       </CodeLine>
 
       <CodeLine>
