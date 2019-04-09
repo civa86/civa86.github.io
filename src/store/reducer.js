@@ -4,6 +4,7 @@ const TREE_ELEM_SELECT = 'TREE_ELEM_SELECT'
 const TAB_SELECT = 'TAB_SELECT'
 const TAB_CLOSE = 'TAB_CLOSE'
 const TAB_CHANGE_POSITION = 'TAB_CHANGE_POSITION'
+const GALLERY_IMAGE_LOADED = 'GALLERY_IMAGE_LOADED'
 
 // Actions
 export const reload = () => {
@@ -38,6 +39,13 @@ export const tabChangePosition = (a, b) => {
     type: TAB_CHANGE_POSITION,
     a,
     b
+  }
+}
+
+export const galleryImageLoaded = imageSource => {
+  return {
+    type: GALLERY_IMAGE_LOADED,
+    imageSource
   }
 }
 
@@ -130,7 +138,8 @@ export const initialState = initializeState({
   currentContent: 0,
   tabs: [],
   tabIcons: [],
-  activeTab: 0
+  activeTab: 0,
+  loadedGalleryImages: []
 })
 
 // Reducer
@@ -201,6 +210,13 @@ export default (state = initialState, action) => {
         ...state,
         activeTab,
         tabs
+      }
+    }
+
+    case GALLERY_IMAGE_LOADED: {
+      return {
+        ...state,
+        loadedGalleryImages: [...state.loadedGalleryImages, action.imageSource]
       }
     }
 
