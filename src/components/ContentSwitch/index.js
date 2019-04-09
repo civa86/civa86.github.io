@@ -54,6 +54,7 @@ const ContentSwitch = props => {
       <div className="row h-100">
         <div className="col-12 h-100">{contentDispatcher()}</div>
       </div>
+      {content !== 3 && <div className="LineLengthLimiter h-100 d-none d-lg-block" />}
     </div>
   )
 }
