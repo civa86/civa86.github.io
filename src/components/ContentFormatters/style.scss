@@ -50,40 +50,39 @@
 }
 
 .CommentLine {
-  color: $hue-7;
+  color: $hue-comment;
 }
 
 .HtmlLine {
   color: $text-color;
   &__tag {
-    color: $hue-5;
+    color: $hue-red;
   }
   &__content {
     color: darken($text-color-highlight, 15%);
   }
   &__attr-key {
-    color: $hue-6;
+    color: $hue-orange;
   }
   &__attr-value {
-    color: $hue-4;
+    color: $hue-green;
   }
 }
 
 .CssBlock {
   color: $text-color;
-
   &__selector {
     &--id {
-      color: $hue-2;
+      color: $hue-blue;
     }
     &--class {
-      color: $hue-6;
+      color: $hue-orange;
     }
     &--tag {
-      color: $hue-5;
+      color: $hue-red;
     }
     &--tag-attribute {
-      color: $hue-6;
+      color: $hue-orange;
     }
     &--tag-attribute-separator {
       color: $text-color;
@@ -91,19 +90,29 @@
   }
 
   &__rule-value {
-    color: $hue-6;
+    color: $hue-orange;
   }
   &__rule-string {
-    color: $hue-4;
+    color: $hue-green;
+  }
+}
+
+.JsonBlock {
+  color: $text-color;
+  &__key {
+    color: $hue-red;
+  }
+  &__value {
+    color: $hue-green;
   }
 }
 
 .YamlLine {
   color: $text-color;
   &__yaml-key {
-    color: $hue-5;
+    color: $hue-red;
   }
   &__yaml-value {
-    color: $hue-4;
+    color: $hue-green;
   }
 }

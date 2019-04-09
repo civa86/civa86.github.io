@@ -146,7 +146,52 @@ export const CssRule = props => {
 export const CssBlockEnd = () => {
   return (
     <span className="CssBlock">
-      <span>}</span>
+      <span>{'}'}</span>
+    </span>
+  )
+}
+
+// JSON
+
+export const JsonBlockStart = () => {
+  return (
+    <span className="JsonBlock">
+      <span>{'{'}</span>
+    </span>
+  )
+}
+
+export const JsonKey = props => {
+  return (
+    <span className="JsonBlock">
+      <span className="JsonBlock__key">
+        {'"'}
+        {props.jsonKey}
+        {'"'}
+      </span>
+      : {props.isArray ? '[' : '{'}
+    </span>
+  )
+}
+
+export const JsonValues = props => {
+  return (
+    <span className="JsonBlock">
+      {props.jsonValues.map((x, i) => (
+        <span key={`jsonVal-${i}`}>
+          <span className="JsonBlock__value">{`"${x}"`}</span>
+          {i < props.jsonValues.length - 1 && ', '}
+        </span>
+      ))}
+      {props.trailingComma && ','}
+    </span>
+  )
+}
+
+export const JsonBlockEnd = () => {
+  return (
+    <span className="JsonBlock">
+      <span>{'}'}</span>
     </span>
   )
 }
