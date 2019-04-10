@@ -78,14 +78,16 @@
     &--class {
       color: $hue-orange;
     }
-    &--tag {
-      color: $hue-red;
+  }
+  &__attribute {
+    &--wrapper {
+      color: $hue-purple;
     }
-    &--tag-attribute {
+    &--key {
       color: $hue-orange;
     }
-    &--tag-attribute-separator {
-      color: $text-color;
+    &--value {
+      color: $hue-green;
     }
   }
 

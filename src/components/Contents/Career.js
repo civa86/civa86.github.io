@@ -6,11 +6,7 @@ const Career = () => {
   return (
     <CodeBlock>
       <CodeLine>
-        <CssBlockStart selector="education" type="id" />
-      </CodeLine>
-      <CodeLine>
-        <CssRule ruleKey="from" ruleValue="09-2005" />
-        <CssRule ruleKey="to" ruleValue="10-2009" />
+        <CssBlockStart attributes={[{ key: 'from', value: '09-2005' }, { key: 'to', value: '10-2009' }]} />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="school" ruleValue="University of Turin" quoted />
@@ -23,11 +19,7 @@ const Career = () => {
       </CodeLine>
 
       <CodeLine>
-        <CssBlockStart selector="experience" attribute=":nth-child" attributeArg="1" type="tag" />
-      </CodeLine>
-      <CodeLine>
-        <CssRule ruleKey="from" ruleValue="11-2009" />
-        <CssRule ruleKey="to" ruleValue="08-2012" />
+        <CssBlockStart attributes={[{ key: 'from', value: '11-2009' }, { key: 'to', value: '08-2012' }]} />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="@" ruleValue="Criticalcase" quoted />
@@ -40,11 +32,7 @@ const Career = () => {
       </CodeLine>
 
       <CodeLine>
-        <CssBlockStart selector="experience" attribute=":nth-child" attributeArg="2" type="tag" />
-      </CodeLine>
-      <CodeLine>
-        <CssRule ruleKey="from" ruleValue="09-2012" />
-        <CssRule ruleKey="to" ruleValue="04-2015" />
+        <CssBlockStart attributes={[{ key: 'from', value: '09-2012' }, { key: 'to', value: '04-2015' }]} />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="@" ruleValue="Wedoo" quoted />
@@ -57,11 +45,7 @@ const Career = () => {
       </CodeLine>
 
       <CodeLine>
-        <CssBlockStart selector="experience" attribute=":nth-child" attributeArg="3" type="tag" />
-      </CodeLine>
-      <CodeLine>
-        <CssRule ruleKey="from" ruleValue="04-2015" />
-        <CssRule ruleKey="to" ruleValue="07-2018" />
+        <CssBlockStart attributes={[{ key: 'from', value: '04-2015' }, { key: 'to', value: '07-2018' }]} />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="@" ruleValue="Etiqa" quoted />
@@ -74,11 +58,7 @@ const Career = () => {
       </CodeLine>
 
       <CodeLine>
-        <CssBlockStart selector="experience" attribute=":nth-child" attributeArg="4" type="tag" />
-      </CodeLine>
-      <CodeLine>
-        <CssRule ruleKey="from" ruleValue="07-2018" />
-        <CssRule ruleKey="to" ruleValue="present" />
+        <CssBlockStart attributes={[{ key: 'from', value: '07-2018' }, { key: 'to', value: 'present' }]} />
       </CodeLine>
       <CodeLine>
         <CssRule ruleKey="@" ruleValue="Protocube Reply" quoted />

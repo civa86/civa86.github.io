@@ -93,27 +93,18 @@ export const HtmlCloseTag = props => {
 
 // CSS
 export const CssBlockStart = props => {
+  const attributes = props.attributes || []
   return (
     <span className="CssBlock">
-      {props.type === 'id' && <span className="CssBlock__selector--id">{`#${props.selector}`}</span>}
-      {props.type === 'class' && <span className="CssBlock__selector--class">{`.${props.selector}`}</span>}
-      {props.type === 'tag' && (
-        <span className="CssBlock__selector--tag">
-          {`${props.selector}`}
-          {props.attribute && (
-            <span className="CssBlock__selector--tag-attribute">
-              {props.attribute}
-              {props.attributeArg && (
-                <span>
-                  <span className="CssBlock__selector--tag-attribute-separator">{'('}</span>
-                  <span>{props.attributeArg}</span>
-                  <span className="CssBlock__selector--tag-attribute-separator">{')'}</span>
-                </span>
-              )}
-            </span>
-          )}
+      {attributes.map((a, i) => (
+        <span key={`attr-${i}`}>
+          <span className="CssBlock__attribute--wrapper">{'['}</span>
+          <span className="CssBlock__attribute--key">{a.key}</span>
+          <span>{'='}</span>
+          <span className="CssBlock__attribute--value">{`"${a.value}"`}</span>
+          <span className="CssBlock__attribute--wrapper">{']'}</span>
         </span>
-      )}
+      ))}
       <span>{' {'}</span>
     </span>
   )
