@@ -1,6 +1,7 @@
 import React from 'react'
-import Tabs, { Tab } from './Tabs'
+import Tabs, { Tab } from 'react-awesome-tabs'
 // Style
+import './tabs.scss'
 import './style.scss'
 
 const TabNavigator = props => {

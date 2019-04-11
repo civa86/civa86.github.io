@@ -52,7 +52,6 @@ class Interests extends Component {
                 showThumbnails={false}
                 showFullscreenButton={false}
                 showPlayButton={false}
-                showNav={!('ontouchstart' in window)}
                 onImageLoad={event => this.onImageLoad(event)}
               />
             </div>

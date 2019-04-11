@@ -1,5 +1,5 @@
-@import '../../../scss/colors';
-@import '../../../scss/functions';
+@import '../../scss/colors';
+@import '../../scss/functions';
 
 .r-a-t {
   position: relative;
@@ -48,7 +48,7 @@
   .tab-wrapper {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -1%;
     width: 100%;
     height: 35px;
 
@@ -72,7 +72,8 @@
       &.active {
         z-index: 999 !important;
 
-        .text {
+        .text,
+        .icon {
           color: $text-color-highlight;
         }
 
@@ -130,11 +131,8 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-
-      .text-value {
-        @include media-breakpoint-down(sm) {
-          display: none;
-        }
+      @include media-breakpoint-down(sm) {
+        color: transparent;
       }
 
       &.with-close {
@@ -150,11 +148,13 @@
       }
 
       .icon {
+        color: $line-number;
         position: relative;
         display: none;
         box-sizing: border-box;
         margin-right: 8px;
         @include media-breakpoint-down(sm) {
+          width: 100%;
           margin-right: 0;
           display: inline-block;
         }
@@ -264,20 +264,7 @@
   }
 
   .tooltip {
-    display: none;
-    position: absolute;
-    left: 100px;
-    top: 40px;
-    z-index: 999;
-    padding: 5px 15px;
-    white-space: nowrap;
-    background-color: #fff;
-    color: #333;
-    font-size: 12px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    box-shadow: 1px 1px 2px rgba(206, 206, 206, 0.8);
-    opacity: 0.95;
+    display: none !important;
   }
 }
 
