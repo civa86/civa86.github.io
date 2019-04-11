@@ -1,8 +1,6 @@
-- check editor font-size in xs..(CodeBlock style)
 - check for tabs plugin and remove custom code??
     - CURRENT COPY OF: https://github.com/gao-sun/react-awesome-tabs
     - https://github.com/ZaninAndrea/react-draggable-tabs
 
-- debug with mobile
-- loader on gallery...
-- clean project from TODO file, TODO:
+
+- clean project from TODO file
