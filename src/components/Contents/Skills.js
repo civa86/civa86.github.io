@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CodeBlock, CodeLine, Tabulator, JsonBlockStart, JsonKey, JsonValues, JsonBlockEnd } from '../ContentFormatters'
 
-const Skills = () => {
+export default function Skills() {
   return (
     <CodeBlock>
       <CodeLine>
@@ -162,5 +162,3 @@ const Skills = () => {
     </CodeBlock>
   )
 }
-
-export default Skills

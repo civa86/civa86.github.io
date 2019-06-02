@@ -3,7 +3,7 @@ import moment from 'moment'
 
 import { CodeBlock, CodeLine, Tabulator, HtmlLine, HtmlOpenTag, HtmlCloseTag } from '../ContentFormatters'
 
-const Bio = () => {
+export default function Intro() {
   const age = moment().diff(moment('1986-08-17 15:00:00'), 'years')
   const exp = moment().diff(moment('2009-11-02 09:00:00'), 'years')
 
@@ -95,5 +95,3 @@ const Bio = () => {
     </CodeBlock>
   )
 }
-
-export default Bio

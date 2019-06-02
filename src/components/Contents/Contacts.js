@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CodeBlock, CodeLine, Tabulator, YamlLine, YamlArrayValue } from '../ContentFormatters'
 
-const Contacts = () => {
+export default function Contacts() {
   return (
     <CodeBlock>
       <CodeLine>
@@ -46,5 +46,3 @@ const Contacts = () => {
     </CodeBlock>
   )
 }
-
-export default Contacts

@@ -11,25 +11,29 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.3.1",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
     "moment": "2.24.0",
     "node-sass": "4.12.0",
     "octicons": "4.3.0",
+    "prettier": "1.17.1",
     "react": "16.8.6",
     "react-awesome-tabs": "0.1.0",
     "react-dom": "16.8.6",
     "react-image-gallery": "0.8.17",
-    "react-redux": "7.0.3",
     "react-scripts": "3.0.1",
-    "react-split-pane": "0.1.87",
-    "redux": "4.0.1",
-    "source-map-explorer": "1.8.0"
+    "react-split-pane": "0.1.87"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +43,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }

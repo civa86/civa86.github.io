@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CodeBlock, CodeLine, CssBlockStart, CssRule, CssBlockEnd } from '../ContentFormatters'
 
-const Career = () => {
+export default function Career() {
   return (
     <CodeBlock>
       <CodeLine>
@@ -72,5 +72,3 @@ const Career = () => {
     </CodeBlock>
   )
 }
-
-export default Career

@@ -1,10 +1,11 @@
 import React from 'react'
 import Tabs, { Tab } from 'react-awesome-tabs'
+
 // Style
 import './tabs.scss'
 import './style.scss'
 
-const TabNavigator = props => {
+export default function TabNavigator(props) {
   const { tabs, tabIcons, activeTab, onTabSwitch, onTabClose, onTabPositionChange } = props
 
   return (
@@ -22,5 +23,3 @@ const TabNavigator = props => {
     </div>
   )
 }
-
-export default TabNavigator
