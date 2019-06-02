@@ -1,68 +1,53 @@
-import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React, { useReducer } from 'react'
 import SplitPane from 'react-split-pane'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import TabNavigator from './components/TabNavigator'
 import ContentSwitch from './components/ContentSwitch'
 import Reload from './components/Reload'
-import { reload, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/reducer'
-
+import { reload, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/actions'
+import reducer from './store/reducer'
+import initialState from './store/state'
 // Style
 import './App.scss'
 
-class App extends Component {
-  globalHandler() {
+export default function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const globalHandler = () => {
     // Reset all CodeLine selected
     Array.from(document.querySelectorAll('.CodeLine--selected')).forEach(node => {
       node.classList.remove('CodeLine--selected')
     })
   }
 
-  render() {
-    const { appState, reload, treeElementSelect, tabSelect, tabClose, tabChangePosition } = this.props
+  return (
+    <div className="App" onClick={() => globalHandler()}>
+      <div className="App__Panels">
+        <SplitPane split="vertical" minSize={250} defaultSize={250}>
+          <Sidebar
+            tree={state.tree}
+            selectedElement={state.treeSelectedName}
+            onSelectElem={elem => dispatch(treeElementSelect(elem))}
+          />
 
-    return (
-      <div className="App" onClick={() => this.globalHandler()}>
-        <div className="App__Panels">
-          <SplitPane split="vertical" minSize={250} defaultSize={250}>
-            <Sidebar
-              tree={appState.tree}
-              selectedElement={appState.treeSelectedName}
-              onSelectElem={elem => treeElementSelect(elem)}
-            />
-
-            {appState.tabs && appState.tabs.length > 0 && (
-              <div className="h-100">
-                <TabNavigator
-                  tabs={appState.tabs}
-                  tabIcons={appState.tabIcons}
-                  activeTab={appState.activeTab}
-                  onTabSwitch={tab => tabSelect(tab)}
-                  onTabClose={tab => tabClose(tab)}
-                  onTabPositionChange={(a, b) => tabChangePosition(a, b)}
-                />
-                <ContentSwitch content={appState.currentContent} />
-              </div>
-            )}
-            {appState.tabs && appState.tabs.length === 0 && <Reload onReload={() => reload()} />}
-          </SplitPane>
-        </div>
-        <Footer currentFile={appState.treeSelectedName} currentType={appState.treeSelectedType} />
+          {state.tabs && state.tabs.length > 0 && (
+            <div className="h-100">
+              <TabNavigator
+                tabs={state.tabs}
+                tabIcons={state.tabIcons}
+                activeTab={state.activeTab}
+                onTabSwitch={tab => dispatch(tabSelect(tab))}
+                onTabClose={tab => dispatch(tabClose(tab))}
+                onTabPositionChange={(a, b) => dispatch(tabChangePosition(a, b))}
+              />
+              <ContentSwitch content={state.currentContent} />
+            </div>
+          )}
+          {state.tabs && state.tabs.length === 0 && <Reload onReload={() => dispatch(reload())} />}
+        </SplitPane>
       </div>
-    )
-  }
+      <Footer currentFile={state.treeSelectedName} currentType={state.treeSelectedType} />
+    </div>
+  )
 }
-
-const mapStateToProps = state => ({
-  appState: state
-})
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ reload, treeElementSelect, tabSelect, tabClose, tabChangePosition }, dispatch)
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
