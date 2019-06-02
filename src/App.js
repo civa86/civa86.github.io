@@ -12,15 +12,14 @@ import initialState from './store/state'
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const globalHandler = () => {
-    // Reset all CodeLine selected
+  const resetLineSelection = () => {
     Array.from(document.querySelectorAll('.CodeLine--selected')).forEach(node => {
       node.classList.remove('CodeLine--selected')
     })
   }
 
   return (
-    <div className="App" onClick={() => globalHandler()}>
+    <div className="App" onClick={() => resetLineSelection()}>
       <div className="App__Panels">
         <SplitPane split="vertical" minSize={250} defaultSize={250}>
           <Sidebar
