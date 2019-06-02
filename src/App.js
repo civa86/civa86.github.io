@@ -8,8 +8,6 @@ import Reload from './components/Reload'
 import { reload, treeElementSelect, tabSelect, tabClose, tabChangePosition } from './store/actions'
 import reducer from './store/reducer'
 import initialState from './store/state'
-// Style
-import './App.scss'
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState)

@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import Loader from '../Loader'
+
 // Style
 import './style.scss'
 

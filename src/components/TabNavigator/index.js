@@ -1,5 +1,6 @@
 import React from 'react'
 import Tabs, { Tab } from 'react-awesome-tabs'
+
 // Style
 import './tabs.scss'
 import './style.scss'

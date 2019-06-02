@@ -2,6 +2,7 @@
 @import 'reset';
 @import 'colors';
 @import 'functions';
+@import 'measures';
 
 // Helpers
 
@@ -73,5 +74,16 @@ body {
   .Pane1,
   .Resizer {
     display: none !important;
+  }
+}
+
+// App
+.App {
+  &__Panels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: $footer-h;
   }
 }
