@@ -11,9 +11,12 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.3.1",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
     "moment": "2.24.0",
     "node-sass": "4.12.0",
     "octicons": "4.3.0",
+    "prettier": "1.17.1",
     "react": "16.8.6",
     "react-awesome-tabs": "0.1.0",
     "react-dom": "16.8.6",
@@ -26,6 +29,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -34,5 +43,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
