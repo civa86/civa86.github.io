@@ -2,7 +2,7 @@ import React from 'react'
 // Style
 import './style.scss'
 
-const Reload = props => {
+export default function Reload(props) {
   const { onReload } = props
 
   return (
@@ -15,5 +15,3 @@ const Reload = props => {
     </div>
   )
 }
-
-export default Reload

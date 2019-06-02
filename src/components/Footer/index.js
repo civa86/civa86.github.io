@@ -2,7 +2,7 @@ import React from 'react'
 // Style
 import './style.scss'
 
-const Footer = props => {
+export default function Footer(props) {
   const { currentFile, currentType } = props
 
   return (
@@ -22,5 +22,3 @@ const Footer = props => {
     </div>
   )
 }
-
-export default Footer

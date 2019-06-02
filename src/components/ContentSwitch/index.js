@@ -9,7 +9,7 @@ const Contacts = React.lazy(() => import('../Contents/Contacts'))
 const Interests = React.lazy(() => import('../Contents/Interests'))
 const Skills = React.lazy(() => import('../Contents/Skills'))
 
-const ContentSwitch = props => {
+export default function ContentSwitch(props) {
   const { content } = props
 
   const contentDispatcher = () => {
@@ -58,5 +58,3 @@ const ContentSwitch = props => {
     </div>
   )
 }
-
-export default ContentSwitch

@@ -2,7 +2,7 @@ import React from 'react'
 // Style
 import './style.scss'
 
-const Sidebar = props => {
+export default function Sidebar(props) {
   const { tree, selectedElement } = props
 
   const renderFile = f => {
@@ -74,5 +74,3 @@ const Sidebar = props => {
     </div>
   )
 }
-
-export default Sidebar
