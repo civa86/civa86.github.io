@@ -7,7 +7,7 @@ echo "/***** APPLICATION DISTRIBUTION ****/"
 npm run build || { echo 'APPLICATION DISTRIBUTION: failed'; exit 1; }
 
 echo "/***** ENTER APPLICATION DIST DIRECTORY ****/"
-cd dist
+cd build
 
 echo "/***** VERSION ****/"
 echo "VERSION $PACKAGE_VERSION" > ./version.txt
