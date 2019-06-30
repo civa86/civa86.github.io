@@ -212,9 +212,12 @@ export const YamlArrayValue = props => {
       <Tabulator />
       {'- '}
       <span className="YamlLine__yaml-value">
-        <a target="_blank" rel="noopener noreferrer" href={`${props.yamlLink}`}>
-          {props.yamlValue}
-        </a>
+        {props.mailLink && <a href={`mailto:${props.yamlLink}`}>{props.yamlValue}</a>}
+        {!props.mailLink && (
+          <a target="_blank" rel="noopener noreferrer" href={`${props.yamlLink}`}>
+            {props.yamlValue}
+          </a>
+        )}
       </span>
     </span>
   )

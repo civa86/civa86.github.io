@@ -6,13 +6,11 @@ export default function Contacts() {
   return (
     <CodeBlock>
       <CodeLine>
-        <YamlLine yamlKey="contacts" />
+        <YamlLine yamlKey="email" />
       </CodeLine>
       <CodeLine>
-        <Tabulator />
-        <YamlLine yamlKey="email" yamlValue="dario.civallero@gmail.com" mailLink />
+        <YamlArrayValue yamlValue="dario.civallero@gmail.com" yamlLink="dario.civallero@gmail.com" mailLink />
       </CodeLine>
-
       <CodeLine />
       <CodeLine>
         <YamlLine yamlKey="open-source" />

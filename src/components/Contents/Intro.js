@@ -73,17 +73,19 @@ export default function Intro() {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">Lambda Anarchist</HtmlLine>
+        <HtmlLine tag="li">Functional Anarchist</HtmlLine>
       </CodeLine>
-      {/* <CodeLine>
-        <Tabulator />
-        <HtmlLine tag="li">Enthusiastic Father</HtmlLine>
-      </CodeLine> */}
       <CodeLine>
         <Tabulator />
-        <HtmlLine tag="li">
-          Skateboarder<span className="CommentLine">{'/'}</span>Snowboarder
-        </HtmlLine>
+        <HtmlLine tag="li">Enthusiastic Dad</HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <HtmlLine tag="li">Skateboarder</HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <HtmlLine tag="li">Snowboarder</HtmlLine>
       </CodeLine>
       <CodeLine>
         <Tabulator />
