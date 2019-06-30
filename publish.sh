@@ -4,7 +4,7 @@ GH_REF="`node -p -e "require('./package.json').repository.url.replace('https://'
 PACKAGE_VERSION=`node -p -e "require('./package.json').version"`
 
 echo "/***** APPLICATION DISTRIBUTION ****/"
-npm run dist || { echo 'APPLICATION DISTRIBUTION: failed'; exit 1; }
+npm run build || { echo 'APPLICATION DISTRIBUTION: failed'; exit 1; }
 
 echo "/***** ENTER APPLICATION DIST DIRECTORY ****/"
 cd dist
