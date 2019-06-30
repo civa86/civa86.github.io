@@ -120,7 +120,7 @@ then
     echo "RELEASE END"
     separator
 
-    notification "Release v$RELEASE_NUM Released"
+    notification "civa86.github.io v$RELEASE_NUM Released"
 else
     echo "Reverting Package Version: $START_V"
 
