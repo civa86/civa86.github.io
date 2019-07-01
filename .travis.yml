@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 8
+  - 10.15
 cache:
   directories:
     - node_modules
@@ -17,6 +17,9 @@ deploy:
   github_token: '$GITHUB_TOKEN'
   local_dir: build
   target_branch: master
+  on:
+    all_branches: true
+    condition: ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH} =~ ^release\/.*$
 env:
   global:
     secure: CohGFLKBSbhiICDhOrkiZ8xBYgfZbcmSj47o+5Tys6/QsqafWW4SERMFFV7K/Cbu0nEzypsOSrc+JdQwmHlU5UTSyKNFg/LufQ3fZV6QHEcaLPwsCNb3EfOBAUudJrawpumPncpGB/2c9oH5VIb9Eq7K5A4aLSuPRCN/jGO3qK2h/mLLJik2NR1XbZpjMxhZIfZVd4D8+XwQINqVEjaesU5FNZJIRk3gb3IHtA3uyKdUonsykFBI0gbs3qjN+fZRRqsBcHv5gTdNQlAyFumctmDwdPd1PYw5G3Ii29DQS1/7tB4zTp5a1gifSJ7CNr5Qqfo7e8QpDgk5oPtu/svGUQVY3d1/a2msGgq7GQvwr7H5uiPTl84mwGqOQ6fsuteT1ct/YPGuemyuI6lKfFapVGBWKvumQMixZrusG1QhH4RFVPcREyzZQD/gvzFAFBee0Z9zgYeX6K1g4r+QBFHKNojDRXS5I9sDgXhhLQ/fcyfq9GwZ4If4TpSOFRUM65ME573komszzxttFOWLE/Xxxj35xH6hP/uk+ZzZ/aK5ggfJWBk35bOkAuA9kCMArv77GpjiSnvnMShC7G+suWNUUtMQag9bZ5TFQielLKfyk+YhAe6nMo3Nwm/sELL8kGS9soKGwWtny461Xu2lPqmpAj1ow/eHESF8mWddzxBkUcQ=
