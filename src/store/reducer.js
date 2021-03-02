@@ -2,7 +2,7 @@ import { RELOAD, TREE_ELEM_SELECT, TAB_SELECT, TAB_CLOSE, TAB_CHANGE_POSITION } 
 import { toggleCollapse, flattenFiles } from './utils'
 import initialState from './state'
 
-export default (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case RELOAD: {
       return { ...initialState }
@@ -76,3 +76,5 @@ export default (state, action) => {
       return state
   }
 }
+
+export default reducer
