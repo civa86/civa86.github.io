@@ -27,7 +27,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "code-style": "prettier --write ."
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
