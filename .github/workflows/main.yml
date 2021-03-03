@@ -84,3 +84,13 @@ jobs:
           git add package.json
           git commit -m "release version ${{ steps.get_version.outputs.version }}"
           git push origin development
+
+      - name: audit production url
+        uses: jakejarvis/lighthouse-action@master
+        with:
+          url: 'https://civa86.github.io/'
+      - name: Upload results as an artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: report
+          path: './report'
