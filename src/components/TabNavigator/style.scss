@@ -1,0 +1,12 @@
+@import '../../scss/measures';
+@import '../../scss/colors';
+
+.TabNavigator {
+  height: $tab-bar-h;
+  background: $base-background-color;
+  border-bottom: 1px solid $base-border-color;
+
+  &--empty {
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,6 @@
+export const RELOAD = 'RELOAD'
+export const TREE_ELEM_SELECT = 'TREE_ELEM_SELECT'
+export const TAB_SELECT = 'TAB_SELECT'
+export const TAB_CLOSE = 'TAB_CLOSE'
+export const TAB_CHANGE_POSITION = 'TAB_CHANGE_POSITION'
+export const GALLERY_IMAGE_LOADED = 'GALLERY_IMAGE_LOADED'

@@ -1,0 +1,13 @@
+@import '../../scss/colors';
+
+.Reload {
+  color: $line-number;
+  i {
+    font-size: 200px;
+    letter-spacing: -45px;
+    display: inline-block;
+    padding: 50px 75px;
+    border-radius: 10px;
+    border: 1px dashed $line-number;
+  }
+}

@@ -1,0 +1,119 @@
+@import '../../scss/measures';
+@import '../../scss/colors';
+@import '../../scss/functions';
+
+.CodeLine {
+  cursor: text;
+  display: block;
+  line-height: 24px;
+
+  &:before {
+    @include media-breakpoint-down(sm) {
+      width: 20px;
+    }
+    @include noSelect();
+    width: 33px;
+    text-align: right;
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    color: $line-number;
+    padding-right: 15px;
+  }
+
+  &--selected {
+    background: $line-highlight;
+    &:before {
+      color: $line-number-highlight;
+    }
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.CodeBlock {
+  white-space: nowrap;
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  counter-reset: line;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
+}
+
+.CommentLine {
+  color: $hue-comment;
+}
+
+.HtmlLine {
+  color: $text-color;
+  &__tag {
+    color: $hue-red;
+  }
+  &__content {
+    color: darken($text-color-highlight, 15%);
+  }
+  &__attr-key {
+    color: $hue-orange;
+  }
+  &__attr-value {
+    color: $hue-green;
+  }
+}
+
+.CssBlock {
+  color: $text-color;
+  &__selector {
+    &--id {
+      color: $hue-blue;
+    }
+    &--class {
+      color: $hue-orange;
+    }
+  }
+  &__attribute {
+    &--wrapper {
+      color: $hue-purple;
+    }
+    &--key {
+      color: $hue-orange;
+    }
+    &--value {
+      color: $hue-green;
+    }
+  }
+
+  &__rule-value {
+    color: $hue-orange;
+  }
+  &__rule-string {
+    color: $hue-green;
+  }
+}
+
+.JsonBlock {
+  color: $text-color;
+  &__key {
+    color: $hue-red;
+  }
+  &__value {
+    color: $hue-green;
+  }
+}
+
+.YamlLine {
+  color: $text-color;
+  &__yaml-key {
+    color: $hue-red;
+  }
+  &__yaml-value {
+    color: $hue-green;
+  }
+}
