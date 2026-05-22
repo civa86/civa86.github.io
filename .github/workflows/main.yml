@@ -69,22 +69,6 @@ jobs:
           publish_dir: ./build
           publish_branch: master
 
-      - name: update package.json
-        shell: bash
-        run: yarn version --new-version ${{ steps.get_version.outputs.version }} --no-git-tag-version
-
-      - name: push development
-        shell: bash
-        run: |
-          git config user.email "dario.civallero@gmail.com"
-          git config user.name "Dario Civallero"
-          git fetch --prune --unshallow
-          git checkout development
-          git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git add package.json
-          git commit -m "release version ${{ steps.get_version.outputs.version }}"
-          git push origin development
-
       - name: audit production url
         uses: jakejarvis/lighthouse-action@master
         with:
