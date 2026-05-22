@@ -4,22 +4,24 @@ import Loader from '../Loader'
 // Style
 import 'react-image-gallery/styles/css/image-gallery.css'
 // Images
-import torino from '../../images/torino.jpg'
-import ny from '../../images/ny.jpg'
-import japan1 from '../../images/japan-1.jpg'
-import japan2 from '../../images/japan-2.jpg'
+import family from '../../images/family.jpg'
 import napoleon from '../../images/napoleon.jpg'
+import japan1 from '../../images/japan-1.jpg'
+import ny from '../../images/ny.jpg'
+import mtb1 from '../../images/mtb1.jpg'
+import mtb2 from '../../images/mtb2.jpg'
 import skatePark from '../../images/skate-park.jpg'
 import skateDh from '../../images/skate-dh.jpg'
 import snowRail from '../../images/snow-rail.jpg'
 import snowJump from '../../images/snow-jump.jpg'
 
 const galleryImages = [
-  { original: torino },
-  { original: japan1 },
-  { original: japan2 },
-  { original: ny },
+  { original: family },
   { original: napoleon },
+  { original: japan1 },
+  { original: ny },
+  { original: mtb1 },
+  { original: mtb2 },
   { original: skatePark },
   { original: skateDh },
   { original: snowRail },
