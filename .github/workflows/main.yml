@@ -68,13 +68,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           publish_branch: master
-
-      - name: audit production url
-        uses: jakejarvis/lighthouse-action@master
-        with:
-          url: 'https://civa86.github.io/'
-      - name: Upload results as an artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: report
-          path: './report'
