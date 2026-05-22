@@ -11,116 +11,54 @@ export default function Skills() {
 
       <CodeLine>
         <Tabulator />
-        <JsonKey jsonKey="frontend" />
+        <JsonKey jsonKey="languages" isArray />
       </CodeLine>
       <CodeLine>
         <Tabulator />
         <Tabulator />
-        <JsonKey jsonKey="javascript" isArray />
+        <JsonValues jsonValues={['TypeScript', 'JavaScript']} trailingComma />
       </CodeLine>
       <CodeLine>
         <Tabulator />
         <Tabulator />
-        <Tabulator />
-        <JsonValues jsonValues={['React', 'Vue', 'Jest']} trailingComma />
+        <JsonValues jsonValues={['Bash', 'Python', 'Java']} />
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <Tabulator />
-        <Tabulator />
-        <JsonValues jsonValues={['AngularJS', 'Ember', 'jQuery']} trailingComma />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <Tabulator />
-        <JsonValues jsonValues={['Babel', 'Webpack', 'Rollup']} />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <JsonKey jsonKey="css" isArray />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <Tabulator />
-        <JsonValues jsonValues={['Bootstrap', 'Sass', 'Less']} />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <span className="JsonBlock">{']'}</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <span className="JsonBlock">{'},'}</span>
-      </CodeLine>
-
-      <CodeLine>
-        <Tabulator />
-        <JsonKey jsonKey="backend" />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <JsonKey jsonKey="node.js" isArray />
-        <JsonValues jsonValues={['Express']} />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <JsonKey jsonKey="java" isArray />
-        <JsonValues jsonValues={['Spring Boot', 'Maven']} />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <JsonKey jsonKey="clojure" isArray />
-        <JsonValues jsonValues={['Luminus']} />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <JsonKey jsonKey="php" isArray />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <Tabulator />
-        <JsonValues jsonValues={['Zend', 'Symfony', 'Composer']} />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <Tabulator />
-        <JsonKey jsonKey="C#" isArray />
-        <JsonValues jsonValues={['.NET Core', 'NuGet']} />
         <span className="JsonBlock">{']'}</span>
       </CodeLine>
 
       <CodeLine>
         <Tabulator />
-        <span className="JsonBlock">{'},'}</span>
+        <JsonKey jsonKey="frameworks" isArray />
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <Tabulator />
+        <JsonValues jsonValues={['VueJS', 'React']} trailingComma />
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <Tabulator />
+        <JsonValues jsonValues={['Flask', 'Spring Boot']} />
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <span className="JsonBlock">{']'}</span>
       </CodeLine>
 
       <CodeLine>
         <Tabulator />
-        <JsonKey jsonKey="database" isArray />
-        <JsonValues jsonValues={['MySql', 'MongoDB']} />
-        <span className="JsonBlock">{'],'}</span>
+        <JsonKey jsonKey="databases" isArray />
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <Tabulator />
+        <JsonValues jsonValues={['MongoDB', 'MySQL', 'DynamoDB']} />
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <span className="JsonBlock">{']'}</span>
       </CodeLine>
 
       <CodeLine>
@@ -130,29 +68,10 @@ export default function Skills() {
       <CodeLine>
         <Tabulator />
         <Tabulator />
-        <JsonValues jsonValues={['Docker', 'Kubernetes']} trailingComma />
+        <JsonValues jsonValues={['AWS', 'Terraform', 'Docker']} />
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <Tabulator />
-        <JsonValues jsonValues={['RabbitMQ', 'Vagrant']} />
-      </CodeLine>
-      <CodeLine>
-        <Tabulator />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-
-      <CodeLine>
-        <Tabulator />
-        <JsonKey jsonKey="cloud" isArray />
-        <JsonValues jsonValues={['AWS', 'Firebase']} />
-        <span className="JsonBlock">{'],'}</span>
-      </CodeLine>
-
-      <CodeLine>
-        <Tabulator />
-        <JsonKey jsonKey="misc" isArray />
-        <JsonValues jsonValues={['Bash', 'VSCode', 'Git']} />
         <span className="JsonBlock">{']'}</span>
       </CodeLine>
 
