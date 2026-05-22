@@ -14,7 +14,7 @@ export default function Intro() {
       </CodeLine>
       <CodeLine>
         <Tabulator />
-        <span className="HtmlLine__content">Senior Software Architect</span>
+        <span className="HtmlLine__content">Tech Lead and Software Architect</span>
       </CodeLine>
       <CodeLine>
         <Tabulator />
@@ -78,6 +78,10 @@ export default function Intro() {
       <CodeLine>
         <Tabulator />
         <HtmlLine tag="li">Enthusiastic Dad</HtmlLine>
+      </CodeLine>
+      <CodeLine>
+        <Tabulator />
+        <HtmlLine tag="li">MTB Rider</HtmlLine>
       </CodeLine>
       <CodeLine>
         <Tabulator />
