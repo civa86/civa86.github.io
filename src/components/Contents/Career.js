@@ -81,7 +81,7 @@ export default function Career() {
         <CssBlockStart
           attributes={[
             { key: 'from', value: '07-2018' },
-            { key: 'to', value: 'present' }
+            { key: 'to', value: '10-2023' }
           ]}
         />
       </CodeLine>
@@ -94,6 +94,25 @@ export default function Career() {
       <CodeLine>
         <CssBlockEnd />
       </CodeLine>
+
+      <CodeLine>
+        <CssBlockStart
+          attributes={[
+            { key: 'from', value: '10-2023' },
+            { key: 'to', value: 'present' }
+          ]}
+        />
+      </CodeLine>
+      <CodeLine>
+        <CssRule ruleKey="@" ruleValue="Protocube Reply" quoted />
+      </CodeLine>
+      <CodeLine>
+        <CssRule ruleKey="role" ruleValue="Lead" quoted />
+      </CodeLine>
+      <CodeLine>
+        <CssBlockEnd />
+      </CodeLine>
+            
     </CodeBlock>
   )
 }
